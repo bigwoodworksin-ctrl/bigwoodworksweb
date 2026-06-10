@@ -9,6 +9,19 @@ const timeline = [
   { year: "2026", text: "Serving buyers across 6+ countries with 50,000+ urns manufactured since 2023." },
 ];
 
+const founders = [
+  {
+    name: "Mujahid Ul Islam",
+    role: "Founder",
+    image: "/assets/founder-mujahid-ul-islam.png",
+  },
+  {
+    name: "Mohd Zaid",
+    role: "Founder",
+    image: "/assets/founder-mohd-zaid.png",
+  },
+];
+
 export function AboutPage() {
   return (
     <>
@@ -39,6 +52,19 @@ export function AboutPage() {
             title="Made to honour every memory."
             text="Every memorial urn carries the memory of a life, the love of a family, and a story that deserves to be honoured with dignity. Every piece is handled with care, respect, and attention from wood selection to final packaging."
           />
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {founders.map((founder) => (
+              <article key={founder.name} className="overflow-hidden rounded-xl border border-outline-variant bg-background shadow-soft">
+                <div className="aspect-[4/3] overflow-hidden bg-surface-container">
+                  <img src={founder.image} alt={founder.name} className="h-full w-full object-cover object-top" loading="lazy" />
+                </div>
+                <div className="p-6">
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-secondary">{founder.role}</p>
+                  <h2 className="mt-2 font-display text-3xl font-semibold text-primary">{founder.name}</h2>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
