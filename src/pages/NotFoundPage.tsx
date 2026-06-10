@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Button } from "../components/ui/Button";
 
 export function NotFoundPage() {
   return (
@@ -11,7 +10,9 @@ export function NotFoundPage() {
           The route does not match one of the Big Wood Works exported screens.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Button href="/">Go home</Button>
+          <Link to="/" className="focus-ring inline-flex min-h-12 items-center justify-center rounded bg-primary px-6 text-sm font-bold text-on-primary">
+            Go home
+          </Link>
           <Link to="/contact" className="focus-ring inline-flex min-h-12 items-center justify-center rounded px-6 text-sm font-bold text-primary hover:bg-surface-container">
             Contact the shop
           </Link>
