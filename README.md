@@ -64,7 +64,8 @@ src/
 ## Audit
 
 - Design source: eight Stitch `code.html` pages and `screen.png` references are stored in `public/stitch`.
-- Routes: all eight Stitch routes plus contact/quote aliases and 404 are implemented in React Router.
+- Routes: all eight Stitch routes plus contact, quote, catalogue/catalog, wholesale aliases, and 404 are implemented in React Router.
+- Navigation: React provides working desktop tabs and an accessible mobile menu; embedded Stitch `href="#"` links are upgraded to real routes when possible.
 - Assets: the Stitch export is served directly so its generated imagery, fonts, Tailwind CDN styling, and page-specific layout are preserved.
 - Responsive layout: inherited from the Stitch-generated HTML pages.
 - Mobile navigation: inherited from the Stitch-generated HTML pages where present.

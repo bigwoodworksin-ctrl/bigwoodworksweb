@@ -1,5 +1,6 @@
 export interface StitchPage {
   route: string;
+  navLabel: string;
   title: string;
   file: string;
 }
@@ -7,41 +8,49 @@ export interface StitchPage {
 export const stitchPages: StitchPage[] = [
   {
     route: "/",
+    navLabel: "Home",
     title: "Big Wood Works | Premium Wooden Cremation Urns Manufacturing",
     file: "/stitch/big_wood_works_home_official/code.html",
   },
   {
     route: "/about",
+    navLabel: "About",
     title: "About Us | Big Wood Works",
     file: "/stitch/big_wood_works_about_us/code.html",
   },
   {
     route: "/products",
+    navLabel: "Products",
     title: "Products | Big Wood Works",
     file: "/stitch/big_wood_works_products_catalog/code.html",
   },
   {
     route: "/customization",
+    navLabel: "Customization",
     title: "Customization | Big Wood Works",
     file: "/stitch/big_wood_works_customization_services/code.html",
   },
   {
     route: "/oem-private-label",
+    navLabel: "OEM",
     title: "OEM & Private Label | Big Wood Works",
     file: "/stitch/big_wood_works_oem_private_label/code.html",
   },
   {
     route: "/manufacturing",
+    navLabel: "Manufacturing",
     title: "Manufacturing | Big Wood Works",
     file: "/stitch/big_wood_works_manufacturing_facility/code.html",
   },
   {
     route: "/export",
+    navLabel: "Export",
     title: "Global Export | Big Wood Works",
     file: "/stitch/big_wood_works_global_export_reach/code.html",
   },
   {
     route: "/quality",
+    navLabel: "Quality",
     title: "Quality Assurance | Big Wood Works",
     file: "/stitch/big_wood_works_quality_assurance/code.html",
   },
