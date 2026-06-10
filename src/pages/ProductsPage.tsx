@@ -12,6 +12,13 @@ export function ProductsPage() {
             title="Premium urn collections for wholesale and OEM buyers."
             text="Discover beautifully crafted urns designed to honor cherished memories with elegance and dignity, from artistic resin finishes to natural wooden designs."
           />
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {["Superior quality", "Custom made", "Trusted worldwide"].map((item) => (
+              <div key={item} className="rounded-lg border border-outline-variant bg-surface-container-low p-5 text-lg font-bold text-primary">
+                {item}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

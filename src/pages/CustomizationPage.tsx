@@ -22,6 +22,15 @@ export function CustomizationPage() {
           ))}
         </div>
       </div>
+      <div className="container-shell mt-14">
+        <div className="rounded-xl bg-primary-container p-8 text-on-primary md:p-10">
+          <p className="text-sm font-bold uppercase tracking-[0.24em] text-tertiary-fixed">Personalized memorial solutions</p>
+          <h2 className="mt-4 font-display text-4xl font-semibold leading-tight">Engraved. Printed. Personalised. Made just for you.</h2>
+          <p className="mt-4 max-w-3xl leading-8 text-on-primary/75">
+            Buyers can develop private-label collections with custom names, dates, logos, religious motifs, pet portraits, floral artwork, resin accents, packaging, and market-specific design variations.
+          </p>
+        </div>
+      </div>
     </section>
   );
 }

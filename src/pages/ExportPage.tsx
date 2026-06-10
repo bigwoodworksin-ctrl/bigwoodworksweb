@@ -1,4 +1,5 @@
 import { SectionHeader } from "../components/SectionHeader";
+import { exportSupport } from "../data/catalogue";
 
 const markets = ["USA", "UK", "Canada", "Germany", "France", "Australia", "Netherlands", "Singapore"];
 
@@ -30,6 +31,14 @@ export function ExportPage() {
               </article>
             ))}
           </div>
+        </div>
+        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {exportSupport.map((item) => (
+            <article key={item.title} className="rounded-lg border border-outline-variant bg-surface-container-lowest p-6 shadow-sm">
+              <h2 className="text-xl font-bold text-primary">{item.title}</h2>
+              <p className="mt-3 leading-7 text-on-surface-variant">{item.text}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

@@ -62,6 +62,25 @@ export const processSteps = [
   },
 ];
 
+export const productFamilies = [
+  {
+    title: "Lichtenberg Resin",
+    text: "Electrifying fractal patterns fused with resin for distinctive premium memorial products.",
+  },
+  {
+    title: "UV-Printed Nature Series",
+    text: "Full-color nature, pet, portrait, floral, and tribute artwork printed directly onto wood.",
+  },
+  {
+    title: "Classical Heritage",
+    text: "Traditional engraved and printed designs with warm natural wood craftsmanship.",
+  },
+  {
+    title: "Keepsake Memorials",
+    text: "Smaller urns and companion keepsakes for meaningful personal remembrance.",
+  },
+];
+
 export const whyChooseUs = [
   "30+ years of trusted manufacturing expertise",
   "50,000+ premium cremation urns crafted",
@@ -71,12 +90,51 @@ export const whyChooseUs = [
   "Global export support and reliable supply chain",
 ];
 
+export const buyerBenefits = [
+  {
+    title: "Uncompromising quality",
+    text: "Strict inspection supports accurate personalization, premium finishing, and safe delivery.",
+  },
+  {
+    title: "Production efficiency",
+    text: "Bulk and repeat orders are supported by 8,000+ units monthly manufacturing capacity.",
+  },
+  {
+    title: "Export expertise",
+    text: "Packaging, documentation, and worldwide delivery support help buyers move quickly.",
+  },
+  {
+    title: "Low MOQ support",
+    text: "Flexible development and order structures support new collections and market testing.",
+  },
+  {
+    title: "OEM / ODM capability",
+    text: "Design, prototyping, branding, packaging, and private-label manufacturing are handled in-house.",
+  },
+  {
+    title: "Custom memorial solutions",
+    text: "Names, dates, portraits, pet images, symbols, artwork, resin, and finish options are available.",
+  },
+];
+
 export const manufacturingHighlights = [
   { title: "Monthly manufacturing capacity", text: "8,000+ units capacity for bulk and repeat orders." },
   { title: "Skilled craftsmanship", text: "Expert teams for woodworking, finishing, engraving, and assembly." },
   { title: "Laser engraving", text: "6 precision laser machines for detailed personalization." },
   { title: "Resin inlay work", text: "Custom resin detailing for unique premium products." },
   { title: "Quality control", text: "Dedicated inspection team ensuring consistent quality." },
+];
+
+export const infrastructure = [
+  "Production Unit",
+  "Finishing Department",
+  "Quality Control",
+  "Warehouse",
+  "R&D Department",
+  "Customer Service Department",
+  "Design Department",
+  "Customization Department",
+  "Dispatch Department",
 ];
 
 export const qualitySteps = [
@@ -115,6 +173,38 @@ export const customizationServices = [
   },
 ];
 
+export const exportSupport = [
+  {
+    title: "Export-ready packaging",
+    text: "Products are carefully packed for secure international dispatch and repeat wholesale supply.",
+  },
+  {
+    title: "Documentation support",
+    text: "Buyer communication, shipment preparation, and export process support are coordinated end to end.",
+  },
+  {
+    title: "Worldwide logistics support",
+    text: "International buyers receive support from material selection and branding through delivery.",
+  },
+  {
+    title: "Buyer approval support",
+    text: "Pre-shipment photos and videos can be provided for batch approval.",
+  },
+];
+
+export const materials = [
+  "Mango Wood",
+  "Rose Wood",
+  "Neem Wood",
+  "Pine Wood",
+  "Steam Beach",
+  "Brass accents",
+  "Aluminium accents",
+  "Premium resin",
+  "UV printed finishes",
+  "Custom stains and coatings",
+];
+
 export const collections: Collection[] = [
   {
     title: "Lichtenberg Resin Urns",
@@ -128,6 +218,17 @@ export const collections: Collection[] = [
     ],
   },
   {
+    title: "Nature Tribute Collection",
+    subtitle: "Wooden memorial collection",
+    description: "Nature-inspired engraved wooden urns crafted to preserve memories with warmth, beauty, and timeless elegance.",
+    image: "/assets/catalogue-images/page-31-1.png",
+    products: [
+      { name: "Soaring Souls", collection: "Nature Tribute", material: "Neem Wood", image: "/assets/catalogue-images/page-31-1.png" },
+      { name: "Roots of Memory", collection: "Nature Tribute", material: "Mango Wood", image: "/assets/catalogue-images/page-31-2.png" },
+      { name: "Guiding Path", collection: "Nature Tribute", material: "Mango Wood", image: "/assets/catalogue-images/page-31-3.png" },
+    ],
+  },
+  {
     title: "Premium UV Printed Urns",
     subtitle: "Custom tributes that last forever",
     description: "High-quality UV printed urns designed for lasting remembrance.",
@@ -136,6 +237,50 @@ export const collections: Collection[] = [
       { name: "Hummingbird", collection: "Premium UV Printed", material: "Mango Wood", image: "/assets/catalogue-images/page-27-1.png" },
       { name: "Guitar Tribute", collection: "Premium UV Printed", material: "Rose Wood", image: "/assets/catalogue-images/page-27-2.png" },
       { name: "Golden Tree", collection: "Premium UV Printed", material: "Rose Wood", image: "/assets/catalogue-images/page-27-3.png" },
+    ],
+  },
+  {
+    title: "Botanical Tribute Collection",
+    subtitle: "Woodland memories collection",
+    description: "Nature-inspired handcrafted urns combining artistic engravings with lasting craftsmanship.",
+    image: "/assets/catalogue-images/page-35-1.png",
+    products: [
+      { name: "Woodland Reflection", collection: "Botanical Tribute", material: "Mango Wood", image: "/assets/catalogue-images/page-35-1.png" },
+      { name: "Bamboo Bloom Urn", collection: "Botanical Tribute", material: "Mango Wood", image: "/assets/catalogue-images/page-35-2.png" },
+      { name: "Birds of Memory", collection: "Botanical Tribute", material: "Mango Wood", image: "/assets/catalogue-images/page-35-3.png" },
+    ],
+  },
+  {
+    title: "Tree of Life Collection",
+    subtitle: "Rooted in remembrance",
+    description: "Crafted to honor cherished memories with timeless elegance and meaningful symbolism.",
+    image: "/assets/catalogue-images/page-36-1.png",
+    products: [
+      { name: "Family Tree", collection: "Tree of Life", material: "Rose Wood", image: "/assets/catalogue-images/page-36-1.png" },
+      { name: "Autumn Bloom", collection: "Tree of Life", material: "Rose Wood", image: "/assets/catalogue-images/page-36-2.png" },
+      { name: "Guardian Tribute", collection: "Tree of Life", material: "Rose Wood", image: "/assets/catalogue-images/page-36-3.png" },
+    ],
+  },
+  {
+    title: "Resin Art Collection",
+    subtitle: "Wood & resin harmony",
+    description: "Handcrafted urns combining natural wood grain with flowing resin artistry for a distinctive tribute.",
+    image: "/assets/catalogue-images/page-37-1.png",
+    products: [
+      { name: "Ocean Heart", collection: "Resin Art", material: "Rose Wood", image: "/assets/catalogue-images/page-37-1.png" },
+      { name: "Midnight Shore", collection: "Resin Art", material: "Rose Wood", image: "/assets/catalogue-images/page-37-2.png" },
+      { name: "Coastal Serenity", collection: "Resin Art", material: "Rose Wood", image: "/assets/catalogue-images/page-37-3.png" },
+    ],
+  },
+  {
+    title: "Engraved Legacy Collection",
+    subtitle: "Personalized legacy tributes",
+    description: "Personalized engravings crafted to honor cherished memories.",
+    image: "/assets/catalogue-images/page-40-1.png",
+    products: [
+      { name: "Nature's Peace", collection: "Engraved Legacy", material: "Rose Wood", image: "/assets/catalogue-images/page-40-1.png" },
+      { name: "Sacred Cross", collection: "Engraved Legacy", material: "Rose Wood", image: "/assets/catalogue-images/page-40-2.png" },
+      { name: "Eternal Words", collection: "Engraved Legacy", material: "Rose Wood", image: "/assets/catalogue-images/page-40-3.png" },
     ],
   },
   {

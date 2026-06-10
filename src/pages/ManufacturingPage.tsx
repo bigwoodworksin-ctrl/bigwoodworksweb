@@ -1,5 +1,5 @@
 import { SectionHeader } from "../components/SectionHeader";
-import { manufacturingHighlights, qualitySteps } from "../data/catalogue";
+import { infrastructure, manufacturingHighlights, materials, qualitySteps } from "../data/catalogue";
 
 export function ManufacturingPage() {
   return (
@@ -44,6 +44,39 @@ export function ManufacturingPage() {
                 {step}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad bg-background">
+        <div className="container-shell grid gap-10 lg:grid-cols-2">
+          <div>
+            <SectionHeader
+              eyebrow="Factory & infrastructure"
+              title="Production, finishing, quality, warehouse, and office support."
+              text="Our manufacturing and corporate teams support product development, buyer communication, customization, dispatch, and repeat export supply."
+            />
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {infrastructure.map((item) => (
+                <div key={item} className="rounded border border-outline-variant bg-surface-container-lowest px-4 py-3 font-semibold text-primary">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <SectionHeader
+              eyebrow="Materials & finishes"
+              title="Carefully selected materials for durable memorial products."
+              text="Premium woods, resin accents, metal details, UV printing, and custom finishes help create market-ready collections."
+            />
+            <div className="mt-8 flex flex-wrap gap-3">
+              {materials.map((item) => (
+                <span key={item} className="rounded-full border border-outline-variant bg-surface-container-low px-4 py-2 text-sm font-bold text-primary">
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>

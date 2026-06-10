@@ -1,5 +1,5 @@
 import { SectionHeader } from "../components/SectionHeader";
-import { customizationServices } from "../data/catalogue";
+import { customizationServices, whyChooseUs } from "../data/catalogue";
 
 export function OemPage() {
   return (
@@ -17,6 +17,16 @@ export function OemPage() {
               <p className="mt-3 leading-7 text-on-surface-variant">{service.text}</p>
             </article>
           ))}
+        </div>
+        <div className="mt-12 rounded-xl bg-surface-container-low p-6 md:p-8">
+          <h2 className="font-display text-3xl font-semibold text-primary">OEM / ODM partnership advantages</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {whyChooseUs.map((item) => (
+              <div key={item} className="rounded border border-outline-variant bg-background px-4 py-3 font-semibold text-primary">
+                {item}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

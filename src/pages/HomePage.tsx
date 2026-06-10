@@ -2,7 +2,7 @@ import { ArrowRight, CheckCircle2, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ProductCard } from "../components/ProductCard";
 import { SectionHeader } from "../components/SectionHeader";
-import { collections, processSteps, stats, whyChooseUs } from "../data/catalogue";
+import { buyerBenefits, collections, productFamilies, processSteps, stats, whyChooseUs } from "../data/catalogue";
 
 export function HomePage() {
   const featured = collections.flatMap((collection) => collection.products).slice(0, 6);
@@ -65,6 +65,24 @@ export function HomePage() {
       <section className="section-pad bg-surface-container-low">
         <div className="container-shell">
           <SectionHeader
+            eyebrow="Curation of excellence"
+            title="From heritage urns to custom printed memorial collections."
+            text="Explore diverse product families, from traditional natural wood designs to resin, engraving, UV printing, pet tributes, keepsakes, and OEM-ready collections."
+          />
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {productFamilies.map((family) => (
+              <article key={family.title} className="rounded-lg border border-outline-variant bg-background p-6 shadow-sm">
+                <h3 className="text-xl font-bold text-primary">{family.title}</h3>
+                <p className="mt-3 leading-7 text-on-surface-variant">{family.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad bg-background">
+        <div className="container-shell">
+          <SectionHeader
             eyebrow="Timber to lasting legacy"
             title="A careful process from material selection to dispatch."
             text="Every piece is handled with respect, from wood selection and seasoning through crafting, customization, quality inspection, packaging, and global delivery."
@@ -75,6 +93,24 @@ export function HomePage() {
                 <p className="font-display text-4xl font-bold text-on-primary-container">{String(index + 1).padStart(2, "0")}</p>
                 <h3 className="mt-5 text-xl font-bold text-primary">{step.title}</h3>
                 <p className="mt-3 leading-7 text-on-surface-variant">{step.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad bg-surface-container-low">
+        <div className="container-shell">
+          <SectionHeader
+            eyebrow="Why global buyers choose us"
+            title="Manufacturing control from concept to global delivery."
+            text="By managing the full lifecycle of products, we maintain control over quality, craftsmanship, customization, and supply."
+          />
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {buyerBenefits.map((benefit) => (
+              <article key={benefit.title} className="rounded-lg border border-outline-variant bg-background p-6">
+                <h3 className="text-xl font-bold text-primary">{benefit.title}</h3>
+                <p className="mt-3 leading-7 text-on-surface-variant">{benefit.text}</p>
               </article>
             ))}
           </div>
