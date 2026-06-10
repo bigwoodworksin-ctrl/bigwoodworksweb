@@ -3,7 +3,15 @@ import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { stitchPages } from "../data/stitchPages";
 
-const primaryPages = stitchPages.filter((page) => page.route !== "/oem-private-label");
+const navItems = [
+  { label: "Home", route: "/" },
+  { label: "About", route: "/about" },
+  { label: "Products", route: "/products" },
+  { label: "Customization", route: "/customization" },
+  { label: "Manufacturing", route: "/manufacturing" },
+  { label: "Export", route: "/export" },
+  { label: "Contact", route: "/contact" },
+];
 
 export function SiteChrome() {
   const [open, setOpen] = useState(false);
@@ -17,25 +25,27 @@ export function SiteChrome() {
     <div className="min-h-screen bg-background text-on-surface">
       <header className="sticky top-0 z-50 border-b border-outline-variant bg-background/95 backdrop-blur-xl">
         <nav className="mx-auto flex h-20 w-full max-w-[1280px] items-center justify-between px-4 md:px-8 lg:px-16">
-          <Link to="/" className="focus-ring flex items-center gap-3 rounded">
-            <span className="grid size-11 place-items-center rounded bg-primary font-display text-xl font-bold text-on-primary">
-              B
-            </span>
+          <Link to="/" className="focus-ring flex min-w-0 items-center gap-3 rounded">
+            <img
+              src="/assets/big-wood-works-logo.png"
+              alt="Big Wood Works logo"
+              className="size-14 shrink-0 rounded object-contain"
+            />
             <span className="font-display text-2xl font-semibold text-primary">Big Wood Works</span>
           </Link>
 
-          <div className="hidden items-center gap-7 lg:flex">
-            {primaryPages.map((page) => (
+          <div className="hidden items-center gap-6 lg:flex">
+            {navItems.map((item) => (
               <NavLink
-                key={page.route}
-                to={page.route}
+                key={item.route}
+                to={item.route}
                 className={({ isActive }) =>
                   `focus-ring rounded py-2 text-sm font-semibold tracking-[0.05em] transition ${
                     isActive ? "border-b-2 border-primary text-primary" : "text-on-surface-variant hover:text-primary"
                   }`
                 }
               >
-                {page.navLabel}
+                {item.label}
               </NavLink>
             ))}
           </div>
@@ -73,17 +83,17 @@ export function SiteChrome() {
 
         <div id="mobile-navigation" className={open ? "border-t border-outline-variant bg-background lg:hidden" : "hidden"}>
           <div className="mx-auto grid w-full max-w-[1280px] gap-2 px-4 py-4 md:px-8">
-            {stitchPages.map((page) => (
+            {[...navItems, { label: "OEM", route: "/oem-private-label" }].map((item) => (
               <NavLink
-                key={page.route}
-                to={page.route}
+                key={item.route}
+                to={item.route}
                 className={({ isActive }) =>
                   `focus-ring rounded px-4 py-3 text-base font-semibold ${
                     isActive ? "bg-primary text-on-primary" : "text-on-surface-variant hover:bg-surface-container hover:text-primary"
                   }`
                 }
               >
-                {page.navLabel}
+                {item.label}
               </NavLink>
             ))}
             <NavLink

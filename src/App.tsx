@@ -15,8 +15,8 @@ export default function App() {
             <Route key={page.route} path={page.route.slice(1)} element={<StitchPage page={page} />} />
           ),
         )}
-        <Route path="contact" element={<StitchPage page={stitchPages[0]} />} />
-        <Route path="quote" element={<StitchPage page={stitchPages[0]} />} />
+        <Route path="contact" element={<StitchPage page={stitchPages[3]} />} />
+        <Route path="quote" element={<StitchPage page={stitchPages[3]} />} />
         <Route path="catalogue" element={<StitchPage page={stitchPages[2]} />} />
         <Route path="catalog" element={<StitchPage page={stitchPages[2]} />} />
         <Route path="wholesale" element={<StitchPage page={stitchPages[4]} />} />

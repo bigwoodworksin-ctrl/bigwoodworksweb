@@ -12,14 +12,14 @@ export function StitchPage({ page }: StitchPageProps) {
       return;
     }
 
-    const header = document.querySelector("header");
-    header?.setAttribute("hidden", "true");
+    const embeddedNavigation = document.querySelector("body > nav");
+    embeddedNavigation?.setAttribute("data-react-hidden-nav", "true");
 
     const style = document.createElement("style");
     style.textContent = `
       html { scroll-behavior: smooth; }
       body { min-height: auto !important; }
-      header[hidden] { display: none !important; }
+      body > nav[data-react-hidden-nav] { display: none !important; }
     `;
     document.head.append(style);
 
