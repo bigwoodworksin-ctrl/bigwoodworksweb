@@ -5,8 +5,8 @@
 @tailwind utilities;
 
 :root {
-  color: #211b17;
-  background: #fffaf2;
+  color: #1b1c17;
+  background: #fbf9f1;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -26,8 +26,8 @@ body {
   min-width: 320px;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at 10% 0%, rgba(164, 101, 63, 0.12), transparent 30rem),
-    linear-gradient(180deg, #fffaf2 0%, #f4efe7 100%);
+    radial-gradient(circle at 10% 0%, rgba(227, 190, 184, 0.28), transparent 30rem),
+    linear-gradient(180deg, #fbf9f1 0%, #f0eee6 100%);
 }
 
 button,
@@ -43,8 +43,8 @@ img {
 }
 
 ::selection {
-  background: #5a3424;
-  color: #fffaf2;
+  background: #271310;
+  color: #ffffff;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -64,11 +64,11 @@ img {
   }
 
   .focus-ring {
-    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bark;
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary;
   }
 
   .eyebrow {
-    @apply text-xs font-bold uppercase tracking-[0.24em] text-cedar;
+    @apply text-xs font-bold uppercase tracking-[0.24em] text-secondary;
   }
 
   .section-pad {

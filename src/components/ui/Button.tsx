@@ -13,9 +13,9 @@ interface ButtonProps {
 }
 
 const variants: Record<ButtonVariant, string> = {
-  primary: "bg-bark text-paper shadow-lift hover:bg-ink",
-  secondary: "border border-bark/25 bg-paper text-ink hover:border-bark hover:bg-linen",
-  ghost: "text-ink hover:bg-bark/10",
+  primary: "bg-primary text-on-primary shadow-lift hover:bg-primary-container",
+  secondary: "border border-outline-variant bg-surface text-primary hover:border-primary hover:bg-surface-container",
+  ghost: "text-primary hover:bg-surface-container",
 };
 
 export function Button({ children, href, type = "button", variant = "primary", className = "", onClick }: ButtonProps) {

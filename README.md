@@ -1,21 +1,21 @@
-# Big Woodworks React Implementation
+# Big Wood Works React Implementation
 
-This project is a React + TypeScript + Vite + Tailwind CSS website prepared for the Big Woodworks Figma prototype.
+This project is a React + TypeScript + Vite + Tailwind CSS website prepared from the exported Big Wood Works Figma context files.
 
 ## Figma Screens
 
-The provided prototype links identify these eight screens:
+The provided exports identify these eight screens:
 
 | Figma node | Route | Page |
 | --- | --- | --- |
-| `8:3` | `/` | Home |
-| `8:328` | `/custom-furniture` | Custom Furniture |
-| `8:885` | `/cabinetry` | Cabinetry |
-| `8:1235` | `/portfolio` | Portfolio |
-| `8:1486` | `/process` | Process |
-| `8:1691` | `/about` | About |
-| `8:1937` | `/contact` | Contact |
-| `8:2126` | `/quote` | Quote |
+| exported image/html pair | `/` | Home |
+| exported image/html pair | `/about` | About Us |
+| exported image/html pair | `/products` | Products |
+| exported image/html pair | `/oem-private-label` | OEM & Private Label |
+| exported image/html pair | `/manufacturing` | Manufacturing |
+| exported image/html pair | `/export` | Global Export |
+| exported image/html pair | `/quality` | Quality Assurance |
+| exported image/html pair | `/customization` | Customization |
 
 ## Development
 
@@ -61,13 +61,13 @@ src/
 
 ## Audit
 
-- Figma frames: eight prototype nodes were mapped to routes, but structured Figma inspection was blocked by the Figma MCP Starter plan tool-call limit.
-- Routes: all eight routes are implemented in React Router.
-- Assets: production image URLs load from remote image sources; exact Figma-exported assets could not be extracted while MCP was rate-limited.
+- Figma frames: eight exported screenshots/HTML files were mapped to React routes.
+- Routes: all eight exported routes plus contact/quote and 404 are implemented in React Router.
+- Assets: exported JPEG frame images are stored in `src/assets/screens`.
 - Responsive layout: components use fluid containers, CSS Grid, Flexbox, and mobile navigation.
 - Mobile navigation: implemented with accessible expanded state and route-close behavior.
 - Console errors: should be checked after dependencies are installed and the dev server is running.
-- Placeholder content: no Lorem Ipsum or TODOs are present. Copy should be replaced with exact Figma text once Figma MCP access or frame exports are available.
+- Placeholder content: no Lorem Ipsum or TODOs are present. Main exported copy has been ported into typed data.
 
 ## Figma Access Note
 

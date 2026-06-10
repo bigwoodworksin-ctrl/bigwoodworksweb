@@ -4,7 +4,7 @@ import { Header } from "../navigation/Header";
 
 export function Layout() {
   return (
-    <div className="min-h-screen bg-paper text-ink">
+    <div className="min-h-screen bg-background text-on-surface">
       <Header />
       <main>
         <Outlet />
