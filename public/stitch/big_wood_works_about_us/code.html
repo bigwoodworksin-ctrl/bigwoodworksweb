@@ -1,0 +1,434 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>About Us | Big Wood Works</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#b38f4a",
+                        "surface-container-low": "#f5f4ec",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e4e3db",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffdea5",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#827472",
+                        "on-tertiary-fixed-variant": "#5d4201",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#231600",
+                        "surface-variant": "#e4e3db",
+                        "on-secondary-fixed": "#271812",
+                        "on-tertiary-fixed": "#261900",
+                        "on-error": "#ffffff",
+                        "surface-container": "#f0eee6",
+                        "surface-bright": "#fbf9f1",
+                        "on-primary-fixed-variant": "#5b403c",
+                        "inverse-primary": "#e3beb8",
+                        "on-background": "#1b1c17",
+                        "tertiary-fixed-dim": "#e9c176",
+                        "on-primary-fixed": "#2b1613",
+                        "primary-fixed": "#ffdad4",
+                        "primary": "#271310",
+                        "inverse-on-surface": "#f3f1e9",
+                        "secondary-fixed": "#fadcd2",
+                        "secondary-fixed-dim": "#ddc1b7",
+                        "inverse-surface": "#30312c",
+                        "on-primary-container": "#ae8d87",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#e3beb8",
+                        "surface-tint": "#745853",
+                        "surface-container-high": "#eae8e0",
+                        "on-secondary-container": "#766057",
+                        "background": "#fbf9f1",
+                        "tertiary-container": "#3d2a00",
+                        "surface": "#fbf9f1",
+                        "primary-container": "#3e2723",
+                        "on-secondary-fixed-variant": "#56423b",
+                        "secondary-container": "#fadcd2",
+                        "on-surface-variant": "#504442",
+                        "on-surface": "#1b1c17",
+                        "outline-variant": "#d3c3c0",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#6f5a52",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#dcdad2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "section-gap": "120px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-shadow-sm {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky bg-surface-bright shadow-sm z-50">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md text-primary">Big Wood Works</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-200" href="#">Home</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-200" href="#">Products</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-200" href="#">Customization</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-200" href="#">Wholesale</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">About</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-200" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-fixed-variant px-6 h-10 flex items-center justify-center font-label-md text-label-md rounded shadow-sm hover:opacity-80 transition-opacity">Catalogue</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section: Company Overview -->
+<section class="relative py-section-gap overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="z-10">
+<span class="font-label-md text-label-md text-on-tertiary-container tracking-widest block mb-4">OUR LEGACY</span>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-6">Quiet Dignity in Every Grain</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl">
+                        Big Wood Works represents the pinnacle of B2B memorial manufacturing. Based in the heart of Rajasthan, India, we bridge the gap between ancient woodworking traditions and modern global standards, providing premium wooden memorial urns to partners worldwide.
+                    </p>
+<div class="flex flex-wrap gap-4 mb-8"><button class="bg-primary text-on-primary px-6 h-10 flex items-center justify-center font-label-md text-label-md rounded shadow-sm hover:opacity-90 transition-opacity">Catalogue</button><button class="border border-primary text-primary px-6 h-10 flex items-center justify-center font-label-md text-label-md rounded hover:bg-primary/5 transition-colors">Get a Quote</button></div>
+</div>
+<div class="relative">
+<div class="aspect-[4/5] overflow-hidden rounded-xl shadow-xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+<img class="w-full h-full object-cover" data-alt="A detailed close-up of a skilled woodworker's weathered hands carefully sanding a dark walnut memorial urn. The lighting is dramatic and warm, coming from a side window, highlighting the fine wood dust in the air. The workshop background is slightly blurred, showing traditional chisels and high-end woodworking tools arranged neatly. The overall mood is one of profound respect, craftsmanship, and quiet artisanal dignity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7SDCKu7gmlDp8jufNV4QKb0aRyMTxwtb-_fXnoG7_wUnTP35xs4l63hS3CPZpQZ2JuXFw8JulZ7VryyMq75rwY3HCRyC6bE7YXYXJ3RR4Wwjs8FuAsuhyOsIMqfiLidE9qZvFwPMJWVb1NX8Gv8C90Dio06l_jzRx3iKoHCHsMIQqFF1h0FaQXgRzF1knpdMWPhalVJnOVJ4KV2E-0OaZ7QQiYJ4TxXiYzWN_JLAdLbi4vhSK2tkJsWfBkYT3SQGyDBjEzWSDgc5K">
+</div>
+<div class="absolute -bottom-8 -left-8 aspect-square w-64 overflow-hidden rounded-xl shadow-lg transform -rotate-3 hidden lg:block">
+<img class="w-full h-full object-cover" data-alt="A macro shot of premium solid oak wood grain, showcasing the deep textures and rich natural patterns of the timber. The finish is a soft, matte satin that reflects a gentle, warm light. The composition focuses on the tactile quality of the wood, emphasizing the artisanal attention to detail and high-quality material selection used in luxury urn manufacturing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD0X9RSRDEpzq5RPVWOpB8R0TXyrQfCjkybRxk602OblqKVKRUa0pEttq_7PuV5g1u11V463VHn-v569tFRqoFxx3Oa60Tl7PFtopf3R4KN0Wt2WZEBNnZ3hLFU7QOsHhz-cBH1DwEctmZnym4soK33lH_zsvh7vlgm9SMKnrMc8Pujqo4Sx-pvHcm7kqe9Ucz5-ePvzRseUAbrvQ7QnnjkNbP3rq8zC5wmF9FFCJ_b14WBQxaUqvFY32Vk8T3gy3KtWguFOYHy9mT">
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Relationship: The Maryam Crafts -->
+<section class="bg-surface-container py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row gap-gutter">
+<div class="md:w-1/3">
+<h2 class="font-headline-md text-headline-md text-primary mb-6">The Maryam Crafts Partnership</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Big Wood Works operates as the specialized B2B manufacturing powerhouse for the renowned consumer brand, <span class="font-bold text-primary">The Maryam Crafts</span>. While they focus on the final connection with families, we ensure the structural integrity and artistic perfection of every piece that leaves our facility.
+                        </p>
+</div>
+<div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-surface p-8 rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">handyman</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-2 text-2xl">Manufacturing Root</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">We provide the technical expertise and bulk production capacity that sustains high-end retail demands.</p>
+</div>
+<div class="bg-surface p-8 rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">diversity_3</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-2 text-2xl">Unified Quality</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">A shared standard of excellence ensures that every product, regardless of the label, meets our rigorous quality benchmarks.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Family Craftsmanship Heritage -->
+<section class="py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-desktop text-center mb-16">
+<span class="font-label-md text-label-md text-on-tertiary-container tracking-widest block mb-4">OUR STORY</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Generations of Excellence</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Woodworking is not just our business; it is our lineage. For generations, our family has practiced the art of shaping timber in the heart of Rajasthan.
+                </p>
+</div>
+<!-- Timeline -->
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="relative">
+<!-- Progress Line -->
+<div class="absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-outline-variant hidden md:block"></div>
+<div class="space-y-12">
+<!-- 2020 Before -->
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 text-right pr-12 hidden md:block">
+<h4 class="font-headline-md text-headline-md text-primary">Before 2020</h4>
+<p class="text-on-surface-variant">The Foundation of Family Heritage and Artisanal Mastery.</p>
+</div>
+<div class="z-10 bg-primary w-10 h-10 rounded-full border-4 border-background flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">history</span>
+</div>
+<div class="md:w-1/2 pl-12">
+<div class="bg-surface-container-low p-6 rounded-lg border border-outline-variant">
+<h4 class="font-headline-md text-headline-md text-primary md:hidden">Before 2020</h4>
+<p class="font-body-md text-body-md">Generations of artisanal woodworking knowledge passed down through the family, mastering local techniques and sustainable material selection.</p>
+</div>
+</div>
+</div>
+<!-- 2020 -->
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 text-right pr-12 order-2 md:order-1">
+<div class="bg-surface-container-low p-6 rounded-lg border border-outline-variant">
+<h4 class="font-headline-md text-headline-md text-primary md:hidden">2020</h4>
+<p class="font-body-md text-body-md">The Maryam Crafts is established as a consumer-facing brand, bringing handcrafted wooden memorials to families seeking solace.</p>
+</div>
+</div>
+<div class="z-10 bg-primary w-10 h-10 rounded-full border-4 border-background flex items-center justify-center order-1 md:order-2">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">storefront</span>
+</div>
+<div class="md:w-1/2 pl-12 hidden md:block order-3">
+<h4 class="font-headline-md text-headline-md text-primary">2020</h4>
+<p class="text-on-surface-variant">The Maryam Crafts Launch.</p>
+</div>
+</div>
+<!-- 2023 -->
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 text-right pr-12 hidden md:block">
+<h4 class="font-headline-md text-headline-md text-primary">2023</h4>
+<p class="text-on-surface-variant">Founding of Big Wood Works.</p>
+</div>
+<div class="z-10 bg-primary w-10 h-10 rounded-full border-4 border-background flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+</div>
+<div class="md:w-1/2 pl-12">
+<div class="bg-surface-container-low p-6 rounded-lg border border-outline-variant">
+<h4 class="font-headline-md text-headline-md text-primary md:hidden">2023</h4>
+<p class="font-body-md text-body-md">Big Wood Works is officially incorporated to serve the global B2B market, scaling production capabilities while maintaining artisanal roots.</p>
+</div>
+</div>
+</div>
+<!-- 2024 -->
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 text-right pr-12 order-2 md:order-1">
+<div class="bg-surface-container-low p-6 rounded-lg border border-outline-variant">
+<h4 class="font-headline-md text-headline-md text-primary md:hidden">2024</h4>
+<p class="font-body-md text-body-md">Successful expansion into international markets, securing key distribution partnerships across Europe and North America.</p>
+</div>
+</div>
+<div class="z-10 bg-primary w-10 h-10 rounded-full border-4 border-background flex items-center justify-center order-1 md:order-2">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">public</span>
+</div>
+<div class="md:w-1/2 pl-12 hidden md:block order-3">
+<h4 class="font-headline-md text-headline-md text-primary">2024</h4>
+<p class="text-on-surface-variant">Global Export Reach.</p>
+</div>
+</div>
+<!-- 2025 -->
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 text-right pr-12 hidden md:block">
+<h4 class="font-headline-md text-headline-md text-primary">2025</h4>
+<p class="text-on-surface-variant">Strategic OEM Partnership Growth.</p>
+</div>
+<div class="z-10 bg-primary w-10 h-10 rounded-full border-4 border-background flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">groups</span>
+</div>
+<div class="md:w-1/2 pl-12">
+<div class="bg-surface-container-low p-6 rounded-lg border border-outline-variant">
+<h4 class="font-headline-md text-headline-md text-primary md:hidden">2025</h4>
+<p class="font-body-md text-body-md">Implementing dedicated OEM lines to provide white-labeled solutions for the world's leading funeral service providers.</p>
+</div>
+</div>
+</div>
+<!-- 2026 -->
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 text-right pr-12 order-2 md:order-1">
+<div class="bg-surface-container-low p-6 rounded-lg border border-outline-variant">
+<h4 class="font-headline-md text-headline-md text-primary md:hidden">2026</h4>
+<p class="font-body-md text-body-md">A milestone year projecting presence in 6+ countries with localized support and enhanced distribution networks.</p>
+</div>
+</div>
+<div class="z-10 bg-primary w-10 h-10 rounded-full border-4 border-background flex items-center justify-center order-1 md:order-2">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">flag</span>
+</div>
+<div class="md:w-1/2 pl-12 hidden md:block order-3">
+<h4 class="font-headline-md text-headline-md text-primary">2026</h4>
+<p class="text-on-surface-variant">Presence in 6+ Countries.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Founder's Message & Core Values -->
+<section class="bg-primary-container text-on-primary py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-20">
+<span class="material-symbols-outlined text-on-tertiary-container text-6xl mb-6">format_quote</span>
+<h2 class="font-headline-lg text-headline-lg text-inverse-primary italic mb-6">"Crafted with Respect. Built with Purpose."</h2>
+<p class="font-label-md text-label-md tracking-widest text-on-primary-container">— FOUNDER'S VISION</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="text-center group">
+<div class="w-16 h-16 bg-surface-container-low rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-inverse-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-primary">favorite</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-inverse-primary text-xl mb-2">Respect</h4>
+<p class="font-body-md text-body-md text-on-primary-container">Honoring the purpose of our products with silent reverence.</p>
+</div>
+<div class="text-center group">
+<div class="w-16 h-16 bg-surface-container-low rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-inverse-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-primary">high_quality</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-inverse-primary text-xl mb-2">Quality</h4>
+<p class="font-body-md text-body-md text-on-primary-container">Uncompromising structural and aesthetic standards in every joint.</p>
+</div>
+<div class="text-center group">
+<div class="w-16 h-16 bg-surface-container-low rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-inverse-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-primary">handshake</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-inverse-primary text-xl mb-2">Trust</h4>
+<p class="font-body-md text-body-md text-on-primary-container">Reliable B2B partnership built on transparency and precision.</p>
+</div>
+<div class="text-center group">
+<div class="w-16 h-16 bg-surface-container-low rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-inverse-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-primary">account_balance</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-inverse-primary text-xl mb-2">Legacy</h4>
+<p class="font-body-md text-body-md text-on-primary-container">Creating timeless objects that honor the memories they protect.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Factory & Infrastructure -->
+<section class="py-section-gap bg-surface-bright">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-section-gap items-center">
+<div class="grid grid-cols-2 gap-4">
+<div class="aspect-square rounded-xl overflow-hidden shadow-lg transform translate-y-8">
+<img class="w-full h-full object-cover" data-alt="A sprawling, high-capacity modern woodworking factory floor located in Rajasthan. The space is organized and bright, featuring advanced CNC machinery alongside traditional artisan benches. Large stacks of raw walnut and oak planks are seasoned in a climate-controlled area. The atmosphere is professional, clean, and industrially efficient, reflecting a high-end B2B manufacturing standard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9uSE1EnzloupsSKyagavyw4GRZgHxQjhIuuhMX8uPaN-G_Puk7dUQln4EuvefXBDf_QjxWC1g5kKa64qUw21v1szWrzR2C0POqh9caw2kEXI6wxtnJXGoqyEKkbawjseNupIVH4fK31G0wxYno7SqVKRmrhdmzCHn0dIpwdVaj2pHctMk03QVfU0m1LML2xTVUyBWXgJ_um-Ckag6e6Z1cWqgR50NN_PvfnlGe4HWCbuBuX5i4U7eY0In_CbKXYure6nsdaTtZKX9">
+</div>
+<div class="aspect-square rounded-xl overflow-hidden shadow-lg">
+<img class="w-full h-full object-cover" data-alt="A worker in a clean manufacturing environment performing a meticulous quality check on a finished wooden urn. They are using professional measuring tools and bright inspection lights to ensure perfectly smooth surfaces and precise dimensions. The scene emphasizes technical rigor and the strict quality control protocols of a leading export-oriented manufacturing facility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2qAc_Q5U3WbQ6GpMRUtypVbX02z_PlcXBX2Pbv-V4OeXdrzw8Ipqkm0lIc2k6t92cikGYRVlICxGKl43dhcoxYXRGKbUdvu-V2MncQDvjnuNNzbOW1n71z_8JbHlfKVDIcPMy7abC9jgwGSJyK9aaPF9gY_0gBGG2pOgRT4C2WTtAb04vWLg2S-aMheWONSl70M2RnhMcpW7eDD3VlEhV0UU-38xIOzNu_Pe7G827GAwxabUjlwzTmTFjblZg0hHtgJEBXMQ76y6v">
+</div>
+<div class="col-span-2 aspect-[16/9] rounded-xl overflow-hidden shadow-lg">
+<img class="w-full h-full object-cover" data-alt="A high-angle view of the shipping and logistics bay of a large woodworking factory. Neatly packaged, palletized memorial urns ready for international export are being moved by electric forklifts. The packaging is robust and professional, branded with Big Wood Works logos, symbolizing the company's global reach and logistical reliability for its international B2B partners." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6v_TE3USvEgr6jftWZf1BynZZc14zXHxqDfZenOu326JlT19Lxxv56kntSfcWOOI9Wg578E1FmibhXpTy-6rK1-0yE4mJdlgNj6CIQk8afEOogoa3oQX7-HyqPzke1pEHkXKWAgqbstfoKBd4Tpkl9HWFW1kJYwMqtT0udQERnmzbH67wksVCJPG4QbgG6WrscQ0kKPtgIZ1Bu4aYm2PWK4uXf2O2iWXHV8toLidnxLT_Xb2hBwYOpP2vdRhVdRY6b12nxMUYdXzs">
+</div>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-tertiary-container tracking-widest block mb-4">OUR INFRASTRUCTURE</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Modern Capacity, Traditional Soul</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                            Our manufacturing unit in Rajasthan is a state-of-the-art facility designed for high-volume, premium quality production. We balance computer-aided precision with hand-finished artistry.
+                        </p>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<div class="bg-primary-container p-2 rounded text-on-primary shrink-0">
+<span class="material-symbols-outlined text-2xl">architecture</span>
+</div>
+<div>
+<h5 class="font-headline-md text-headline-md text-primary text-lg">Precision Machining</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">Advanced CNC capabilities for exact geometric specifications and consistent OEM output.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="bg-primary-container p-2 rounded text-on-primary shrink-0">
+<span class="material-symbols-outlined text-2xl">air</span>
+</div>
+<div>
+<h5 class="font-headline-md text-headline-md text-primary text-lg">Seasoning Chambers</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">In-house wood seasoning to ensure durability across different international climates.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="bg-primary-container p-2 rounded text-on-primary shrink-0">
+<span class="material-symbols-outlined text-2xl">grading</span>
+</div>
+<div>
+<h5 class="font-headline-md text-headline-md text-primary text-lg">3-Stage Quality Check</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">Every unit undergoes structural, surface, and final finish inspections before packaging.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-primary-container border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto text-on-primary-container">
+<div class="col-span-1 md:col-span-1">
+<div class="text-headline-md font-headline-md text-on-primary-container mb-4">Big Wood Works</div>
+<p class="font-body-md text-body-md">Defining the standard for premium wooden memorials through artisanal heritage and industrial precision.</p>
+</div>
+<div>
+<h5 class="font-label-md text-label-md text-on-primary mb-4">Quick Links</h5>
+<ul class="space-y-2">
+<li class=""><a class="font-body-md text-body-md hover:text-secondary-fixed-dim transition-colors" href="#">Privacy Policy</a></li>
+<li class=""><a class="font-body-md text-body-md hover:text-secondary-fixed-dim transition-colors" href="#">Export Terms</a></li>
+<li class=""><a class="font-body-md text-body-md hover:text-secondary-fixed-dim transition-colors" href="#">Sustainability</a></li>
+<li class=""><a class="font-body-md text-body-md hover:text-secondary-fixed-dim transition-colors" href="#">Quality Standards</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-label-md text-on-primary mb-4">Contact</h5>
+<p class="font-body-md text-body-md">Manufacturing Unit: Jodhpur Industrial Area, Rajasthan, India.</p>
+<p class="font-body-md text-body-md mt-2">info@bigwoodworks.com</p>
+</div>
+<div>
+<h5 class="font-label-md text-label-md text-on-primary mb-4">B2B Newsletter</h5>
+<div class="flex flex-col gap-2">
+<input class="bg-surface-container-lowest text-on-surface p-2 rounded focus:ring-2 focus:ring-inverse-primary outline-none" placeholder="Business Email" type="email">
+<button class="bg-inverse-primary text-primary px-4 py-2 rounded font-label-md text-label-md hover:opacity-90 transition-opacity">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-body-md opacity-80 text-on-primary-container">© 2024 Big Wood Works. Premium Wooden Memorial Urns. Manufacturing Unit: Rajasthan, India.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed-dim transition-colors">public</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed-dim transition-colors">mail</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed-dim transition-colors">description</span>
+</div>
+</div>
+</footer>
+<script>
+        // Simple parallax or reveal effect on scroll
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.hover\\:rotate-0');
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    el.classList.remove('rotate-2');
+                    el.classList.remove('-rotate-3');
+                }
+            });
+        });
+    </script>
+
+
+</body></html>

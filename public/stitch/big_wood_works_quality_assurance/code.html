@@ -1,0 +1,355 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Quality Assurance | Big Wood Works</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#b38f4a",
+                    "surface-container-low": "#f5f4ec",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e4e3db",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#ffdea5",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#827472",
+                    "on-tertiary-fixed-variant": "#5d4201",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#231600",
+                    "surface-variant": "#e4e3db",
+                    "on-secondary-fixed": "#271812",
+                    "on-tertiary-fixed": "#261900",
+                    "on-error": "#ffffff",
+                    "surface-container": "#f0eee6",
+                    "surface-bright": "#fbf9f1",
+                    "on-primary-fixed-variant": "#5b403c",
+                    "inverse-primary": "#e3beb8",
+                    "on-background": "#1b1c17",
+                    "tertiary-fixed-dim": "#e9c176",
+                    "on-primary-fixed": "#2b1613",
+                    "primary-fixed": "#ffdad4",
+                    "primary": "#271310",
+                    "inverse-on-surface": "#f3f1e9",
+                    "secondary-fixed": "#fadcd2",
+                    "secondary-fixed-dim": "#ddc1b7",
+                    "inverse-surface": "#30312c",
+                    "on-primary-container": "#ae8d87",
+                    "on-primary": "#ffffff",
+                    "primary-fixed-dim": "#e3beb8",
+                    "surface-tint": "#745853",
+                    "surface-container-high": "#eae8e0",
+                    "on-secondary-container": "#766057",
+                    "background": "#fbf9f1",
+                    "tertiary-container": "#3d2a00",
+                    "surface": "#fbf9f1",
+                    "primary-container": "#3e2723",
+                    "on-secondary-fixed-variant": "#56423b",
+                    "secondary-container": "#fadcd2",
+                    "on-surface-variant": "#504442",
+                    "on-surface": "#1b1c17",
+                    "outline-variant": "#d3c3c0",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#6f5a52",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#dcdad2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "section-gap": "120px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Playfair Display"],
+                    "label-md": ["Inter"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .tonal-layer {
+            background: linear-gradient(180deg, rgba(251, 249, 241, 0) 0%, rgba(240, 238, 230, 0.5) 100%);
+        }
+        .glass-card {
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(161, 136, 127, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<nav class="sticky top-0 w-full z-50 bg-surface/95 dark:bg-surface-container-lowest/95 backdrop-blur-md shadow-sm dark:shadow-none border-b border-outline-variant dark:border-outline">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim uppercase tracking-wider">
+                Big Wood Works
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-md text-label-md" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-md text-label-md" href="#">About</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-md text-label-md" href="#">Products</a>
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary pb-1 font-semibold font-label-md text-label-md" href="#">Manufacturing</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-md text-label-md" href="#">Export</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-md text-label-md" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4"><button class="hidden lg:block bg-primary-container text-on-primary font-label-md text-label-md px-6 h-12 rounded-lg hover:opacity-90 transition-all active:scale-95">Catalogue</button><button class="border border-primary text-primary font-label-md text-label-md px-6 h-12 rounded-lg hover:bg-primary/5 transition-all active:scale-95">Get a Custom Quote</button></div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative py-section-gap overflow-hidden tonal-layer">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="z-10">
+<span class="inline-block font-label-md text-label-md text-on-tertiary-container mb-4 tracking-widest uppercase">Uncompromising Standards</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-6 leading-tight">
+                        Crafted with Care.<br>Delivered with Confidence.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-10">
+                        At Big Wood Works, our commitment to excellence isn't just a promise—it's a rigorous six-stage verification protocol that ensures every handcrafted piece meets international B2B standards before it leaves our workshop.
+                    </p>
+<a class="inline-flex items-center justify-center gap-2 bg-on-tertiary-container text-white px-8 h-12 rounded-lg font-label-md text-label-md hover:shadow-lg transition-all active:scale-95 shadow-[0_4px_14px_rgba(179,143,74,0.3)]" href="#quality-process">
+                        Explore Our Protocol
+                        <span class="material-symbols-outlined">arrow_downward</span>
+</a>
+</div>
+<div class="relative">
+<div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl border-8 border-white">
+<img alt="Quality Inspection" class="w-full h-full object-cover" data-alt="A close-up, high-detail photograph of a skilled artisan using a precision moisture meter on a slab of premium raw walnut wood. The workshop setting is warm and atmospheric, with soft natural light streaming through large windows, highlighting the wood's grain. The color palette is dominated by deep browns and soft creams, conveying a sense of professional craftsmanship and artisanal quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcdVJ5wLlrCuVPHhTiUkR6EJeFKpD0LAqEOCJxy_3TDvcZ9boP0tcgKKwMOgt1bFGtojrtWuHSXZISmPal5q-qKbneR8fPa9OTVJSc3UlgheJaWHmmRHfWAV_u96V3LFYUNmVUOH8R_MgRDtGVi9PLYouTdRn4tD2gfSCDA0YetBdYaEEnrgqaboQspLFghbn186JOHt17PuJaHJfG0WDdTp0K8YJxii5DsK9AUE-GMlShgf_KNuG6aVWsJ_IBr6ussY1jbVk6rC94">
+</div>
+<!-- Decorative element -->
+<div class="absolute -bottom-10 -left-10 w-48 h-48 bg-tertiary-fixed/30 rounded-full blur-3xl -z-10"></div>
+</div>
+</div>
+</section>
+<!-- The Six-Stage Process (Bento Grid) -->
+<section class="py-section-gap bg-surface" id="quality-process">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Our Six-Stage Quality Process</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">From raw timber to final export, we employ meticulous checks at every transition point to eliminate defects and ensure longevity.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-6">
+<!-- Stage 1 -->
+<div class="md:col-span-3 lg:col-span-4 glass-card p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow transition-all duration-700 opacity-100 translate-y-0">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white" data-icon="inventory_2">inventory_2</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">01. Material Inspection</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Every batch of solid wood undergoes <strong>moisture checks</strong> to ensure levels are between 8-12%, preventing warping or cracking in various climates.
+                        </p>
+</div>
+<!-- Stage 2 -->
+<div class="md:col-span-3 lg:col-span-4 glass-card p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border-t-4 border-on-tertiary-container transition-all duration-700 opacity-100 translate-y-0">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white" data-icon="architecture">architecture</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">02. Process Control</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+<strong>Dimension verification</strong> occurs after every cut. We maintain a ±0.5mm tolerance for joinery to guarantee structural integrity and perfect assembly.
+                        </p>
+</div>
+<!-- Stage 3 -->
+<div class="md:col-span-6 lg:col-span-4 glass-card p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow transition-all duration-700 opacity-100 translate-y-0">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white" data-icon="texture">texture</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">03. Finish Review</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Visual and tactile inspection of all surfaces. We check for grain consistency, sanding smoothness, and uniform application of non-toxic protective oils.
+                        </p>
+</div>
+<!-- Stage 4 -->
+<div class="md:col-span-6 lg:col-span-5 glass-card p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow bg-primary-container !text-on-primary transition-all duration-700 opacity-100 translate-y-0">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-primary mb-3">04. Personalization Verification</h3>
+<p class="font-body-lg text-body-lg opacity-90">
+                            For custom B2B orders, we perform <strong>lid closure checks</strong> and verify engraving accuracy against approved digital proofs to ensure brand alignment.
+                        </p>
+</div>
+<!-- Stage 5 -->
+<div class="md:col-span-3 lg:col-span-3 glass-card p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow transition-all duration-700 opacity-100 translate-y-0">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white" data-icon="assignment_turned_in">assignment_turned_in</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">05. Final Inspection</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            A comprehensive 50-point checklist covering hardware stability, edge softness, and overall aesthetic balance.
+                        </p>
+</div>
+<!-- Stage 6 -->
+<div class="md:col-span-3 lg:col-span-4 glass-card p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow transition-all duration-700 opacity-100 translate-y-0">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white" data-icon="handshake">handshake</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">06. Buyer Approval Support</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Transparency is key. We provide <strong>pre-shipment photo and video approval</strong> for every wholesale batch before they are securely packed.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Assurance Section -->
+<section class="py-section-gap bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col lg:flex-row gap-gutter">
+<div class="lg:w-1/3">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Technical Rigor, Handcrafted Soul.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                            Our quality assurance is not just about catching mistakes; it's about honoring the heritage of woodworking through modern precision.
+                        </p>
+</div>
+<div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md text-primary uppercase border-b border-outline-variant pb-2">Moisture &amp; Climate</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                India's climate differs vastly from European or North American markets. We utilize advanced kiln-drying and seasoning techniques followed by digital moisture tracking to ensure stability across global shipping lanes.
+                            </p>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md text-primary uppercase border-b border-outline-variant pb-2">Fit &amp; Function</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                For our signature wooden boxes and urns, lid closure checks are paramount. We test for pneumatic resistance—the gentle "sigh" of a perfectly fitted lid—ensuring an airtight and dignified seal.
+                            </p>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md text-primary uppercase border-b border-outline-variant pb-2">Digital Transparency</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                Before any wholesale shipment departs, you receive a high-definition gallery and 360° video of random sample checks from your specific production run.
+                            </p>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md text-primary uppercase border-b border-outline-variant pb-2">Hardware Integrity</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                All hinges, clasps, and linings are stress-tested. We use only premium-grade brass and stainless steel that resist tarnishing and maintain smooth operation for decades.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-gap bg-surface">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="bg-primary-container rounded-3xl p-12 lg:p-20 relative overflow-hidden text-center">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="A top-down, artistic view of assorted wood grain patterns including oak, walnut, and cherry. The lighting is low and dramatic, emphasizing the textures and organic swirls of the wood. The overall aesthetic is one of natural luxury and high-end design, consistent with the brand's 'Modern Organic' visual identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmzIADm0JbEKTy3QTD6gZJzrownawbZ95qug2BafeEJH5a1RRX38iqrzcWvRaWUpgF1dgoaBB6yu9_qG4sZyH2cz0k58ihMFhDRSo38YBbxKfBOMnmibWwMsnFc-ZoGYWUx_6oqmxrAAidb2qFmrYg7A3yXptwBLkO1tQzLN2IqEgqwhkpX2s-Q8hU4g3koqaooiBMVIvkdzwRDXJOCydmnDwpim2irraP2p5nWRInPbnmBFU4gJhddZJzSY2YT_YpPtC2QcB-5FG-">
+</div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-white mb-6">Ready to ensure excellence for your brand?</h2>
+<p class="font-body-lg text-body-lg text-secondary-fixed mb-10">
+                            Whether you need specialized moisture targets for a specific region or custom inspection reports for your retail partners, we adapt to your standards.
+                        </p>
+<button class="bg-tertiary-fixed text-primary px-10 py-5 rounded-lg font-label-md text-label-md font-bold uppercase tracking-widest hover:bg-white transition-all transform active:scale-95 shadow-xl">
+                            Discuss Your Quality Requirements
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container dark:bg-surface-container-lowest pt-section-gap pb-8 w-full rounded-none">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-5 gap-gutter">
+<div class="md:col-span-2">
+<div class="font-headline-lg text-headline-lg text-on-primary-container dark:text-primary mb-6">
+                    Big Wood Works
+                </div>
+<p class="text-on-primary-container/80 font-body-md text-body-md max-w-xs mb-8">
+                    Premium artisanal woodworking and B2B manufacturing partner based in Saharanpur, India. Merging traditional craft with modern logistics.
+                </p>
+</div>
+<div>
+<h4 class="text-on-primary-container font-bold mb-6 font-label-md text-label-md uppercase tracking-wider">Navigation</h4>
+<ul class="space-y-4">
+<li class=""><a class="text-on-primary-container/80 hover:text-on-primary-container transition-colors font-body-md text-body-md" href="#">Home</a></li>
+<li class=""><a class="text-on-primary-container/80 hover:text-on-primary-container transition-colors font-body-md text-body-md" href="#">About</a></li>
+<li class=""><a class="text-on-primary-container/80 hover:text-on-primary-container transition-colors font-body-md text-body-md" href="#">Products</a></li>
+<li class=""><a class="text-on-primary-container font-bold underline font-body-md text-body-md" href="#">Manufacturing</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-on-primary-container font-bold mb-6 font-label-md text-label-md uppercase tracking-wider">Partners</h4>
+<ul class="space-y-4">
+<li class=""><a class="text-on-primary-container/80 hover:text-on-primary-container transition-colors font-body-md text-body-md" href="#">B2B Services</a></li>
+<li class=""><a class="text-on-primary-container/80 hover:text-on-primary-container transition-colors font-body-md text-body-md" href="#">Resources</a></li>
+<li class=""><a class="text-on-primary-container/80 hover:text-on-primary-container transition-colors font-body-md text-body-md" href="#">Wholesale Catalogue</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-on-primary-container font-bold mb-6 font-label-md text-label-md uppercase tracking-wider">Contact</h4>
+<p class="text-on-primary-container/80 font-body-md text-body-md mb-2">info@bigwoodworks.com</p>
+<div class="flex space-x-4 mt-6">
+<span class="material-symbols-outlined text-on-primary-container cursor-pointer hover:opacity-70 transition-opacity" data-icon="public">public</span>
+<span class="material-symbols-outlined text-on-primary-container cursor-pointer hover:opacity-70 transition-opacity" data-icon="mail">mail</span>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-20 pt-8 border-t border-on-primary-container/10">
+<p class="text-on-primary-container/60 font-label-md text-label-md text-center">
+                © 2024 Big Wood Works - A Brand of The Maryam Crafts, India. All Rights Reserved.
+            </p>
+</div>
+</footer>
+<script>
+        // Simple scroll reveal effect for stages
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.glass-card').forEach(card => {
+                card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+                observer.observe(card);
+            });
+        });
+    </script>
+
+
+</body></html>

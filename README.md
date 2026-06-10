@@ -1,21 +1,23 @@
 # Big Wood Works React Implementation
 
-This project is a React + TypeScript + Vite + Tailwind CSS website prepared from the exported Big Wood Works Figma context files.
+This project is a React + TypeScript + Vite website prepared from the Stitch Big Wood Works B2B Portal export.
 
 ## Figma Screens
 
-The provided exports identify these eight screens:
+The Stitch zip provides these eight source pages:
 
 | Figma node | Route | Page |
 | --- | --- | --- |
-| exported image/html pair | `/` | Home |
-| exported image/html pair | `/about` | About Us |
-| exported image/html pair | `/products` | Products |
-| exported image/html pair | `/oem-private-label` | OEM & Private Label |
-| exported image/html pair | `/manufacturing` | Manufacturing |
-| exported image/html pair | `/export` | Global Export |
-| exported image/html pair | `/quality` | Quality Assurance |
-| exported image/html pair | `/customization` | Customization |
+| Stitch folder | Route | Page |
+| --- | --- | --- |
+| `big_wood_works_home_official` | `/` | Home |
+| `big_wood_works_about_us` | `/about` | About Us |
+| `big_wood_works_products_catalog` | `/products` | Products |
+| `big_wood_works_oem_private_label` | `/oem-private-label` | OEM & Private Label |
+| `big_wood_works_manufacturing_facility` | `/manufacturing` | Manufacturing |
+| `big_wood_works_global_export_reach` | `/export` | Global Export |
+| `big_wood_works_quality_assurance` | `/quality` | Quality Assurance |
+| `big_wood_works_customization_services` | `/customization` | Customization |
 
 ## Development
 
@@ -61,13 +63,13 @@ src/
 
 ## Audit
 
-- Figma frames: eight exported screenshots/HTML files were mapped to React routes.
-- Routes: all eight exported routes plus contact/quote and 404 are implemented in React Router.
-- Assets: exported JPEG frame images are stored in `src/assets/screens`.
-- Responsive layout: components use fluid containers, CSS Grid, Flexbox, and mobile navigation.
-- Mobile navigation: implemented with accessible expanded state and route-close behavior.
+- Design source: eight Stitch `code.html` pages and `screen.png` references are stored in `public/stitch`.
+- Routes: all eight Stitch routes plus contact/quote aliases and 404 are implemented in React Router.
+- Assets: the Stitch export is served directly so its generated imagery, fonts, Tailwind CDN styling, and page-specific layout are preserved.
+- Responsive layout: inherited from the Stitch-generated HTML pages.
+- Mobile navigation: inherited from the Stitch-generated HTML pages where present.
 - Console errors: should be checked after dependencies are installed and the dev server is running.
-- Placeholder content: no Lorem Ipsum or TODOs are present. Main exported copy has been ported into typed data.
+- Placeholder content: no Lorem Ipsum or TODOs are present in the app shell.
 
 ## Figma Access Note
 

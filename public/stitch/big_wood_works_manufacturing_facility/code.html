@@ -1,0 +1,341 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Manufacturing | Big Wood Works</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .wood-texture-overlay {
+            background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+            opacity: 0.03;
+        }
+    </style>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#b38f4a",
+                      "surface-container-low": "#f5f4ec",
+                      "error": "#ba1a1a",
+                      "surface-container-highest": "#e4e3db",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#ffdea5",
+                      "surface-container-lowest": "#ffffff",
+                      "outline": "#827472",
+                      "on-tertiary-fixed-variant": "#5d4201",
+                      "error-container": "#ffdad6",
+                      "tertiary": "#231600",
+                      "surface-variant": "#e4e3db",
+                      "on-secondary-fixed": "#271812",
+                      "on-tertiary-fixed": "#261900",
+                      "on-error": "#ffffff",
+                      "surface-container": "#f0eee6",
+                      "surface-bright": "#fbf9f1",
+                      "on-primary-fixed-variant": "#5b403c",
+                      "inverse-primary": "#e3beb8",
+                      "on-background": "#1b1c17",
+                      "tertiary-fixed-dim": "#e9c176",
+                      "on-primary-fixed": "#2b1613",
+                      "primary-fixed": "#ffdad4",
+                      "primary": "#271310",
+                      "inverse-on-surface": "#f3f1e9",
+                      "secondary-fixed": "#fadcd2",
+                      "secondary-fixed-dim": "#ddc1b7",
+                      "inverse-surface": "#30312c",
+                      "on-primary-container": "#ae8d87",
+                      "on-primary": "#ffffff",
+                      "primary-fixed-dim": "#e3beb8",
+                      "surface-tint": "#745853",
+                      "surface-container-high": "#eae8e0",
+                      "on-secondary-container": "#766057",
+                      "background": "#fbf9f1",
+                      "tertiary-container": "#3d2a00",
+                      "surface": "#fbf9f1",
+                      "primary-container": "#3e2723",
+                      "on-secondary-fixed-variant": "#56423b",
+                      "secondary-container": "#fadcd2",
+                      "on-surface-variant": "#504442",
+                      "on-surface": "#1b1c17",
+                      "outline-variant": "#d3c3c0",
+                      "on-tertiary": "#ffffff",
+                      "secondary": "#6f5a52",
+                      "on-error-container": "#93000a",
+                      "surface-dim": "#dcdad2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "64px",
+                      "container-max": "1280px",
+                      "gutter": "24px",
+                      "unit": "8px",
+                      "section-gap": "120px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Playfair Display"],
+                      "label-md": ["Inter"],
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "headline-lg": ["Playfair Display"],
+                      "display-lg": ["Playfair Display"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                      "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 bg-surface/95 dark:bg-surface-container-lowest/95 backdrop-blur-md shadow-sm dark:shadow-none border-b border-outline-variant dark:border-outline">
+<nav class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim uppercase tracking-wider">
+                Big Wood Works
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-md text-label-md" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-md text-label-md" href="#">About</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-md text-label-md" href="#">Products</a>
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary pb-1 font-semibold font-label-md text-label-md" href="#">Manufacturing</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-md text-label-md" href="#">Export</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-md text-label-md" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block bg-primary-container text-on-primary-container px-6 py-2 rounded shadow-sm hover:opacity-90 transition-all font-label-md text-label-md">Catalogue</button>
+
+</div>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="relative h-[70vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0 transition-all duration-1000 opacity-100 translate-y-0">
+<img class="w-full h-full object-cover" data-alt="A wide-angle cinematic shot of a professional large-scale woodworking production unit. Sunlight streams through industrial windows, illuminating master woodworkers at heavy-duty workbenches. The environment is clean and organized with stacks of premium walnut and oak planks. The color palette is warm with natural wood tones, deep walnut browns, and soft cream highlights, creating a sense of quiet dignity and artisanal excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4-c2LYF5kU9mJR9D9ZtxWBws1KNiM5ctkGKQ-Rcnnvn4u15Q89M9p4IScV7q-z1BYOliUS-4J06Sr0a8Yh8SdiZp06lCv8JTLQFkeJcGDKase00LK3ziK9HR7darK2UCkwZHqTCwhYEp002rYXqjDcW2E7eSjrVKyHoC0CK2SIvZNh9NYrZMV2ayw7Xq91ElHpWgffDcrGfEwkDrXhZf6Wne12sTTGsqMHyCkzHgCxNi61r79h9ffSCgf3SCgCWcw6fv7HQacjjyg">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop w-full text-on-primary transition-all duration-1000 opacity-100 translate-y-0">
+<p class="font-label-md text-label-md mb-4 uppercase tracking-[0.2em] text-on-tertiary-fixed-dim">Industrial Precision • Artisanal Soul</p>
+<h1 class="font-display-lg text-display-lg max-w-3xl mb-6">Our Production Unit: Where Craft Meets Scale</h1>
+<p class="font-body-lg text-body-lg max-w-2xl text-on-primary-fixed">From raw logs to precision-finished artifacts, explore the heartbeat of Big Wood Works' manufacturing prowess.</p>
+</div>
+</section>
+<!-- Key Stats / Production Highlights -->
+<section class="py-16 bg-surface-container-low border-y border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-2 lg:grid-cols-4 gap-gutter transition-all duration-1000 opacity-100 translate-y-0">
+<div class="flex flex-col items-center text-center">
+<span class="font-display-lg text-headline-lg text-primary mb-2">8,000+</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Units Monthly Capacity</span>
+</div>
+<div class="flex flex-col items-center text-center border-l border-outline-variant/30">
+<span class="font-display-lg text-headline-lg text-primary mb-2">06</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Laser Engraving Machines</span>
+</div>
+<div class="flex flex-col items-center text-center border-l border-outline-variant/30">
+<span class="font-display-lg text-headline-lg text-primary mb-2">45+</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Woodworking Teams</span>
+</div>
+<div class="flex flex-col items-center text-center border-l border-outline-variant/30">
+<span class="font-display-lg text-headline-lg text-primary mb-2">12</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Finishing Specialists</span>
+</div>
+</div>
+</section>
+<!-- Core Operations Bento Grid -->
+<section class="py-section-gap px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16 transition-all duration-1000 opacity-100 translate-y-0">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Precision Woodworking Equipment</h2>
+<div class="w-24 h-1 bg-on-tertiary-container mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter h-auto md:h-[800px] transition-all duration-1000 opacity-100 translate-y-0">
+<!-- Turning and Cutting -->
+<div class="md:col-span-2 group relative rounded-lg overflow-hidden border border-outline-variant shadow-sm hover:shadow-lg transition-all duration-500">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Detailed close-up shot of a high-end wood lathe in action, turning a piece of premium dark walnut. Shavings of wood are frozen in the air under sharp studio lighting. The background is a professional workshop with warm, amber lighting that emphasizes the texture of the wood and the precision of the machinery. Minimalist and professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDSU_viovFz-7bkkTu90tFD2XDffO70YvisboCI9Lv-Lg09Giuf6Sy7cnrMtv31s_6QPg2lPv1Gme_mdINbyuopzZFjgYg8xRLyDXgw98RI36X_qDN6izH3-wOs1IC09GH9TYZoX5Ul9reyGoVqjTiLN7BAumWHhLoMW0_P2mjJ5Y4UDEGj2x5tecfd9D6P40Q4O8--sdc8SKxPvDEZUFQkudhYnKM7xciOyDbHFKOULWfgH7LrBOoYEU77d4dD1ONrmkSJqhSRbgB">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent flex flex-col justify-end p-12">
+<h3 class="font-headline-md text-headline-md text-on-primary mb-4">Turning and Cutting</h3>
+<p class="font-body-md text-body-md text-white/80 max-w-md">Our heavy-duty CNC and manual turning units handle complex geometries with sub-millimeter precision, ensuring structural integrity for every piece.</p>
+</div>
+</div>
+<!-- Hand Finishing -->
+<div class="group relative rounded-lg overflow-hidden border border-outline-variant shadow-sm hover:shadow-lg transition-all duration-500">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="An artisan's weathered hands carefully applying natural oil finish to a smooth oak board. The lighting is soft and directional, highlighting the grain of the wood and the tactile nature of the hand-finishing process. The setting is a clean, organized 'Digital Atelier' with a palette of cream, gold, and deep browns, evoking a sense of heritage and luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ-Es4xuujhOFBQrXwKFi2QHd_oohOfTOwlI1CH8AcrxULexRDG301ahZLMwzDD4-fB46C5Vi0oKltUBC32t8ohqGDklCyWmDvphCo8w5488hzobekv63c0hbiEwCmQAEIZFFLGIHup_-tYNVuUVIUzYNl2AcbUs_pU1b1QyFw9jufIV5iUOdOyqoeM3bzASeSJDIxTQvS2vXzeiRHYYSHL07VudUSEVJYKuXCbq5KhUqsLFaY0rroKfrxqDvC7dIpbsn2C4KmXCRe">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent flex flex-col justify-end p-8">
+<h3 class="font-headline-md text-headline-md text-on-primary mb-4 text-2xl">Hand Finishing</h3>
+<p class="font-body-md text-body-md text-white/80">Every product passes through our specialists for manual sanding, oiling, and buffing to achieve that signature Big Wood Works tactile feel.</p>
+</div>
+</div>
+<!-- Resin Detailing -->
+<div class="group relative rounded-lg overflow-hidden border border-outline-variant shadow-sm hover:shadow-lg transition-all duration-500">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Macro photography of clear crystalline resin being poured into a natural void in a rustic piece of olive wood. The lighting is high-contrast, making the resin glow against the dark, textured wood grain. The aesthetic is modern-organic, focusing on the blend of synthetic clarity and natural imperfection. Soft cream background tones maintain the professional UI feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGTeqI8FJixwl58USHLpg7AvS-4js8IiVyLnMNbURIchiwAJuP1Rt2DhcY29_9eXgIKk-KTzBgZ0WRQMkdWW9YwCqXz5jufFMJFHsC-hGIyaRGhu8VH67CeHig-pxdNuYcjO3eOXoSUvDWZyGNtwmSaWrvBiS5SluIIiW2bydRdtgVzMfMVXieKrQHbnT-q52hdo0OX8YeBPXta2zFgp2ayH2CbbaEoI-yL6zlAHXZfsQp8_aaqpQoavtXt6IJafsdUA7VsrEpXWep">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent flex flex-col justify-end p-8">
+<h3 class="font-headline-md text-headline-md text-on-primary mb-4 text-2xl">Resin Detailing</h3>
+<p class="font-body-md text-body-md text-white/80">Merging organic wood voids with high-clarity resins for bespoke, high-end furniture and decorative elements.</p>
+</div>
+</div>
+<!-- Specialized Processing -->
+<div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-surface-container-high p-8 flex flex-col justify-between border border-outline-variant rounded-lg">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6">precision_manufacturing</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4 text-2xl">Laser Engraving</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Our fleet of six state-of-the-art laser machines provides hyper-detailed branding and intricate pattern work on wood and composite surfaces.</p>
+</div>
+<div class="mt-8 flex items-center gap-2 text-primary font-semibold">
+<span class="text-sm">View Capability</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-8 flex flex-col justify-between rounded-lg">
+<div>
+<span class="material-symbols-outlined text-on-tertiary-container text-4xl mb-6">print</span>
+<h3 class="font-headline-md text-headline-md mb-4 text-2xl">UV Printing</h3>
+<p class="font-body-md text-body-md text-on-primary-fixed">Direct-to-surface UV printing allows for full-color photographic reproduction on wood without losing the underlying grain texture.</p>
+</div>
+<div class="mt-8 flex items-center gap-2 text-on-tertiary-container font-semibold">
+<span class="text-sm">Learn More</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Post-Production & Logistics -->
+<section class="bg-primary-container py-section-gap relative overflow-hidden">
+<div class="wood-texture-overlay absolute inset-0 transition-all duration-1000 opacity-100 translate-y-0"></div>
+<div class="max-w-container-max mx-auto px-margin-desktop relative z-10 transition-all duration-1000 opacity-100 translate-y-0">
+<div class="flex flex-col lg:flex-row gap-section-gap items-center">
+<div class="lg:w-1/2">
+<h2 class="font-headline-lg text-headline-lg text-on-primary mb-8">Rigorous Quality Control &amp; Logistics</h2>
+<p class="font-body-lg text-body-lg text-on-primary-fixed-dim mb-12">Every shipment leaving Big Wood Works undergoes a multi-stage inspection to ensure it meets our "Zero-Defect" B2B standard.</p>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="w-12 h-12 shrink-0 rounded-full bg-on-tertiary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-container">verified</span>
+</div>
+<div>
+<h4 class="font-headline-md text-xl text-on-primary mb-2">Quality Control Department</h4>
+<p class="text-on-primary-fixed-dim opacity-80">Moisture content testing, structural load checks, and visual aesthetic auditing at every stage of the build.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 shrink-0 rounded-full bg-on-tertiary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-container">inventory_2</span>
+</div>
+<div>
+<h4 class="font-headline-md text-xl text-on-primary mb-2">Optimized Warehouse</h4>
+<p class="text-on-primary-fixed-dim opacity-80">Climate-controlled storage ensures wood stability and prevents warping before and after production.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 shrink-0 rounded-full bg-on-tertiary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-container">package_2</span>
+</div>
+<div>
+<h4 class="font-headline-md text-xl text-on-primary mb-2">Bespoke Packing Area</h4>
+<p class="text-on-primary-fixed-dim opacity-80">Reinforced export-grade packaging tailored to the fragility and weight of each custom product.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 relative">
+<div class="grid grid-cols-2 gap-4">
+<div class="pt-12">
+<img class="rounded-lg shadow-2xl border border-white/10 mb-4" data-alt="A clean, highly organized industrial warehouse for wood products. Shelves are stacked with neatly wrapped timber and finished wooden goods. Soft, cool-toned overhead lighting creates a professional and efficient atmosphere. The perspective is symmetrical, emphasizing scale and order. The overall aesthetic is one of Quiet Dignity and industrial rigor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbE1vYF06ECElctBBWzyIplfHs9xG17nTbM5ccy5ttYNMnfiUWXN34FzxmPuMHpEAhA-YfF48ditRBmHnOKp5NIh-UwPFd96xh-nnfB-_OwcWrL7lHW1J8p7UNNRCY9EuVEGkJoHGWoz5HKbVfefD3dbZq2BXN1MK4W2KXO_HMh62bh_NMsn1UZ4WhOaMcJFT96TqdXhdAkRrExCMaoVWrtncekIEZAh8AWAo9jB4bVJ2HtoPeNR_LHnX2Czdbt5SxafxnBipODGYL">
+<img class="rounded-lg shadow-2xl border border-white/10" data-alt="Close-up of a worker in the packing area, securing a high-end wooden crate with heavy-duty strapping. The environment is bright and functional, with a focus on protection and logistics. The lighting highlights the tactile materials of the packaging—corrugated cardboard, wood, and nylon straps. Professional B2B manufacturing feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWf8EON1reUDyR6_-06rr6ZqfTI03K87SZK6UpsjrpXnEe_NtaUCOSCaSiHoanc2xfm80N-zIoFLbj7YrE-DUXhR2M11la8wtR9HUwCBU0BfwC0m4VZbOR-WhTI5e9mgM7j2c8NsIZRzPs9EtdaY301mr1MbHEiZP49LbWtIluP7RfJ6iFTn-jrrJBqh-NTERk5cEwRjJTedjV0q7PQnUbnZkjOox8Fz-0L-jaFi5UCfO7kH3qxdbHbG9hhA8WMtDOAHgTRKFuc6kj">
+</div>
+<div>
+<img class="rounded-lg shadow-2xl border border-white/10" data-alt="A quality control inspector using a digital moisture meter on a stack of walnut planks. The background is a blurred woodworking shop, putting the sharp focus on the precision tool and the wood texture. The lighting is neutral and clear, suggesting accuracy and professional standards. Deep walnut tones contrast with soft cream surroundings." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6TuFSA3PxEHt3G0ASzpKTVaNIYHzmCHFYomIjmOV0PNVV8Tl4TvkNdJVlwdygFxl-U1eltNl996hXE3umMtDSkztFE-jl9aDTAqAqUmBvfLHW6IYyq0pmoufHRbYYKFtPzw2ga1PVT_-i_p_ZrQGD0MEq4N5zR3X5cSBAUehBbU59Ypfacs6cxD8t-hocRtjAbHq1jWfE0umt-A3Z3VXxkf17aGqziR42abVQLfSouLFwh63dMwz0nCm9oBMELbbKPpnKuEtGSbr6">
+</div>
+</div>
+<!-- Accent decorative element -->
+<div class="absolute -bottom-10 -right-10 w-40 h-40 border-r border-b border-on-tertiary-container/30 hidden lg:block"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary-container dark:bg-surface-container-lowest pt-section-gap pb-8 w-full rounded-none">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-5 gap-gutter">
+<div class="md:col-span-2">
+<div class="font-headline-lg text-headline-lg text-on-primary-container dark:text-primary mb-6">Big Wood Works</div>
+<p class="text-on-primary-container/80 max-w-sm mb-8 font-body-lg text-body-lg">Specialized B2B manufacturing partner for premium wood products. From boutique designs to global export volumes.</p>
+</div>
+<div>
+<h5 class="font-headline-md text-headline-md text-on-primary-container mb-6 text-xl">Company</h5>
+<ul class="space-y-3">
+<li class=""><a class="text-on-primary-container/80 hover:text-on-primary-container transition-colors font-label-md text-label-md" href="#">About Us</a></li>
+<li class=""><a class="text-on-primary-container/80 hover:text-on-primary-container transition-colors font-label-md text-label-md" href="#">Our Factory</a></li>
+<li class=""><a class="text-on-primary-container/80 hover:text-on-primary-container transition-colors font-label-md text-label-md" href="#">Process</a></li>
+<li class=""><a class="text-on-primary-container/80 hover:text-on-primary-container transition-colors font-label-md text-label-md" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline-md text-headline-md text-on-primary-container mb-6 text-xl">Products</h5>
+<ul class="space-y-3">
+<li class=""><a class="text-on-primary-container/80 hover:text-on-primary-container transition-colors font-label-md text-label-md" href="#">Kitchenware</a></li>
+<li class=""><a class="text-on-primary-container/80 hover:text-on-primary-container transition-colors font-label-md text-label-md" href="#">Home Decor</a></li>
+<li class=""><a class="text-on-primary-container/80 hover:text-on-primary-container transition-colors font-label-md text-label-md" href="#">Furniture</a></li>
+<li class=""><a class="text-on-primary-container/80 hover:text-on-primary-container transition-colors font-label-md text-label-md" href="#">Custom Projects</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline-md text-headline-md text-on-primary-container mb-6 text-xl">Connect</h5>
+<ul class="space-y-3">
+<li class=""><a class="text-on-primary-container/80 hover:text-on-primary-container transition-colors font-label-md text-label-md" href="#">Contact Sales</a></li>
+<li class=""><a class="text-on-primary-container/80 hover:text-on-primary-container transition-colors font-label-md text-label-md" href="#">Wholesale Portal</a></li>
+<li class=""><a class="text-on-primary-container/80 hover:text-on-primary-container transition-colors font-label-md text-label-md" href="#">Support</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-16 pt-8 border-t border-on-primary-container/10 flex flex-col md:row justify-between items-center gap-4">
+<div class="text-on-primary-container/60 text-sm font-label-md">© 2024 Big Wood Works - A Brand of The Maryam Crafts, India. All Rights Reserved.</div>
+<div class="flex gap-6">
+<a class="text-on-primary-container/60 hover:text-on-primary-container transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-on-primary-container/60 hover:text-on-primary-container transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-on-primary-container/60 hover:text-on-primary-container transition-colors" href="#"><span class="material-symbols-outlined">description</span></a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+
+
+</body></html>

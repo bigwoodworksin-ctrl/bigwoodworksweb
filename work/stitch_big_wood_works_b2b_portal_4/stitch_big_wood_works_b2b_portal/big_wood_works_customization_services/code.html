@@ -1,0 +1,445 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Customization | Big Wood Works</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#b38f4a",
+                    "surface-container-low": "#f5f4ec",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e4e3db",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#ffdea5",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#827472",
+                    "on-tertiary-fixed-variant": "#5d4201",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#231600",
+                    "surface-variant": "#e4e3db",
+                    "on-secondary-fixed": "#271812",
+                    "on-tertiary-fixed": "#261900",
+                    "on-error": "#ffffff",
+                    "surface-container": "#f0eee6",
+                    "surface-bright": "#fbf9f1",
+                    "on-primary-fixed-variant": "#5b403c",
+                    "inverse-primary": "#e3beb8",
+                    "on-background": "#1b1c17",
+                    "tertiary-fixed-dim": "#e9c176",
+                    "on-primary-fixed": "#2b1613",
+                    "primary-fixed": "#ffdad4",
+                    "primary": "#271310",
+                    "inverse-on-surface": "#f3f1e9",
+                    "secondary-fixed": "#fadcd2",
+                    "secondary-fixed-dim": "#ddc1b7",
+                    "inverse-surface": "#30312c",
+                    "on-primary-container": "#ae8d87",
+                    "on-primary": "#ffffff",
+                    "primary-fixed-dim": "#e3beb8",
+                    "surface-tint": "#745853",
+                    "surface-container-high": "#eae8e0",
+                    "on-secondary-container": "#766057",
+                    "background": "#fbf9f1",
+                    "tertiary-container": "#3d2a00",
+                    "surface": "#fbf9f1",
+                    "primary-container": "#3e2723",
+                    "on-secondary-fixed-variant": "#56423b",
+                    "secondary-container": "#fadcd2",
+                    "on-surface-variant": "#504442",
+                    "on-surface": "#1b1c17",
+                    "outline-variant": "#d3c3c0",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#6f5a52",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#dcdad2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "section-gap": "120px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Playfair Display"],
+                    "label-md": ["Inter"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .workflow-step::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -12px;
+            width: 24px;
+            height: 1px;
+            background-color: #d3c3c0;
+            display: none;
+        }
+        @media (min-width: 768px) {
+            .workflow-step::after { display: block; }
+            .workflow-step:last-child::after { display: none; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-on-tertiary-container/30">
+<!-- Top Navigation -->
+<nav class="sticky top-0 w-full z-50 bg-surface/95 dark:bg-surface-container-lowest/95 backdrop-blur-md shadow-sm dark:shadow-none border-b border-outline-variant dark:border-outline">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim uppercase tracking-wider">Big Wood Works</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-md text-label-md" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-md text-label-md" href="#">About</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-md text-label-md" href="#">Products</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-md text-label-md" href="#">Manufacturing</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-md text-label-md" href="#">Export</a>
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary pb-1 font-semibold font-label-md text-label-md" href="#">Contact</a>
+</div>
+<div class="flex gap-4">
+<button class="hidden lg:block bg-primary-container text-on-primary font-label-md text-label-md px-6 h-12 rounded-lg hover:bg-opacity-90 transition-all active:scale-95 flex items-center justify-center">Catalogue</button>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 h-12 rounded-lg hover:bg-opacity-90 transition-all active:scale-95 flex items-center justify-center">Get a Custom Quote</button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<header class="relative py-section-gap px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="z-10">
+<span class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-md text-label-md mb-6 uppercase tracking-widest">Digital Atelier</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-6 leading-tight">Masterful Customization for Artisanal Woodcraft</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">From initial reference to bulk production, we translate your vision into tangible wooden excellence through a seamless B2B workflow and expert craftsmanship.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary-container text-on-primary font-label-md text-label-md px-8 h-12 rounded-lg flex items-center justify-center gap-2 group transition-all duration-700 opacity-100 translate-y-0">
+                            Start Custom Project
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="relative h-[400px] lg:h-[600px] rounded-xl overflow-hidden shadow-2xl">
+<img alt="Wood Laser Engraving" class="w-full h-full object-cover" data-alt="A macro close-up of a high-precision laser engraver meticulously etching a complex logo onto a dark, polished walnut surface. The workshop setting is professional and modern, illuminated by soft cinematic lighting that highlights the wood's grain and the crisp white light of the laser. The overall aesthetic is one of high-end manufacturing and precision craftsmanship, consistent with a luxury woodworking brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtJd5-D29_msxEfrdSph7v2YZsKaJYxTRDsylnA-KYclVYFptRuO4lxb0CLyiO5_SFn60SzZuGmzfVlgtZPRdm7eijpy5ESoU08h1Fxj5qqGVVCjAOJP_uvI8DdEJyvbJilKUW4QNSLQtYiz6V6ViaQD_RM5RzkdgKtB3c1bH7ZIS91LWYdV_9yr8LmwCp_1ggp5MkOFBwTu8rTb-qSu1nrpDIJXQKgwNGiuC9eYNttAVCLfo0C_yAqUzK9F189EKel9MT4fpL5OjG">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+</div>
+</div>
+</header>
+<!-- Step-by-Step Workflow -->
+<section class="bg-surface-container-low py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">The Customization Journey</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">A rigorous 8-step process ensuring quality from concept to delivery.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+<!-- Steps -->
+<div class="workflow-step relative flex flex-col items-center text-center group transition-all duration-700 opacity-100 translate-y-0">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-4 transition-transform group-hover:scale-110 shadow-lg">
+<span class="material-symbols-outlined">share</span>
+</div>
+<h3 class="font-label-md text-label-md font-bold text-primary mb-2">1. Share Reference</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Send us your sketches, moodboards, or physical samples.</p>
+</div>
+<div class="workflow-step relative flex flex-col items-center text-center group transition-all duration-700 opacity-100 translate-y-0">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-4 transition-transform group-hover:scale-110 shadow-lg">
+<span class="material-symbols-outlined">layers</span>
+</div>
+<h3 class="font-label-md text-label-md font-bold text-primary mb-2">2. Materials &amp; Size</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Select from premium Walnut, Oak, or Teak and specify dimensions.</p>
+</div>
+<div class="workflow-step relative flex flex-col items-center text-center group transition-all duration-700 opacity-100 translate-y-0">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-4 transition-transform group-hover:scale-110 shadow-lg">
+<span class="material-symbols-outlined">upload_file</span>
+</div>
+<h3 class="font-label-md text-label-md font-bold text-primary mb-2">3. Submit Artwork</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Upload high-resolution logos, graphics, or photo references.</p>
+</div>
+<div class="workflow-step relative flex flex-col items-center text-center group transition-all duration-700 opacity-100 translate-y-0">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-4 transition-transform group-hover:scale-110 shadow-lg">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+<h3 class="font-label-md text-label-md font-bold text-primary mb-2">4. Digital Proof</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Receive a detailed 3D mockup for your initial review.</p>
+</div>
+<div class="workflow-step relative flex flex-col items-center text-center group transition-all duration-700 opacity-100 translate-y-0">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-4 transition-transform group-hover:scale-110 shadow-lg">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<h3 class="font-label-md text-label-md font-bold text-primary mb-2">5. Approve Sample</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">We create a physical prototype for final touch-and-feel approval.</p>
+</div>
+<div class="workflow-step relative flex flex-col items-center text-center group transition-all duration-700 opacity-100 translate-y-0">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-4 transition-transform group-hover:scale-110 shadow-lg">
+<span class="material-symbols-outlined">factory</span>
+</div>
+<h3 class="font-label-md text-label-md font-bold text-primary mb-2">6. Bulk Production</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Scale your design with precision-grade manufacturing.</p>
+</div>
+<div class="workflow-step relative flex flex-col items-center text-center group transition-all duration-700 opacity-100 translate-y-0">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-4 transition-transform group-hover:scale-110 shadow-lg">
+<span class="material-symbols-outlined">update</span>
+</div>
+<h3 class="font-label-md text-label-md font-bold text-primary mb-2">7. Quality Updates</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Daily photographic updates from our workshop floor.</p>
+</div>
+<div class="workflow-step relative flex flex-col items-center text-center group transition-all duration-700 opacity-100 translate-y-0">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-4 transition-transform group-hover:scale-110 shadow-lg">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<h3 class="font-label-md text-label-md font-bold text-primary mb-2">8. Dispatch</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">International shipping with secure protective packaging.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Customization Services Grid -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div class="max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Precision Branding Techniques</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Explore our diverse range of customization methods, each executed with artisanal care and industrial-grade equipment.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Engraving -->
+<div class="group relative overflow-hidden rounded-xl border border-outline-variant hover:border-primary transition-all duration-300 hover:shadow-xl bg-surface duration-700 opacity-100 translate-y-0">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Name Engraving" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A detailed view of elegant cursive name engraving on a smooth light oak surface. The lighting is warm and directional, casting soft shadows that emphasize the depth of the laser cut. The wood grain is prominent and clean, suggesting a premium artisanal finish for a bespoke gift or award." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArPUTYFodYbvD9X1lb97Rub6O1PQPltEYN66PjIMk1Kjv-_AitZpLYpuFKPmkU4q0lZfYXrsH-95yPsGngDiqkPiJFceYWYVganmwMftqS6kY9D55xP6Cv-mLOIZQS1p8WFVgip2AmpofwwIk4hi7Kkz_Ierj9wGyA9thpFUqVAwxvXZNepHcdSNy3AGnbDyKdVNx1ss3vXoY87c0rogpJBJ-hCFWHMthAUEMYZENqQgmNkNDhS8JdZ9RP_vfyN7GHhlMtNtWBx3Po">
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-primary text-xl mb-2">Name &amp; Date Engraving</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4">Timeless laser-etched details for awards and gifts.</p>
+<span class="font-label-md text-label-md text-primary-container border-b border-primary-container">Learn More</span>
+</div>
+</div>
+<!-- Photo Engraving -->
+<div class="group relative overflow-hidden rounded-xl border border-outline-variant hover:border-primary transition-all duration-300 hover:shadow-xl bg-surface duration-700 opacity-100 translate-y-0">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Photo Engraving" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A high-contrast photo of a family portrait laser-engraved onto a wooden plaque. The engraving captures fine photographic gradients and textures, turning a digital memory into a tactile piece of art. The scene is set on a dark wood background with soft ambient lighting creating a respectful, memorial atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4Oy3bterBfWGt8DYR0yJAeGXve4wKXsjFXtGksqYgbUawLt6Ur0KLqmbIRexWZwClJ0nNq-t-X0eXv_JllQjeyT0tF0t1X3Z7hAzIDNMJxvFYgeEKKBLkUUm5yAMBd3vV0_02ZJ_JYQJTc39mLHYk2I4nW24AFJAuIaskS_FFoEcUDr-JJIWSUJcqrgkR12jmCzcEQ5N67bfm-UsYuW1NydK0UPJAU-M0fMLaGbt4KQAdMVw8TYA0Kh0Ujk1IOa-aKPN35ckQeE4n">
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-primary text-xl mb-2">Photo Engraving</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4">Turning high-resolution imagery into wooden art.</p>
+<span class="font-label-md text-label-md text-primary-container border-b border-primary-container">Learn More</span>
+</div>
+</div>
+<!-- Custom Artwork -->
+<div class="group relative overflow-hidden rounded-xl border border-outline-variant hover:border-primary transition-all duration-300 hover:shadow-xl bg-surface lg:col-span-2 duration-700 opacity-100 translate-y-0">
+<div class="aspect-[16/9] overflow-hidden">
+<img alt="Custom Artwork" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A wide shot of a master craftsman using a precision tool to hand-carve custom organic patterns into a large slab of mahogany. The workshop is bathed in natural light, with wood shavings scattered around. The image emphasizes the human element and artisanal heritage of Big Wood Works, maintaining a sophisticated and high-end aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVJcMcX1YK5xlg8YuSQ1ZvFZywfzgCZPyZf3SqRI3jMxBhqBuGgoaEgUQ9WhuT6YGPK0uOMPNCW6juHpqfDexfLgWuytpiSmh1C4rAGWwX5OXkqBIm6YqFJ76QZAuDuXnlWqyRdhhfSpe8WWvJWfVMPiVyqiSXBAbpamz7m2-CMNhPXRdDA8muTHgEvXd3VfAENyIIjJTN__qv7mZxfH_20rllbT1Kc4yxC7NUO3nhQRY2Tfo27ChkUw0Dlo0umuvQJcVHbDcgj7kg">
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-primary text-xl mb-2">Bespoke Logo &amp; Artwork</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4">Precision CNC or hand-carved manifestations of your brand identity onto any wooden surface.</p>
+<span class="font-label-md text-label-md text-primary-container border-b border-primary-container">Request Demo</span>
+</div>
+</div>
+<!-- UV Printing -->
+<div class="group relative overflow-hidden rounded-xl border border-outline-variant hover:border-primary transition-all duration-300 hover:shadow-xl bg-surface duration-700 opacity-100 translate-y-0">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="UV Printing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A vibrant, full-color graphic printed directly onto a light wood panel using UV printing technology. The colors are crisp and saturated, contrasting beautifully with the natural wood grain. The scene is bright and commercial, highlighting the modern digital capabilities of the manufacturing facility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCPP8rIL8x1jxRcZ41boFLfZ7M1AUXAkpCc8FJA8JmkMplD25j4PU3WlJqk1dJhe4k7EhmkMRc-7m9bjZelmtAKIZT9UbXs_IyJZSgyRe7FSUk56jqc-UHRHDmRRxDp2TrUEaOgBI5M9GX1uzRcxJWgDjiYxqnHNEO6rPXGwGBrxadT2PteA8uNhe0wh-G6pxxgZQbzM9q6CXOco5H8TkJcTrOrP9w1CmjjsNHYg-aky1v0P2pjre3LqYdsHo2qF3sHSVKzu8JPAxh">
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-primary text-xl mb-2">UV Direct Printing</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4">Full-spectrum color applications directly on wood.</p>
+<span class="font-label-md text-label-md text-primary-container border-b border-primary-container">View Portfolio</span>
+</div>
+</div>
+<!-- Resin Inlay -->
+<div class="group relative overflow-hidden rounded-xl border border-outline-variant hover:border-primary transition-all duration-300 hover:shadow-xl bg-surface duration-700 opacity-100 translate-y-0">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Resin Inlay" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A stunning blue resin river inlay running through a rustic walnut wood table. The resin is translucent with subtle metallic swirls, caught in the light to show depth. The finish is glass-smooth and high-gloss, showcasing the luxurious fusion of organic and synthetic materials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfk4yoK7L-b-WrIyGkdIYKqvG6kyB6OfusRFD9ceR02VFP7uYTSp0AA77dNEwfvpgAN-nEOD64UFpSsZRara5cQ-jNhD1M7ZHS9yapg9ITaJJg6kEvXvNBN-Xz25rzX_F980YjB7eixm8oA9JIH2JxnbiQPlZD5659xTT_jonfMHYYz1p8bp4g1BW9trXqumDWajzCDhyjTDDTteKbx6tEDXWwul-phH3PWVZ-P2cVPCkOinw39PRtUft917NuaMhfEpTgkaio7vLR">
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-primary text-xl mb-2">Luxury Resin Inlay</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4">Elegant liquid-to-solid transitions in any color.</p>
+<span class="font-label-md text-label-md text-primary-container border-b border-primary-container">Custom Colors</span>
+</div>
+</div>
+<!-- Custom Finishes -->
+<div class="group relative overflow-hidden rounded-xl border border-outline-variant hover:border-primary transition-all duration-300 hover:shadow-xl bg-surface duration-700 opacity-100 translate-y-0">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Custom Finishes" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Various wood samples showing a range of custom finishes from matte oil to high-gloss lacquer and charred Shou Sugi Ban. The samples are arranged neatly in a grid, shot with top-down studio lighting. The aesthetic is clean, professional, and selection-focused for B2B clients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQfmDvC_1JLXVpgd3BOkihaIqL6-Y8bOgBTtI2klX02YcvnaOphIyBFQouLh8_cwVfBhP78zlVvudhdfXwTp-BaBEOaf_QvtWr71MMkZMRzRLaSJjisF5xXY7cd19fOXonmhvG56vPT6BhvWhzEyvenM6KZg_KiR0LnNMVstPfVAT7gWSBlsLWS3BDkIJByrkTm1gWnblHxBLAB3jjar5PV9sKgFrHQwQ6ucqCQEBK3Kimd9-5i2Y6-pDghE9PqULEw7K0e-55Zpw6">
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-primary text-xl mb-2">Signature Finishes</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4">Matte, gloss, or charred Shou Sugi Ban textures.</p>
+<span class="font-label-md text-label-md text-primary-container border-b border-primary-container">Request Samples</span>
+</div>
+</div>
+<!-- Brass Plate -->
+<div class="group relative overflow-hidden rounded-xl border border-outline-variant hover:border-primary transition-all duration-300 hover:shadow-xl bg-surface duration-700 opacity-100 translate-y-0">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Brass Plate" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A polished brass plate with black engraved text mounted onto a dark ebony wood base. The metal reflects a warm glow, suggesting premium quality and prestige. The close-up shot focuses on the clean transition between the metallic brass and the textured wood grain." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApaBYk59n26eO2zH7lrzlX5w0TjStjk2nkil95z3kRo81K6HktC5b2FEnmOEMhVwAWDNZ_vx9eU_z8LcP7z-BHk9mhvro0-_E2sI8fC9W0tzQk2bRGCIVpCej5lT_gPI-lLcUJttiIdQqQk7P0emte4zvlwTXWlE7kJfSK4VIq8r_utFDNnRpY3cV8BXclORNwRkmMDZ2kebkaAdc2n5e6lYQAWmKFAAMsmWHvXCp0O2Miq_wENniSCKZ6i8GCZNkDUjEu8MF_yw8V">
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-primary text-xl mb-2">Brass Plate Inlays</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4">Polished metal accents for luxury branding.</p>
+<span class="font-label-md text-label-md text-primary-container border-b border-primary-container">Explore Metal Options</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Inquiry Form -->
+<section class="bg-primary-container text-on-primary py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-section-gap">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-6">Initiate Your Custom Project</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-8">Our B2B consultants are ready to discuss your wholesale requirements, material preferences, and branding needs. Use the form to upload your references and receive a formal quote within 24 hours.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-on-tertiary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-container">support_agent</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold">Dedicated Account Manager</h4>
+<p class="text-sm text-on-primary-container">Personalized guidance through every production phase.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-on-tertiary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-container">verified</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold">ISO-Certified Quality Control</h4>
+<p class="text-sm text-on-primary-container">Strict adherence to international manufacturing standards.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface p-8 md:p-12 rounded-xl shadow-2xl text-on-surface">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-secondary">Full Name</label>
+<input class="w-full border-outline-variant focus:border-primary focus:ring-primary rounded-lg p-3 bg-surface" placeholder="John Doe" type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-secondary">Work Email</label>
+<input class="w-full border-outline-variant focus:border-primary focus:ring-primary rounded-lg p-3 bg-surface" placeholder="john@company.com" type="email">
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-secondary">Project Type</label>
+<select class="w-full border-outline-variant focus:border-primary focus:ring-primary rounded-lg p-3 bg-surface">
+<option>Wholesale Order</option>
+<option>Custom Corporate Gifting</option>
+<option>Architecture &amp; Interior Supply</option>
+<option>Bespoke Event Branding</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-secondary">Project Details</label>
+<textarea class="w-full border-outline-variant focus:border-primary focus:ring-primary rounded-lg p-3 bg-surface h-32" placeholder="Tell us about your materials, dimensions, and quantities..."></textarea>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-secondary">Upload Artwork/Reference</label>
+<div class="border-2 border-dashed border-outline-variant rounded-lg p-8 flex flex-col items-center justify-center text-center hover:border-primary transition-colors cursor-pointer group transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-4xl text-outline group-hover:text-primary mb-2">cloud_upload</span>
+<p class="text-sm text-on-surface-variant">Drop files here or click to upload (PNG, PDF, DXF, JPG)</p>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-label-md text-label-md uppercase tracking-widest hover:bg-primary-container transition-all shadow-lg active:scale-[0.98]" type="submit">
+                            Submit Inquiry
+                        </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container dark:bg-surface-container-lowest pt-section-gap pb-8 w-full rounded-none">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-5 gap-gutter">
+<div class="md:col-span-2">
+<div class="font-headline-lg text-headline-lg text-on-primary-container dark:text-primary mb-6">Big Wood Works</div>
+<p class="font-body-md text-body-md text-on-primary-container/80 mb-8 max-w-sm">Crafting enduring legacies through premium woodcraft. A heritage brand serving global B2B partners from the heart of India's artisanal clusters.</p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-primary-container font-bold mb-6">Company</h4>
+<ul class="space-y-4">
+<li class=""><a class="font-body-md text-body-md text-on-primary-container/80 hover:text-on-primary-container transition-colors" href="#">Our Heritage</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-primary-container/80 hover:text-on-primary-container transition-colors" href="#">Sustainability</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-primary-container/80 hover:text-on-primary-container transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-primary-container font-bold mb-6">Products</h4>
+<ul class="space-y-4">
+<li class=""><a class="font-body-md text-body-md text-on-primary-container/80 hover:text-on-primary-container transition-colors" href="#">Corporate Gifts</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-primary-container/80 hover:text-on-primary-container transition-colors" href="#">Interior Accents</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-primary-container/80 hover:text-on-primary-container transition-colors" href="#">Awards &amp; Trophies</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-primary-container font-bold mb-6">Resources</h4>
+<ul class="space-y-4">
+<li class=""><a class="font-body-md text-body-md text-on-primary-container/80 hover:text-on-primary-container transition-colors" href="#">Wholesale Guide</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-primary-container/80 hover:text-on-primary-container transition-colors" href="#">Shipping Policy</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-primary-container/80 hover:text-on-primary-container transition-colors" href="#">Contact Support</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-section-gap pt-8 border-t border-on-primary-container/10 text-center">
+<p class="font-label-md text-label-md text-on-primary-container/60">© 2024 Big Wood Works - A Brand of The Maryam Crafts, India. All Rights Reserved.</p>
+</div>
+</footer>
+<script>
+        // Micro-interactions and atmospheric effects
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            // Animate items on scroll
+            document.querySelectorAll('.workflow-step, .group').forEach(el => {
+                el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+                observer.observe(el);
+            });
+        });
+    </script>
+
+
+</body></html>
