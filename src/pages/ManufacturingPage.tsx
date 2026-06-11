@@ -5,8 +5,9 @@ import { infrastructure, manufacturingHighlights, materials, qualitySteps } from
 
 interface ManufacturingOption {
   name: string;
-  texture: string;
-  accent: string;
+  image?: string;
+  texture?: string;
+  accent?: string;
   shape?: "cube" | "swatch";
 }
 
@@ -23,38 +24,31 @@ const optionGroups: ManufacturingOptionGroup[] = [
     items: [
       {
         name: "Rosewood",
-        texture: "bg-[linear-gradient(135deg,#2b0804_0%,#6f1c12_34%,#b84b22_52%,#35100c_100%)]",
-        accent: "from-[#4b100a] to-[#c16a32]",
+        image: "/assets/material-library/rosewood.png",
       },
       {
         name: "Mango Wood",
-        texture: "bg-[linear-gradient(135deg,#8b4a16_0%,#d58931_30%,#f1b65b_48%,#70401b_100%)]",
-        accent: "from-[#b76422] to-[#f2bd68]",
+        image: "/assets/material-library/mango_wood.png",
       },
       {
         name: "Neem Wood",
-        texture: "bg-[linear-gradient(135deg,#3b2411_0%,#7d4c1e_36%,#b07636_55%,#25180d_100%)]",
-        accent: "from-[#5b3518] to-[#b07839]",
+        image: "/assets/material-library/neem_wood.png",
       },
       {
         name: "Pine Wood",
-        texture: "bg-[linear-gradient(135deg,#d58a32_0%,#f1c678_34%,#ffd98f_56%,#a76522_100%)]",
-        accent: "from-[#e7a94e] to-[#ffdfa0]",
+        image: "/assets/material-library/pine_wood.png",
       },
       {
         name: "Steam Beech",
-        texture: "bg-[linear-gradient(135deg,#ba6d3a_0%,#dfa173_36%,#f0c39b_55%,#9b552b_100%)]",
-        accent: "from-[#c77c47] to-[#f2c9a5]",
+        image: "/assets/material-library/steam_beech.png",
       },
       {
         name: "Maple Wood",
-        texture: "bg-[linear-gradient(135deg,#e6b05e_0%,#ffd893_36%,#ffe8b3_56%,#bd7e34_100%)]",
-        accent: "from-[#e3a84f] to-[#ffe0a8]",
+        image: "/assets/material-library/maple_wood.png",
       },
       {
         name: "Akashi Wood",
-        texture: "bg-[linear-gradient(135deg,#6b3516_0%,#a95c24_32%,#d58a3d_54%,#3c1d0e_100%)]",
-        accent: "from-[#7f3f18] to-[#d98b3f]",
+        image: "/assets/material-library/acacia_wood.png",
       },
     ],
   },
@@ -64,18 +58,15 @@ const optionGroups: ManufacturingOptionGroup[] = [
     items: [
       {
         name: "Brass",
-        texture: "bg-[linear-gradient(135deg,#8f5b16_0%,#d6a448_38%,#ffe6a3_54%,#7a4a0f_100%)]",
-        accent: "from-[#9d671b] to-[#f1cf7a]",
+        image: "/assets/material-library/brass.png",
       },
       {
         name: "Aluminium",
-        texture: "bg-[linear-gradient(135deg,#8f9698_0%,#d6dcdd_38%,#f4f6f5_54%,#737a7d_100%)]",
-        accent: "from-[#9aa1a3] to-[#f0f3f3]",
+        image: "/assets/material-library/aluminium.png",
       },
       {
         name: "Resin",
-        texture: "bg-[linear-gradient(135deg,#351808_0%,#955d28_30%,#0f8d95_52%,#c07a34_72%,#2c1509_100%)]",
-        accent: "from-[#6e3f1c] via-[#00a0a7] to-[#d99042]",
+        image: "/assets/material-library/resin.png",
       },
     ],
   },
@@ -183,33 +174,39 @@ export function ManufacturingPage() {
               const Icon = group.icon;
 
               return (
-                <article key={group.title} className="rounded-xl border border-outline-variant bg-surface-container-lowest p-5 shadow-soft">
-                  <div className="grid gap-6 lg:grid-cols-[190px_1fr] lg:items-center">
-                    <div className="flex items-center gap-4 border-outline-variant lg:min-h-40 lg:border-r lg:pr-6">
+                <article key={group.title} className="rounded-xl border border-outline-variant bg-surface-container-lowest p-5 shadow-soft md:p-6">
+                  <div className="grid gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:items-stretch">
+                    <div className="flex flex-col items-center justify-center gap-5 border-outline-variant text-center lg:min-h-[240px] lg:border-r lg:px-6">
                       <div className="grid h-16 w-16 shrink-0 place-items-center rounded-full border-2 border-on-tertiary-container text-on-tertiary-container">
                         <Icon size={30} aria-hidden="true" />
                       </div>
-                      <h2 className="font-display text-3xl font-semibold leading-tight text-primary">{group.title}</h2>
+                      <h2 className="max-w-[9ch] font-display text-4xl font-semibold leading-[1.05] text-primary">{group.title}</h2>
                     </div>
-                    <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+                    <div className="grid grid-cols-[repeat(auto-fit,minmax(155px,1fr))] gap-4">
                       {group.items.map((item) => (
                         <button
                           key={item.name}
                           type="button"
-                          className="focus-ring group rounded-lg border border-outline-variant bg-background p-4 text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:border-secondary hover:shadow-lift"
+                          className="focus-ring group flex min-h-[190px] flex-col items-center justify-between rounded-lg border border-outline-variant bg-background p-4 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:border-secondary hover:shadow-lift"
                           aria-label={`${group.title}: ${item.name}`}
                         >
-                          <span
-                            className={
-                              item.shape === "swatch"
-                                ? `relative block h-20 rounded-md border border-outline-variant ${item.texture} shadow-[inset_0_1px_10px_rgba(255,255,255,0.28),0_10px_22px_rgba(39,19,16,0.2)] transition duration-300 group-hover:scale-[1.03]`
-                                : `relative mx-auto block h-24 w-24 rounded-md border border-outline-variant ${item.texture} shadow-[inset_-14px_-12px_18px_rgba(0,0,0,0.22),inset_10px_10px_18px_rgba(255,255,255,0.24),0_16px_24px_rgba(39,19,16,0.22)] transition duration-300 group-hover:rotate-2 group-hover:scale-105`
-                            }
-                          >
-                            <span className={`absolute inset-x-3 top-3 h-2 rounded-full bg-gradient-to-r ${item.accent} opacity-70 blur-[1px]`} />
-                            <span className="absolute inset-0 rounded-md bg-[linear-gradient(90deg,rgba(255,255,255,0.18),transparent_30%,rgba(0,0,0,0.14)_72%,transparent)] opacity-80" />
-                          </span>
-                          <span className="mt-4 block text-center font-display text-xl font-semibold text-primary">{item.name}</span>
+                          {item.image ? (
+                            <span className="relative mx-auto block h-24 w-24 overflow-hidden rounded-md border border-outline-variant shadow-[0_16px_24px_rgba(39,19,16,0.16)] transition duration-300 group-hover:rotate-2 group-hover:scale-105">
+                              <img src={item.image} alt="" className="h-full w-full object-cover" loading="lazy" />
+                            </span>
+                          ) : (
+                            <span
+                              className={
+                                item.shape === "swatch"
+                                  ? `relative block h-20 rounded-md border border-outline-variant ${item.texture} shadow-[inset_0_1px_10px_rgba(255,255,255,0.28),0_10px_22px_rgba(39,19,16,0.2)] transition duration-300 group-hover:scale-[1.03]`
+                                  : `relative mx-auto block h-24 w-24 rounded-md border border-outline-variant ${item.texture} shadow-[inset_-14px_-12px_18px_rgba(0,0,0,0.22),inset_10px_10px_18px_rgba(255,255,255,0.24),0_16px_24px_rgba(39,19,16,0.22)] transition duration-300 group-hover:rotate-2 group-hover:scale-105`
+                              }
+                            >
+                              <span className={`absolute inset-x-3 top-3 h-2 rounded-full bg-gradient-to-r ${item.accent} opacity-70 blur-[1px]`} />
+                              <span className="absolute inset-0 rounded-md bg-[linear-gradient(90deg,rgba(255,255,255,0.18),transparent_30%,rgba(0,0,0,0.14)_72%,transparent)] opacity-80" />
+                            </span>
+                          )}
+                          <span className="mt-4 block text-balance font-display text-xl font-semibold leading-tight text-primary">{item.name}</span>
                         </button>
                       ))}
                     </div>
