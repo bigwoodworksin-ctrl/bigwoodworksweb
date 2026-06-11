@@ -1,4 +1,18 @@
-import { ArrowRight, Download, Factory, Flag, Globe2, History, Store, Users } from "lucide-react";
+import {
+  ArrowRight,
+  Award,
+  BadgeCheck,
+  Download,
+  Factory,
+  Flag,
+  Globe2,
+  Handshake,
+  Heart,
+  History,
+  Quote,
+  Store,
+  Users,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import founderMohdZaid from "../assets/founder-mohd-zaid.png";
 import founderMujahidUlIslam from "../assets/founder-mujahid-ul-islam.png";
@@ -56,6 +70,29 @@ const storyPoints = [
   {
     title: "Global-ready support",
     text: "Packaging, documentation, approval photos, and export coordination are handled to make international purchasing easier.",
+  },
+];
+
+const values = [
+  {
+    title: "Respect",
+    text: "Honoring the purpose of our products with silent reverence.",
+    icon: Heart,
+  },
+  {
+    title: "Quality",
+    text: "Uncompromising structural and aesthetic standards in every joint.",
+    icon: BadgeCheck,
+  },
+  {
+    title: "Trust",
+    text: "Reliable B2B partnership built on transparency and precision.",
+    icon: Handshake,
+  },
+  {
+    title: "Legacy",
+    text: "Creating timeless objects that honor the memories they protect.",
+    icon: Award,
   },
 ];
 
@@ -124,8 +161,8 @@ export function AboutPage() {
             title="Made to honour every memory with care and consistency."
             text="Every memorial urn carries the memory of a life, the love of a family, and a story that deserves to be honoured with dignity. From the first wood selection to the final carton, the process is handled with care, respect, and attention."
           />
-          <div className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="rounded-xl border border-outline-variant bg-background p-8 shadow-soft">
+          <div className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div className="rounded-xl border border-outline-variant bg-background p-6 shadow-soft md:p-8">
               <p className="text-lg leading-8 text-on-surface-variant">
                 We began with traditional woodworking and a belief that memorial products should feel personal, precise, and beautifully made. That belief still guides us as we serve funeral homes, memorial brands, importers, distributors, and OEM partners around the world.
               </p>
@@ -168,32 +205,70 @@ export function AboutPage() {
             text="Woodworking is not just our business; it is our lineage. For generations, our family has practiced the art of shaping timber in the heart of Rajasthan."
             center
           />
+
           <div className="relative mx-auto mt-16 max-w-6xl">
-            <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-outline-variant md:block" />
-            <div className="grid gap-12 md:gap-14">
+            <div className="absolute left-6 top-0 h-full w-px bg-outline-variant md:left-1/2 md:-translate-x-1/2" aria-hidden="true" />
+
+            <div className="grid gap-8 md:gap-12">
               {timeline.map((item, index) => {
                 const Icon = item.icon;
                 const isEven = index % 2 === 0;
 
                 return (
-                  <article key={item.year} className="relative grid gap-5 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:items-center">
-                    <div className={isEven ? "hidden text-right md:block md:pr-12" : "md:order-3 md:pl-12"}>
+                  <article key={item.year} className="relative grid grid-cols-[3rem_minmax(0,1fr)] gap-4 md:grid-cols-[minmax(0,1fr)_3rem_minmax(0,1fr)] md:items-center md:gap-0">
+                    <div className={isEven ? "hidden text-right md:block md:pr-12" : "hidden md:order-3 md:block md:pl-12"}>
                       <h3 className="font-display text-4xl font-semibold leading-none text-primary">{item.year}</h3>
                       <p className="mt-3 text-xl leading-8 text-on-surface-variant">{item.label}</p>
                     </div>
+
                     <div className="z-10 grid h-12 w-12 place-items-center rounded-full border-4 border-background bg-primary text-on-primary shadow-soft md:order-2">
                       <Icon size={18} aria-hidden="true" />
                     </div>
+
                     <div className={isEven ? "md:pl-12" : "md:order-1 md:pr-12"}>
-                      <div className="rounded-xl border border-outline-variant bg-surface-container-lowest p-6 shadow-sm md:p-7">
-                        <h3 className="font-display text-3xl font-semibold text-primary md:hidden">{item.year}</h3>
-                        <p className="mt-3 text-lg leading-8 text-on-surface-variant md:mt-0">{item.text}</p>
+                      <div className="rounded-xl border border-outline-variant bg-surface-container-lowest p-6 shadow-sm transition-shadow hover:shadow-soft md:p-7">
+                        <div className="md:hidden">
+                          <h3 className="font-display text-3xl font-semibold text-primary">{item.year}</h3>
+                          <p className="mt-2 text-base font-semibold leading-7 text-secondary">{item.label}</p>
+                        </div>
+                        <p className="mt-4 text-base leading-8 text-on-surface-variant md:mt-0 md:text-lg">{item.text}</p>
                       </div>
                     </div>
                   </article>
                 );
               })}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad bg-primary-container text-on-primary">
+        <div className="container-shell">
+          <div className="mx-auto max-w-4xl text-center">
+            <Quote className="mx-auto mb-6 h-14 w-14 text-tertiary-fixed" aria-hidden="true" />
+            <p className="text-sm font-bold uppercase tracking-[0.24em] text-tertiary-fixed">Founder&apos;s vision</p>
+            <h2 className="mt-5 font-display text-4xl font-semibold leading-tight text-on-primary md:text-5xl">
+              Crafted with Respect. Built with Purpose.
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-on-primary/75">
+              These values guide the way we choose wood, finish every surface, package every order, and support every wholesale partner.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {values.map((value) => {
+              const Icon = value.icon;
+
+              return (
+                <article key={value.title} className="rounded-xl border border-on-primary/10 bg-background/5 p-6 text-center transition-colors hover:bg-background/10">
+                  <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-surface-container-lowest text-primary shadow-sm">
+                    <Icon size={26} aria-hidden="true" />
+                  </div>
+                  <h3 className="mt-6 font-display text-2xl font-semibold text-tertiary-fixed">{value.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-on-primary/75">{value.text}</p>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
