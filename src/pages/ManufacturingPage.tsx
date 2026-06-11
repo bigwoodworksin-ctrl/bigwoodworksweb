@@ -191,8 +191,8 @@ export function ManufacturingPage() {
                           aria-label={`${group.title}: ${item.name}`}
                         >
                           {item.image ? (
-                            <span className="relative mx-auto block h-24 w-24 overflow-hidden rounded-md border border-outline-variant shadow-[0_16px_24px_rgba(39,19,16,0.16)] transition duration-300 group-hover:rotate-2 group-hover:scale-105">
-                              <img src={item.image} alt="" className="h-full w-full object-cover" loading="lazy" />
+                            <span className="relative mx-auto flex h-24 w-24 items-center justify-center transition duration-300 group-hover:rotate-2 group-hover:scale-105">
+                              <img src={item.image} alt="" className="max-h-full max-w-full object-contain drop-shadow-[0_16px_20px_rgba(39,19,16,0.2)]" loading="lazy" />
                             </span>
                           ) : (
                             <span

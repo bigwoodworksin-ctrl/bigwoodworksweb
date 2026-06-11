@@ -1,5 +1,7 @@
 import { ArrowRight, Download, Factory, Flag, Globe2, History, Store, Users } from "lucide-react";
 import { Link } from "react-router-dom";
+import founderMohdZaid from "../assets/founder-mohd-zaid.png";
+import founderMujahidUlIslam from "../assets/founder-mujahid-ul-islam.png";
 import { SectionHeader } from "../components/SectionHeader";
 import { stats, whyChooseUs } from "../data/catalogue";
 
@@ -61,12 +63,12 @@ const founders = [
   {
     name: "Mujahid Ul Islam",
     role: "Founder",
-    image: "/assets/founder-mujahid-ul-islam.png",
+    image: founderMujahidUlIslam,
   },
   {
     name: "Mohd Zaid",
     role: "Founder",
-    image: "/assets/founder-mohd-zaid.png",
+    image: founderMohdZaid,
   },
 ];
 
@@ -140,7 +142,9 @@ export function AboutPage() {
               {founders.map((founder) => (
                 <article key={founder.name} className="overflow-hidden rounded-xl border border-outline-variant bg-background shadow-soft">
                   <div className="bg-surface-container-lowest p-4">
-                    <img src={founder.image} alt={founder.name} className="mx-auto max-h-[560px] w-full object-contain" loading="lazy" />
+                    <div className="overflow-hidden rounded-lg bg-surface-container-low">
+                      <img src={founder.image} alt={founder.name} className="aspect-[4/5] w-full object-cover object-top" loading="lazy" />
+                    </div>
                   </div>
                   <div className="p-6">
                     <p className="text-xs font-bold uppercase tracking-[0.2em] text-secondary">{founder.role}</p>
@@ -164,26 +168,26 @@ export function AboutPage() {
             text="Woodworking is not just our business; it is our lineage. For generations, our family has practiced the art of shaping timber in the heart of Rajasthan."
             center
           />
-          <div className="relative mt-14">
+          <div className="relative mx-auto mt-16 max-w-6xl">
             <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-outline-variant md:block" />
-            <div className="grid gap-10">
+            <div className="grid gap-12 md:gap-14">
               {timeline.map((item, index) => {
                 const Icon = item.icon;
                 const isEven = index % 2 === 0;
 
                 return (
-                  <article key={item.year} className="relative grid gap-5 md:grid-cols-[1fr_auto_1fr] md:items-center">
-                    <div className={isEven ? "hidden text-right md:block md:pr-10" : "md:order-3 md:pl-10"}>
-                      <h3 className="font-display text-3xl font-semibold text-primary">{item.year}</h3>
-                      <p className="mt-2 leading-7 text-on-surface-variant">{item.label}</p>
+                  <article key={item.year} className="relative grid gap-5 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:items-center">
+                    <div className={isEven ? "hidden text-right md:block md:pr-12" : "md:order-3 md:pl-12"}>
+                      <h3 className="font-display text-4xl font-semibold leading-none text-primary">{item.year}</h3>
+                      <p className="mt-3 text-xl leading-8 text-on-surface-variant">{item.label}</p>
                     </div>
-                    <div className="z-10 grid h-11 w-11 place-items-center rounded-full border-4 border-background bg-primary text-on-primary shadow-soft md:order-2">
+                    <div className="z-10 grid h-12 w-12 place-items-center rounded-full border-4 border-background bg-primary text-on-primary shadow-soft md:order-2">
                       <Icon size={18} aria-hidden="true" />
                     </div>
-                    <div className={isEven ? "md:pl-10" : "md:order-1 md:pr-10"}>
-                      <div className="rounded-lg border border-outline-variant bg-surface-container-low p-6 shadow-sm">
-                        <h3 className="font-display text-2xl font-semibold text-primary md:hidden">{item.year}</h3>
-                        <p className="mt-3 leading-7 text-on-surface-variant md:mt-0">{item.text}</p>
+                    <div className={isEven ? "md:pl-12" : "md:order-1 md:pr-12"}>
+                      <div className="rounded-xl border border-outline-variant bg-surface-container-lowest p-6 shadow-sm md:p-7">
+                        <h3 className="font-display text-3xl font-semibold text-primary md:hidden">{item.year}</h3>
+                        <p className="mt-3 text-lg leading-8 text-on-surface-variant md:mt-0">{item.text}</p>
                       </div>
                     </div>
                   </article>
