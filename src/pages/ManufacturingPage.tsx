@@ -17,6 +17,54 @@ interface ManufacturingOptionGroup {
   items: ManufacturingOption[];
 }
 
+interface EquipmentCard {
+  title: string;
+  text: string;
+  image: string;
+  alt: string;
+  featured?: boolean;
+}
+
+
+const equipmentCards: EquipmentCard[] = [
+  {
+    title: "Turning and Cutting",
+    text: "Heavy-duty cutting, turning, and shaping units help us maintain accurate dimensions, clean edges, and repeatable production for wholesale orders.",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuBDSU_viovFz-7bkkTu90tFD2XDffO70YvisboCI9Lv-Lg09Giuf6Sy7cnrMtv31s_6QPg2lPv1Gme_mdINbyuopzZFjgYg8xRLyDXgw98RI36X_qDN6izH3-wOs1IC09GH9TYZoX5Ul9reyGoVqjTiLN7BAumWHhLoMW0_P2mjJ5Y4UDEGj2x5tecfd9D6P40Q4O8--sdc8SKxPvDEZUFQkudhYnKM7xciOyDbHFKOULWfgH7LrBOoYEU77d4dD1ONrmkSJqhSRbgB",
+    alt: "Woodworking machinery turning and cutting wood in a professional production unit",
+    featured: true,
+  },
+  {
+    title: "Hand Finishing",
+    text: "Specialists complete sanding, polishing, buffing, lacquer, and final touch work by hand so each product feels refined and dignified.",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuCQ-Es4xuujhOFBQrXwKFi2QHd_oohOfTOwlI1CH8AcrxULexRDG301ahZLMwzDD4-fB46C5Vi0oKltUBC32t8ohqGDklCyWmDvphCo8w5488hzobekv63c0hbiEwCmQAEIZFFLGIHup_-tYNVuUVIUzYNl2AcbUs_pU1b1QyFw9jufIV5iUOdOyqoeM3bzASeSJDIxTQvS2vXzeiRHYYSHL07VudUSEVJYKuXCbq5KhUqsLFaY0rroKfrxqDvC7dIpbsn2C4KmXCRe",
+    alt: "Craftsperson applying a hand finish to wood",
+  },
+  {
+    title: "Resin Detailing",
+    text: "Controlled resin work supports decorative inlays, premium accents, and buyer-specific product development for custom collections.",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAGTeqI8FJixwl58USHLpg7AvS-4js8IiVyLnMNbURIchiwAJuP1Rt2DhcY29_9eXgIKk-KTzBgZ0WRQMkdWW9YwCqXz5jufFMJFHsC-hGIyaRGhu8VH67CeHig-pxdNuYcjO3eOXoSUvDWZyGNtwmSaWrvBiS5SluIIiW2bydRdtgVzMfMVXieKrQHbnT-q52hdo0OX8YeBPXta2zFgp2ayH2CbbaEoI-yL6zlAHXZfsQp8_aaqpQoavtXt6IJafsdUA7VsrEpXWep",
+    alt: "Clear resin being poured into a wood detail",
+  },
+  {
+    title: "Laser Engraving",
+    text: "Six laser engraving machines support names, dates, artwork, logos, plaques, and detailed personalization with repeatable accuracy.",
+    image: "/assets/manufacturing-hero.png",
+    alt: "Laser engraving and wood processing machinery in the manufacturing facility",
+  },
+  {
+    title: "UV Printing",
+    text: "Direct-to-surface UV printing supports full-color artwork, photo-style decoration, branding, and market-specific design programs.",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuC4-c2LYF5kU9mJR9D9ZtxWBws1KNiM5ctkGKQ-Rcnnvn4u15Q89M9p4IScV7q-z1BYOliUS-4J06Sr0a8Yh8SdiZp06lCv8JTLQFkeJcGDKase00LK3ziK9HR7darK2UCkwZHqTCwhYEp002rYXqjDcW2E7eSjrVKyHoC0CK2SIvZNh9NYrZMV2ayw7Xq91ElHpWgffDcrGfEwkDrXhZf6Wne12sTTGsqMHyCkzHgCxNi61r79h9ffSCgf3SCgCWcw6fv7HQacjjyg",
+    alt: "Large woodworking production unit with industrial equipment",
+    featured: true,
+  },
+];
+
 const optionGroups: ManufacturingOptionGroup[] = [
   {
     title: "Wood Options",
@@ -123,6 +171,43 @@ export function ManufacturingPage() {
               <article key={item.title} className="rounded-lg border border-outline-variant bg-surface-container-lowest p-6">
                 <h2 className="text-lg font-bold text-primary">{item.title}</h2>
                 <p className="mt-3 leading-7 text-on-surface-variant">{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad bg-background">
+        <div className="container-shell">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow">Core operations</p>
+            <h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-primary md:text-5xl">Precision Woodworking Equipment</h2>
+            <div className="mx-auto mt-5 h-1 w-24 rounded-full bg-on-tertiary-container" />
+            <p className="mt-6 text-lg leading-8 text-on-surface-variant">
+              A full-background visual equipment section showing the main production capabilities behind our manufacturing workflow.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {equipmentCards.map((card) => (
+              <article
+                key={card.title}
+                className={`group relative min-h-[360px] overflow-hidden rounded-xl border border-outline-variant bg-primary shadow-soft transition duration-500 hover:-translate-y-1 hover:shadow-lift ${
+                  card.featured ? "md:col-span-2" : ""
+                }`}
+              >
+                <img
+                  src={card.image}
+                  alt={card.alt}
+                  className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/35 to-transparent" />
+                <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(39,19,16,0.38),transparent_55%)]" />
+                <div className="relative z-10 flex min-h-[360px] flex-col justify-end p-7 text-on-primary md:p-9">
+                  <h3 className="font-display text-3xl font-semibold leading-tight">{card.title}</h3>
+                  <p className="mt-4 max-w-xl leading-7 text-on-primary/80">{card.text}</p>
+                </div>
               </article>
             ))}
           </div>
