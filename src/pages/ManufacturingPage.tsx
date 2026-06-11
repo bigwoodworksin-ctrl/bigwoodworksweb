@@ -76,40 +76,25 @@ const optionGroups: ManufacturingOptionGroup[] = [
     items: [
       {
         name: "Natural",
-        texture: "bg-[linear-gradient(135deg,#c68134_0%,#e8b56e_42%,#ffd18b_58%,#9b5a22_100%)]",
-        accent: "from-[#c98538] to-[#f4c47e]",
-        shape: "swatch",
+        image: "/assets/material-library/natural.png",
       },
       {
         name: "Matte",
-        texture: "bg-[linear-gradient(135deg,#70401b_0%,#9a5b28_45%,#b16b35_60%,#4e2d16_100%)]",
-        accent: "from-[#70401b] to-[#b16b35]",
-        shape: "swatch",
+        image: "/assets/material-library/matte.png",
       },
       {
         name: "Gloss",
-        texture: "bg-[linear-gradient(135deg,#2e0805_0%,#74180f_42%,#c83a1d_52%,#160604_100%)]",
-        accent: "from-[#4a0d08] to-[#c3361b]",
-        shape: "swatch",
+        image: "/assets/material-library/gloss.png",
       },
       {
         name: "Lacquer",
-        texture: "bg-[linear-gradient(135deg,#4b1f0f_0%,#8b441e_36%,#e3a15a_48%,#2d1409_100%)]",
-        accent: "from-[#5f2913] to-[#df9850]",
-        shape: "swatch",
+        image: "/assets/material-library/lacquer.png",
       },
       {
         name: "Buff",
-        texture: "bg-[linear-gradient(135deg,#1f1b18_0%,#4b423c_34%,#8e8178_50%,#171412_100%)]",
-        accent: "from-[#26211d] to-[#8d8178]",
-        shape: "swatch",
+        image: "/assets/material-library/buff_polish.png",
       },
-      {
-        name: "Premium Coated",
-        texture: "bg-[linear-gradient(135deg,#11100e_0%,#2d2a25_40%,#57514a_52%,#0b0a09_100%)]",
-        accent: "from-[#11100e] to-[#59524b]",
-        shape: "swatch",
-      },
+
     ],
   },
 ];
