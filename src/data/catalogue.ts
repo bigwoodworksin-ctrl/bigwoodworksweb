@@ -197,12 +197,17 @@ export const materials = [
   "Rose Wood",
   "Neem Wood",
   "Pine Wood",
+  "Maple Wood",
+  "Akashi Wood",
   "Steam Beach",
   "Brass accents",
   "Aluminium accents",
   "Premium resin",
   "UV printed finishes",
   "Custom stains and coatings",
+  "Matte finish",
+  "Lacquer finish",
+  "Buff finish",
 ];
 
 export const collections: Collection[] = [
