@@ -156,45 +156,78 @@ export function AboutPage() {
 
       <section className="section-pad bg-surface-container-low">
         <div className="container-shell">
-          <SectionHeader
-            eyebrow="Founder's message"
-            title="Made to honour every memory with care and consistency."
-            text="Every memorial urn carries the memory of a life, the love of a family, and a story that deserves to be honoured with dignity. From the first wood selection to the final carton, the process is handled with care, respect, and attention."
-          />
-          <div className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <div className="rounded-xl border border-outline-variant bg-background p-6 shadow-soft md:p-8">
-              <p className="text-lg leading-8 text-on-surface-variant">
-                We began with traditional woodworking and a belief that memorial products should feel personal, precise, and beautifully made. That belief still guides us as we serve funeral homes, memorial brands, importers, distributors, and OEM partners around the world.
-              </p>
-              <div className="mt-8 grid gap-4">
-                {storyPoints.map((point) => (
-                  <article
-                    key={point.title}
-                    className="rounded-lg border border-outline-variant bg-surface-container-low p-5 md:grid md:grid-cols-[13rem_1fr] md:items-start md:gap-5"
-                  >
-                    <h3 className="text-lg font-bold leading-7 text-primary">{point.title}</h3>
-                    <p className="mt-2 text-sm leading-7 text-on-surface-variant md:mt-0">{point.text}</p>
-                  </article>
-                ))}
+          <div className="max-w-3xl">
+            <p className="eyebrow">Founder&apos;s message</p>
+            <h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-primary md:text-5xl">
+              Who you&apos;ll work with.
+            </h2>
+            <p className="mt-4 text-base leading-7 text-on-surface-variant md:text-lg">
+              Meet the founders behind Big Wood Works and the care, craftsmanship, and buyer support behind every memorial product.
+            </p>
+          </div>
+
+          <div className="mt-10 overflow-hidden rounded-[1.5rem] border border-outline-variant bg-background shadow-soft">
+            <div className="grid gap-10 p-6 md:p-10 lg:min-h-[620px] lg:grid-cols-[1.05fr_0.95fr] lg:p-14">
+              <div className="flex flex-col justify-between">
+                <div>
+                  <h3 className="font-display text-4xl font-semibold leading-tight text-primary md:text-5xl">
+                    Hello <span aria-hidden="true">👋</span>
+                  </h3>
+                  <p className="mt-5 text-lg leading-8 text-on-surface-variant">
+                    We&apos;re <span className="font-semibold text-primary">Mujahid Ul Islam</span> and <span className="font-semibold text-primary">Mohd Zaid</span>, the founders of Big Wood Works.
+                  </p>
+                  <p className="mt-5 text-base leading-8 text-on-surface-variant">
+                    We began with traditional woodworking and a belief that memorial products should feel personal, precise, and beautifully made. That belief still guides us as we serve funeral homes, memorial brands, importers, distributors, and OEM partners around the world.
+                  </p>
+                  <p className="mt-5 text-base leading-8 text-on-surface-variant">
+                    Every memorial urn carries the memory of a life, the love of a family, and a story that deserves to be honoured with dignity. From the first wood selection to the final carton, the process is handled with care, respect, and attention.
+                  </p>
+                </div>
+
+                <div className="mt-10 grid gap-4">
+                  {storyPoints.map((point) => (
+                    <article
+                      key={point.title}
+                      className="rounded-lg border border-outline-variant bg-surface-container-low p-5 md:grid md:grid-cols-[13rem_1fr] md:items-start md:gap-5"
+                    >
+                      <h4 className="text-base font-bold leading-7 text-primary">{point.title}</h4>
+                      <p className="mt-2 text-sm leading-7 text-on-surface-variant md:mt-0">{point.text}</p>
+                    </article>
+                  ))}
+                </div>
+
+                <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <p className="font-display text-3xl font-semibold leading-none text-primary">Mujahid &amp; Zaid</p>
+                    <p className="mt-3 text-xs font-bold uppercase tracking-[0.24em] text-secondary">Founders, Big Wood Works</p>
+                  </div>
+                  <Link className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-bold text-on-primary" to="/contact">
+                    Let&apos;s talk
+                    <ArrowRight size={18} aria-hidden="true" />
+                  </Link>
+                </div>
               </div>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2">
-              {founders.map((founder) => (
-                <article key={founder.name} className="overflow-hidden rounded-xl border border-outline-variant bg-background shadow-soft">
-                  <div className="bg-surface-container-lowest p-4">
-                    <div className="overflow-hidden rounded-lg bg-surface-container-low">
-                      <img src={founder.image} alt={founder.name} className="aspect-[4/5] w-full object-cover object-top" loading="lazy" />
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-secondary">{founder.role}</p>
-                    <h2 className="mt-2 font-display text-3xl font-semibold text-primary">{founder.name}</h2>
-                    <p className="mt-4 leading-7 text-on-surface-variant">
-                      A hands-on leader shaping the company&apos;s craftsmanship, product development, buyer relationships, and export growth.
-                    </p>
-                  </div>
-                </article>
-              ))}
+
+              <div className="relative overflow-hidden rounded-2xl bg-surface-container-lowest lg:min-h-[500px]">
+                <div className="absolute inset-x-8 bottom-0 top-16 rounded-t-full bg-surface-container-low" aria-hidden="true" />
+                <div className="relative z-10 grid h-full gap-5 p-5 sm:grid-cols-2 lg:items-end lg:p-8">
+                  {founders.map((founder) => (
+                    <article key={founder.name} className="overflow-hidden rounded-2xl bg-background shadow-sm">
+                      <img
+                        src={founder.image}
+                        alt={founder.name}
+                        className="h-[340px] w-full object-cover object-top grayscale md:h-[420px] lg:h-[500px]"
+                        loading="lazy"
+                      />
+                      <div className="border-t border-outline-variant bg-background p-5">
+                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-secondary">{founder.role}</p>
+                        <h4 className="mt-2 font-display text-2xl font-semibold text-primary">{founder.name}</h4>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background/90 to-transparent" aria-hidden="true" />
+              </div>
             </div>
           </div>
         </div>
