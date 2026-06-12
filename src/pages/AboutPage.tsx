@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   ArrowRight,
   Award,
@@ -58,21 +59,6 @@ const timeline = [
   },
 ];
 
-const storyPoints = [
-  {
-    title: "Respectful craftsmanship",
-    text: "Every urn, keepsake, and memorial product is built with careful material selection and a finish that feels dignified in hand.",
-  },
-  {
-    title: "Buyer-first manufacturing",
-    text: "We support private label programs, repeat wholesale orders, and market-specific product development with dependable lead times.",
-  },
-  {
-    title: "Global-ready support",
-    text: "Packaging, documentation, approval photos, and export coordination are handled to make international purchasing easier.",
-  },
-];
-
 const values = [
   {
     title: "Respect",
@@ -96,20 +82,31 @@ const values = [
   },
 ];
 
-const founders = [
-  {
-    name: "Mujahid Ul Islam",
-    role: "Founder",
-    image: founderMujahidUlIslam,
-  },
+const founderMessageCards = [
   {
     name: "Mohd Zaid",
     role: "Founder",
     image: founderMohdZaid,
   },
+  {
+    name: "Mujahid Ul Islam",
+    role: "Founder",
+    image: founderMujahidUlIslam,
+  },
 ];
 
 export function AboutPage() {
+  const [activeFounderIndex, setActiveFounderIndex] = useState(0);
+  const activeFounder = founderMessageCards[activeFounderIndex];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveFounderIndex((current) => (current + 1) % founderMessageCards.length);
+    }, 4500);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <>
       <section className="section-pad bg-surface-container-low">
@@ -159,77 +156,76 @@ export function AboutPage() {
           <div className="max-w-3xl">
             <p className="eyebrow">Founder&apos;s message</p>
             <h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-primary md:text-5xl">
-              Who you&apos;ll work with.
+              Crafted with Respect. Made to Honour Every Memory.
             </h2>
             <p className="mt-4 text-base leading-7 text-on-surface-variant md:text-lg">
               Meet the founders behind Big Wood Works and the care, craftsmanship, and buyer support behind every memorial product.
             </p>
           </div>
 
-          <div className="mt-10 overflow-hidden rounded-[1.5rem] border border-outline-variant bg-background shadow-soft">
-            <div className="grid gap-10 p-6 md:p-10 lg:min-h-[620px] lg:grid-cols-[1.05fr_0.95fr] lg:p-14">
-              <div className="flex flex-col justify-between">
+          <article className="relative mx-auto mt-10 overflow-hidden rounded-[1.6rem] border border-outline-variant bg-background shadow-soft">
+            <div className="grid min-h-[640px] gap-8 px-6 py-10 md:px-10 lg:grid-cols-[1.08fr_0.92fr] lg:px-14 lg:py-14">
+              <div className="relative z-10 flex flex-col justify-between">
                 <div>
-                  <h3 className="font-display text-4xl font-semibold leading-tight text-primary md:text-5xl">
-                    Hello <span aria-hidden="true">👋</span>
+                  <h3 className="max-w-3xl text-3xl font-bold leading-tight text-primary md:text-4xl">
+                    Crafted with Respect. Made to Honour Every Memory.
                   </h3>
-                  <p className="mt-5 text-lg leading-8 text-on-surface-variant">
-                    We&apos;re <span className="font-semibold text-primary">Mujahid Ul Islam</span> and <span className="font-semibold text-primary">Mohd Zaid</span>, the founders of Big Wood Works.
-                  </p>
-                  <p className="mt-5 text-base leading-8 text-on-surface-variant">
-                    We began with traditional woodworking and a belief that memorial products should feel personal, precise, and beautifully made. That belief still guides us as we serve funeral homes, memorial brands, importers, distributors, and OEM partners around the world.
-                  </p>
-                  <p className="mt-5 text-base leading-8 text-on-surface-variant">
-                    Every memorial urn carries the memory of a life, the love of a family, and a story that deserves to be honoured with dignity. From the first wood selection to the final carton, the process is handled with care, respect, and attention.
-                  </p>
-                </div>
 
-                <div className="mt-10 grid gap-4">
-                  {storyPoints.map((point) => (
-                    <article
-                      key={point.title}
-                      className="rounded-lg border border-outline-variant bg-surface-container-low p-5 md:grid md:grid-cols-[13rem_1fr] md:items-start md:gap-5"
-                    >
-                      <h4 className="text-base font-bold leading-7 text-primary">{point.title}</h4>
-                      <p className="mt-2 text-sm leading-7 text-on-surface-variant md:mt-0">{point.text}</p>
-                    </article>
-                  ))}
-                </div>
-
-                <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-                  <div>
-                    <p className="font-display text-3xl font-semibold leading-none text-primary">Mujahid &amp; Zaid</p>
-                    <p className="mt-3 text-xs font-bold uppercase tracking-[0.24em] text-secondary">Founders, Big Wood Works</p>
+                  <div className="mt-7 max-w-2xl space-y-5 text-sm leading-7 text-on-surface-variant md:text-base md:leading-8">
+                    <p>
+                      At Big Wood Works, we understand that every memorial urn carries something deeply personal—the memory of a life, the love of a family, and a story that deserves to be honoured with dignity.
+                    </p>
+                    <p>
+                      This understanding is at the heart of everything we create. Every piece is handled with care, respect, and attention, from the selection of the wood to the final engraving, finishing, inspection, and packaging. We never see an urn as simply a product; we recognise the trust and emotion placed in our hands.
+                    </p>
+                    <p>
+                      Our promise is to create meaningful memorials that families can treasure for generations while providing our business partners with dependable quality, thoughtful customization, clear communication, and consistent support.
+                    </p>
+                    <p className="max-w-xl text-xs leading-6 md:text-sm md:leading-7">
+                      We are sincerely grateful to every family, customer, business partner, artisan, and team member who has placed their trust in Big Wood Works. Your confidence inspires us to work with greater care and purpose every day.
+                    </p>
                   </div>
-                  <Link className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-bold text-on-primary" to="/contact">
-                    Let&apos;s talk
-                    <ArrowRight size={18} aria-hidden="true" />
+                </div>
+
+                <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center">
+                  <Link className="focus-ring inline-flex min-h-11 w-fit items-center justify-center gap-2 rounded-full bg-primary px-7 text-xs font-bold text-on-primary shadow-sm" to="/contact">
+                    Let&apos;s Talk
+                    <ArrowRight size={16} aria-hidden="true" />
                   </Link>
+
+                  <div className="flex items-center gap-2" aria-label="Founder message cards">
+                    {founderMessageCards.map((founder, index) => (
+                      <button
+                        key={founder.name}
+                        type="button"
+                        onClick={() => setActiveFounderIndex(index)}
+                        className={index === activeFounderIndex ? "h-2.5 w-8 rounded-full bg-primary" : "h-2.5 w-2.5 rounded-full bg-outline-variant"}
+                        aria-label={`Show ${founder.name}`}
+                        aria-pressed={index === activeFounderIndex}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              <div className="relative overflow-hidden rounded-2xl bg-surface-container-lowest lg:min-h-[500px]">
-                <div className="absolute inset-x-8 bottom-0 top-16 rounded-t-full bg-surface-container-low" aria-hidden="true" />
-                <div className="relative z-10 grid h-full gap-5 p-5 sm:grid-cols-2 lg:items-end lg:p-8">
-                  {founders.map((founder) => (
-                    <article key={founder.name} className="overflow-hidden rounded-2xl bg-background shadow-sm">
-                      <img
-                        src={founder.image}
-                        alt={founder.name}
-                        className="h-[340px] w-full object-cover object-top grayscale md:h-[420px] lg:h-[500px]"
-                        loading="lazy"
-                      />
-                      <div className="border-t border-outline-variant bg-background p-5">
-                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-secondary">{founder.role}</p>
-                        <h4 className="mt-2 font-display text-2xl font-semibold text-primary">{founder.name}</h4>
-                      </div>
-                    </article>
-                  ))}
+              <div className="relative min-h-[420px] lg:min-h-[560px]">
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-surface-container-low to-transparent" aria-hidden="true" />
+                <img
+                  key={activeFounder.name}
+                  src={activeFounder.image}
+                  alt={activeFounder.name}
+                  className="absolute bottom-0 right-0 max-h-[520px] w-full object-contain object-bottom transition-opacity duration-500 lg:max-h-[620px]"
+                  loading="lazy"
+                />
+                <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 rounded-xl bg-background/95 px-5 py-3 shadow-soft backdrop-blur md:left-10 md:translate-x-0">
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-secondary">{activeFounder.role}</p>
+                  <p className="mt-1 text-3xl font-semibold leading-none text-primary" style={{ fontFamily: '"Playlist Script", cursive' }}>
+                    {activeFounder.name}
+                  </p>
                 </div>
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background/90 to-transparent" aria-hidden="true" />
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </section>
 
