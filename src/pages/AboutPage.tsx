@@ -15,7 +15,7 @@ import {
   Users,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import founderMohdZaid from "../assets/founder-mohd-zaid.png";
+import founderMohdZaid from "../assets/founder-mohd-zaid_NOBG.PNG";
 import founderMujahidUlIslam from "../assets/founder-mujahid-ul-islam.png";
 import { SectionHeader } from "../components/SectionHeader";
 import { stats, whyChooseUs } from "../data/catalogue";
@@ -151,28 +151,30 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-surface-container-low">
+      <section className="section-pad bg-[#f4f1ef]">
         <div className="container-shell">
-          <div className="max-w-3xl">
-            <p className="eyebrow">Founder&apos;s message</p>
-            <h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-primary md:text-5xl">
-              Crafted with Respect. Made to Honour Every Memory.
+          <div className="mx-auto max-w-[980px]">
+            <p className="mb-2 text-[9px] font-bold uppercase tracking-[0.18em] text-on-surface-variant">
+              Founder&apos;s message
+            </p>
+            <h2 className="text-[26px] font-extrabold leading-tight tracking-[-0.03em] text-[#111111] md:text-[30px]">
+              Who you&apos;ll work with.
             </h2>
-            <p className="mt-4 text-base leading-7 text-on-surface-variant md:text-lg">
-              Meet the founders behind Big Wood Works and the care, craftsmanship, and buyer support behind every memorial product.
+            <p className="mt-2 text-[12px] leading-5 text-[#333333]">
+              Meet the founders behind Big Wood Works.
             </p>
           </div>
 
-          <div className="mx-auto mt-12 max-w-6xl px-2 sm:px-4">
-            <article className="relative overflow-hidden border border-outline-variant bg-background shadow-soft transform-gpu -rotate-1">
-              <div className="grid min-h-[620px] gap-8 px-6 py-10 transform-gpu rotate-1 md:px-10 lg:grid-cols-[1.08fr_0.92fr] lg:px-14 lg:py-14">
-                <div className="relative z-10 flex flex-col justify-between">
+          <div className="mx-auto mt-6 max-w-[980px] px-1 sm:px-3">
+            <article className="relative min-h-[570px] overflow-hidden bg-white shadow-[0_18px_45px_rgba(15,15,15,0.10)] transform-gpu -rotate-[1.2deg] md:min-h-[585px]">
+              <div className="relative z-10 grid min-h-[570px] gap-8 px-8 py-11 md:min-h-[585px] md:px-12 md:py-14 lg:grid-cols-[1.05fr_0.95fr] lg:px-14">
+                <div className="relative z-20 flex max-w-[560px] flex-col justify-between">
                   <div>
-                    <h3 className="max-w-3xl text-3xl font-bold leading-tight text-primary md:text-4xl">
+                    <h3 className="max-w-[650px] text-[24px] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#0d0d0d] md:text-[25px]">
                       Crafted with Respect. Made to Honour Every Memory.
                     </h3>
 
-                    <div className="mt-7 max-w-2xl space-y-5 text-sm leading-7 text-on-surface-variant md:text-base md:leading-8">
+                    <div className="mt-6 max-w-[540px] space-y-[18px] text-[12.5px] leading-[1.55] tracking-[-0.01em] text-[#262626] md:text-[13px] md:leading-[1.58]">
                       <p>
                         At Big Wood Works, we understand that every memorial urn carries something deeply personal—the memory of a life, the love of a family, and a story that deserves to be honoured with dignity.
                       </p>
@@ -182,16 +184,15 @@ export function AboutPage() {
                       <p>
                         Our promise is to create meaningful memorials that families can treasure for generations while providing our business partners with dependable quality, thoughtful customization, clear communication, and consistent support.
                       </p>
-                      <p className="max-w-xl text-xs leading-6 md:text-sm md:leading-7">
+                      <p className="max-w-[430px] text-[10.5px] leading-[1.55] text-[#323232] md:text-[11px]">
                         We are sincerely grateful to every family, customer, business partner, artisan, and team member who has placed their trust in Big Wood Works. Your confidence inspires us to work with greater care and purpose every day.
                       </p>
                     </div>
                   </div>
 
-                  <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center">
-                    <Link className="focus-ring inline-flex min-h-11 w-fit items-center justify-center gap-2 rounded-full bg-primary px-7 text-xs font-bold text-on-primary shadow-sm" to="/contact">
+                  <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
+                    <Link className="focus-ring inline-flex min-h-8 w-[108px] items-center justify-center rounded-full bg-[#111111] px-5 text-[10px] font-bold text-white shadow-[0_10px_20px_rgba(0,0,0,0.15)]" to="/contact">
                       Let&apos;s Talk
-                      <ArrowRight size={16} aria-hidden="true" />
                     </Link>
 
                     <div className="flex items-center gap-2" aria-label="Founder message cards">
@@ -200,7 +201,7 @@ export function AboutPage() {
                           key={founder.name}
                           type="button"
                           onClick={() => setActiveFounderIndex(index)}
-                          className={index === activeFounderIndex ? "h-2.5 w-8 rounded-full bg-primary transition-all" : "h-2.5 w-2.5 rounded-full bg-outline-variant transition-all"}
+                          className={index === activeFounderIndex ? "h-1.5 w-7 rounded-full bg-[#111111] transition-all" : "h-1.5 w-1.5 rounded-full bg-[#cfc9c4] transition-all"}
                           aria-label={`Show ${founder.name}`}
                           aria-pressed={index === activeFounderIndex}
                         />
@@ -209,18 +210,17 @@ export function AboutPage() {
                   </div>
                 </div>
 
-                <div className="relative min-h-[420px] lg:min-h-[540px]">
+                <div className="relative min-h-[330px] lg:min-h-[480px]">
                   <img
                     key={activeFounder.name}
                     src={activeFounder.image}
                     alt={activeFounder.name}
-                    className="absolute bottom-[-1px] right-0 max-h-[500px] w-full object-contain object-bottom transition-opacity duration-500 lg:max-h-[600px]"
+                    className="absolute bottom-[-10px] right-[-28px] z-10 max-h-[410px] w-full object-contain object-bottom transition-opacity duration-500 md:max-h-[470px] lg:bottom-[-4px] lg:right-[-34px] lg:max-h-[505px]"
                     loading="lazy"
                   />
 
-                  <div className="absolute bottom-7 left-1/2 z-10 -translate-x-1/2 rounded-xl bg-background/95 px-5 py-3 shadow-soft backdrop-blur md:left-6 md:translate-x-0">
-                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-secondary">{activeFounder.role}</p>
-                    <p className="mt-1 text-3xl font-semibold leading-none text-primary" style={{ fontFamily: '"Playlist Script", cursive' }}>
+                  <div className="absolute bottom-12 left-1/2 z-30 -translate-x-1/2 rounded-xl bg-[#f7f2ee] px-5 py-2 shadow-[0_8px_22px_rgba(0,0,0,0.12)] md:bottom-12 md:left-3 md:translate-x-0">
+                    <p className="whitespace-nowrap text-[27px] font-semibold leading-none tracking-[-0.02em] text-[#111111] md:text-[30px]" style={{ fontFamily: '"Playlist Script", cursive' }}>
                       {activeFounder.name}
                     </p>
                   </div>
@@ -230,7 +230,6 @@ export function AboutPage() {
           </div>
         </div>
       </section>
-
       <section className="section-pad bg-background">
         <div className="container-shell">
           <SectionHeader
