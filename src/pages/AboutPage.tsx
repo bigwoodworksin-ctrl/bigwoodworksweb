@@ -241,33 +241,53 @@ export function AboutPage() {
           />
 
           <div className="relative mx-auto mt-16 max-w-6xl">
-            <div className="absolute left-6 top-0 h-full w-px bg-outline-variant md:left-1/2 md:-translate-x-1/2" aria-hidden="true" />
+            <div className="absolute left-5 top-0 h-full w-px bg-outline-variant md:left-1/2 md:-translate-x-1/2" aria-hidden="true" />
 
-            <div className="grid gap-8 md:gap-12">
+            <div className="space-y-10 md:space-y-12">
               {timeline.map((item, index) => {
                 const Icon = item.icon;
                 const isEven = index % 2 === 0;
 
+                const yearBlock = (
+                  <div>
+                    <h3 className="font-display text-4xl font-semibold leading-none text-primary">{item.year}</h3>
+                    <p className="mt-3 text-xl leading-8 text-on-surface-variant">{item.label}</p>
+                  </div>
+                );
+
+                const textCard = (
+                  <div className="w-full rounded-lg border border-outline-variant bg-surface-container-low p-6 shadow-sm transition-shadow hover:shadow-soft md:p-7">
+                    <div className="mb-3 md:hidden">
+                      <h3 className="font-display text-3xl font-semibold text-primary">{item.year}</h3>
+                      <p className="mt-2 text-base font-semibold leading-7 text-secondary">{item.label}</p>
+                    </div>
+                    <p className="text-base leading-8 text-on-surface-variant md:text-lg">{item.text}</p>
+                  </div>
+                );
+
                 return (
-                  <article key={item.year} className="relative grid grid-cols-[3rem_minmax(0,1fr)] gap-4 md:grid-cols-[minmax(0,1fr)_3rem_minmax(0,1fr)] md:items-center md:gap-0">
-                    <div className={isEven ? "hidden text-right md:block md:pr-12" : "hidden md:order-3 md:block md:pl-12"}>
-                      <h3 className="font-display text-4xl font-semibold leading-none text-primary">{item.year}</h3>
-                      <p className="mt-3 text-xl leading-8 text-on-surface-variant">{item.label}</p>
-                    </div>
+                  <article key={item.year} className="relative pl-14 md:grid md:grid-cols-12 md:items-center md:pl-0">
+                    {isEven ? (
+                      <>
+                        <div className="hidden md:col-span-5 md:block md:pr-12 md:text-right">{yearBlock}</div>
 
-                    <div className="z-10 grid h-12 w-12 place-items-center rounded-full border-4 border-background bg-primary text-on-primary shadow-soft md:order-2">
-                      <Icon size={18} aria-hidden="true" />
-                    </div>
-
-                    <div className={isEven ? "md:pl-12" : "md:order-1 md:pr-12"}>
-                      <div className="rounded-xl border border-outline-variant bg-surface-container-lowest p-6 shadow-sm transition-shadow hover:shadow-soft md:p-7">
-                        <div className="md:hidden">
-                          <h3 className="font-display text-3xl font-semibold text-primary">{item.year}</h3>
-                          <p className="mt-2 text-base font-semibold leading-7 text-secondary">{item.label}</p>
+                        <div className="absolute left-0 top-1 z-10 grid h-10 w-10 place-items-center rounded-full border-4 border-background bg-primary text-on-primary shadow-soft md:static md:col-span-2 md:mx-auto">
+                          <Icon size={16} aria-hidden="true" />
                         </div>
-                        <p className="mt-4 text-base leading-8 text-on-surface-variant md:mt-0 md:text-lg">{item.text}</p>
-                      </div>
-                    </div>
+
+                        <div className="md:col-span-5 md:pl-12">{textCard}</div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="md:col-span-5 md:pr-12">{textCard}</div>
+
+                        <div className="absolute left-0 top-1 z-10 grid h-10 w-10 place-items-center rounded-full border-4 border-background bg-primary text-on-primary shadow-soft md:static md:col-span-2 md:mx-auto">
+                          <Icon size={16} aria-hidden="true" />
+                        </div>
+
+                        <div className="hidden md:col-span-5 md:block md:pl-12">{yearBlock}</div>
+                      </>
+                    )}
                   </article>
                 );
               })}
