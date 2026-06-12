@@ -15,7 +15,6 @@ import {
   Users,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import founderMujahidUlIslam from "../assets/founder-mujahid-ul-islam.png";
 import { SectionHeader } from "../components/SectionHeader";
 import { stats, whyChooseUs } from "../data/catalogue";
 
@@ -82,6 +81,7 @@ const values = [
 ];
 
 const founderMohdZaid = new URL("../assets/founder-mohd-zaid_NOBG.png", import.meta.url).href;
+const founderMujahidUlIslam = new URL("../assets/founder-mujahid-ul-islam_NOBG.png", import.meta.url).href;
 
 const founderMessageCards = [
   {
