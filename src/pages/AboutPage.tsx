@@ -166,11 +166,14 @@ export function AboutPage() {
               <p className="text-lg leading-8 text-on-surface-variant">
                 We began with traditional woodworking and a belief that memorial products should feel personal, precise, and beautifully made. That belief still guides us as we serve funeral homes, memorial brands, importers, distributors, and OEM partners around the world.
               </p>
-              <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              <div className="mt-8 grid gap-4">
                 {storyPoints.map((point) => (
-                  <article key={point.title} className="rounded-lg border border-outline-variant bg-surface-container-low p-5">
-                    <h3 className="text-lg font-bold text-primary">{point.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-on-surface-variant">{point.text}</p>
+                  <article
+                    key={point.title}
+                    className="rounded-lg border border-outline-variant bg-surface-container-low p-5 md:grid md:grid-cols-[13rem_1fr] md:items-start md:gap-5"
+                  >
+                    <h3 className="text-lg font-bold leading-7 text-primary">{point.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-on-surface-variant md:mt-0">{point.text}</p>
                   </article>
                 ))}
               </div>
