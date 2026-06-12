@@ -155,13 +155,13 @@ export function AboutPage() {
       <section className="section-pad bg-[#f4f1ef]">
         <div className="container-shell">
           <div className="mx-auto max-w-[980px]">
-            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.18em] text-on-surface-variant">
+            <p className="mb-2 text-[9px] font-bold uppercase tracking-[0.18em] text-on-surface-variant">
               Founder&apos;s message
             </p>
-            <h2 className="text-[30px] font-extrabold leading-tight tracking-[-0.03em] text-[#111111] md:text-[34px]">
+            <h2 className="text-[26px] font-extrabold leading-tight tracking-[-0.03em] text-[#111111] md:text-[30px]">
               Who you&apos;ll work with.
             </h2>
-            <p className="mt-2 text-[14px] leading-6 text-[#333333]">
+            <p className="mt-2 text-[12px] leading-5 text-[#333333]">
               Meet the founders behind Big Wood Works.
             </p>
           </div>
@@ -171,11 +171,11 @@ export function AboutPage() {
               <div className="relative z-10 grid min-h-[570px] gap-8 px-8 py-11 md:min-h-[585px] md:px-12 md:py-14 lg:grid-cols-[1.05fr_0.95fr] lg:px-14">
                 <div className="relative z-20 flex max-w-[560px] flex-col justify-between">
                   <div>
-                    <h3 className="max-w-[650px] text-[28px] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#0d0d0d] md:text-[30px]">
+                    <h3 className="max-w-[650px] text-[24px] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#0d0d0d] md:text-[25px]">
                       Crafted with Respect. Made to Honour Every Memory.
                     </h3>
 
-                    <div className="mt-6 max-w-[540px] space-y-[18px] text-[14px] leading-[1.62] tracking-[-0.01em] text-[#262626] md:text-[15px] md:leading-[1.65]">
+                    <div className="mt-6 max-w-[540px] space-y-[18px] text-[12.5px] leading-[1.55] tracking-[-0.01em] text-[#262626] md:text-[13px] md:leading-[1.58]">
                       <p>
                         At Big Wood Works, we understand that every memorial urn carries something deeply personal—the memory of a life, the love of a family, and a story that deserves to be honoured with dignity.
                       </p>
@@ -185,14 +185,14 @@ export function AboutPage() {
                       <p>
                         Our promise is to create meaningful memorials that families can treasure for generations while providing our business partners with dependable quality, thoughtful customization, clear communication, and consistent support.
                       </p>
-                      <p className="max-w-[460px] text-[12.5px] leading-[1.6] text-[#323232] md:text-[13px]">
+                      <p className="max-w-[430px] text-[10.5px] leading-[1.55] text-[#323232] md:text-[11px]">
                         We are sincerely grateful to every family, customer, business partner, artisan, and team member who has placed their trust in Big Wood Works. Your confidence inspires us to work with greater care and purpose every day.
                       </p>
                     </div>
                   </div>
 
                   <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-                    <Link className="focus-ring inline-flex min-h-10 w-[124px] items-center justify-center rounded-full bg-[#111111] px-6 text-[12px] font-bold text-white shadow-[0_10px_20px_rgba(0,0,0,0.15)]" to="/contact">
+                    <Link className="focus-ring inline-flex min-h-8 w-[108px] items-center justify-center rounded-full bg-[#111111] px-5 text-[10px] font-bold text-white shadow-[0_10px_20px_rgba(0,0,0,0.15)]" to="/contact">
                       Let&apos;s Talk
                     </Link>
 
