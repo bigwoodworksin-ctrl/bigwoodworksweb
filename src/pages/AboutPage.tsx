@@ -15,7 +15,6 @@ import {
   Users,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import founderMohdZaid from "../assets/founder-mohd-zaid_NOBG.PNG";
 import founderMujahidUlIslam from "../assets/founder-mujahid-ul-islam.png";
 import { SectionHeader } from "../components/SectionHeader";
 import { stats, whyChooseUs } from "../data/catalogue";
@@ -82,6 +81,8 @@ const values = [
   },
 ];
 
+const founderMohdZaid = new URL("../assets/founder-mohd-zaid_NOBG.png", import.meta.url).href;
+
 const founderMessageCards = [
   {
     name: "Mohd Zaid",
@@ -97,7 +98,7 @@ const founderMessageCards = [
 
 export function AboutPage() {
   const [activeFounderIndex, setActiveFounderIndex] = useState(0);
-  const activeFounder = founderMessageCards[activeFounderIndex];
+  const activeFounder = founderMessageCards[activeFounderIndex] ?? founderMessageCards[0]!;
 
   useEffect(() => {
     const timer = setInterval(() => {
