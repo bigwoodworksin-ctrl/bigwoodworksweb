@@ -1,23 +1,38 @@
-# Big Wood Works React Implementation
+# Big Wood Works Catalogue Website
 
-This project is a React + TypeScript + Vite website prepared from the Stitch Big Wood Works B2B Portal export.
+Pure React + TypeScript + Vite implementation for Big Wood Works, refined from the attached product catalogue.
 
-## Figma Screens
+## Routes
 
-The Stitch zip provides these eight source pages:
+| Route | Page |
+| --- | --- |
+| `/` | Home |
+| `/about` | About |
+| `/products` | Product collections |
+| `/customization` | Customization services |
+| `/manufacturing` | Manufacturing and quality |
+| `/export` | Global export |
+| `/oem` | OEM / ODM |
+| `/contact` | Contact |
 
-| Figma node | Route | Page |
-| --- | --- | --- |
-| Stitch folder | Route | Page |
-| --- | --- | --- |
-| `big_wood_works_home_official` | `/` | Home |
-| `big_wood_works_about_us` | `/about` | About Us |
-| `big_wood_works_products_catalog` | `/products` | Products |
-| `big_wood_works_oem_private_label` | `/oem-private-label` | OEM & Private Label |
-| `big_wood_works_manufacturing_facility` | `/manufacturing` | Manufacturing |
-| `big_wood_works_global_export_reach` | `/export` | Global Export |
-| `big_wood_works_quality_assurance` | `/quality` | Quality Assurance |
-| `big_wood_works_customization_services` | `/customization` | Customization |
+Aliases are included for `/quote`, `/catalogue`, `/catalog`, `/wholesale`, and `/oem-private-label`.
+
+## Catalogue Content Used
+
+- Premium cremation urns and memorial products
+- 30+ years manufacturing excellence
+- 50,000+ cremation urns manufactured since 2023
+- 8,000+ monthly manufacturing capacity
+- OEM / ODM and private-label manufacturing
+- Custom engraving, UV printing, resin inlay, packaging, and export-ready logistics
+- Product collections including Lichtenberg Resin, UV Printed, Classical Design, Heritage Memorial, Pet Tribute, and Best Seller
+
+## Assets
+
+- Logo: `public/assets/big-wood-works-logo.png`
+- Downloadable catalogue: `public/assets/catalogue.pdf`
+- Selected catalogue product visuals: `public/assets/catalogue-images/`
+- Export logistics visual: `public/assets/export-logistics.png`
 
 ## Development
 
@@ -33,51 +48,17 @@ Start the dev server:
 npm run dev
 ```
 
-Build for production:
+Build:
 
 ```bash
 npm run build
 ```
 
-Preview the production build:
-
-```bash
-npm run preview
-```
-
-## Architecture
-
-```text
-src/
-  components/
-    layout/
-    navigation/
-    sections/
-    ui/
-  data/
-  pages/
-  styles/
-  App.tsx
-  main.tsx
-```
-
 ## Audit
 
-- Design source: eight Stitch `code.html` pages and `screen.png` references are stored in `public/stitch`.
-- Routes: all eight Stitch routes plus contact, quote, catalogue/catalog, wholesale aliases, and 404 are implemented in React Router.
-- Navigation: React provides working desktop tabs and an accessible mobile menu; embedded Stitch `href="#"` links are upgraded to real routes when possible.
-- Assets: the Stitch export is served directly so its generated imagery, fonts, Tailwind CDN styling, and page-specific layout are preserved.
-- Responsive layout: inherited from the Stitch-generated HTML pages.
-- Mobile navigation: inherited from the Stitch-generated HTML pages where present.
-- Console errors: should be checked after dependencies are installed and the dev server is running.
-- Placeholder content: no Lorem Ipsum or TODOs are present in the app shell.
-
-## Figma Access Note
-
-The Figma MCP tools returned:
-
-```text
-You've reached the Figma MCP tool call limit on the Starter plan.
-```
-
-Because of that, this implementation cannot be claimed as pixel-perfect against the inaccessible Figma layer data. Once access is restored, compare each route against the exact frame screenshot and update spacing, typography, imagery, and copy accordingly.
+- Removed the previous embedded static-page implementation.
+- Removed unused export files and temporary work files.
+- Removed unused extracted catalogue images.
+- Navigation is native React Router with desktop and mobile states.
+- Catalogue download is local.
+- No placeholder filler content remains.
