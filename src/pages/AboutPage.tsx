@@ -80,8 +80,8 @@ const values = [
   },
 ];
 
-const founderMohdZaid = new URL("../assets/founder-mohd-zaid.png", import.meta.url).href;
-const founderMujahidUlIslam = new URL("../assets/founder-mujahid-ul-islam.png", import.meta.url).href;
+const founderMohdZaid = new URL("../assets/founder-mohd-zaid_NOBG.png", import.meta.url).href;
+const founderMujahidUlIslam = new URL("../assets/founder-mujahid-ul-islam_NOBG.png", import.meta.url).href;
 
 const founderMessageCards = [
   {
