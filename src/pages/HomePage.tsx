@@ -4,18 +4,54 @@ import { ProductCard } from "../components/ProductCard";
 import { SectionHeader } from "../components/SectionHeader";
 import { buyerBenefits, buyerTypes, collections, productFamilies, processSteps, stats, whyChooseUs } from "../data/catalogue";
 
+const faqItems = [
+  {
+    question: "Do you supply wholesale wooden cremation urns for funeral brands and distributors?",
+    answer:
+      "Yes. Big Wood Works positions its manufacturing and export support around funeral brands, wholesalers, importers, distributors, and e-commerce buyers.",
+  },
+  {
+    question: "Can you support OEM and private-label urn programs?",
+    answer:
+      "Yes. The website content already highlights OEM, ODM, branding, packaging, engraving, and private-label support for buyer-specific memorial collections.",
+  },
+  {
+    question: "What customisation options are available?",
+    answer:
+      "Current project content confirms support for custom engraving, UV printing, resin detailing, wood species selection, finish direction, branding, and packaging support.",
+  },
+  {
+    question: "Do you support export orders?",
+    answer:
+      "Yes. Export-ready packaging, documentation support, buyer approval support, and global delivery coordination are already part of the site’s export positioning.",
+  },
+];
+
 export function HomePage() {
   const featured = collections.flatMap((collection) => collection.products).slice(0, 6);
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <section className="relative overflow-hidden bg-primary-container text-on-primary">
         <div className="absolute inset-0 opacity-25">
           <img src="/assets/home-hero-urns.png" alt="" className="h-full w-full object-cover object-center" />
         </div>
         <div className="container-shell relative grid min-h-[calc(100svh-5rem)] gap-10 py-16 lg:grid-cols-[1fr_0.9fr] lg:items-center">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.28em] text-tertiary-fixed">Made in India · Custom Branding · Global Export Support</p>
+            <p className="text-sm font-bold uppercase tracking-[0.28em] text-tertiary-fixed">Made in India • Custom Branding • Global Export Support</p>
             <h1 className="mt-5 font-display text-5xl font-bold leading-[1.05] md:text-7xl">
               Handcrafted Wooden Cremation Urns for Wholesale & Private Label
             </h1>
@@ -167,6 +203,49 @@ export function HomePage() {
 
       <section className="section-pad bg-background">
         <div className="container-shell">
+          <SectionHeader
+            eyebrow="Key pages"
+            title="Explore product, manufacturing, OEM, and export information."
+            text="These sections support commercial buyers who want to review product direction, manufacturing capabilities, private-label options, and export readiness before making an enquiry."
+          />
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              {
+                title: "Wooden urn collections",
+                text: "Review wholesale-ready memorial products, materials, and category direction.",
+                to: "/products",
+              },
+              {
+                title: "Manufacturing capabilities",
+                text: "See how production, engraving, finishing, and quality control are presented.",
+                to: "/manufacturing",
+              },
+              {
+                title: "OEM & private label",
+                text: "Explore branding, packaging, and buyer-specific development support.",
+                to: "/oem",
+              },
+              {
+                title: "Export support",
+                text: "Understand markets served, documentation support, and wholesale dispatch flow.",
+                to: "/export",
+              },
+            ].map((item) => (
+              <article key={item.title} className="rounded-lg border border-outline-variant bg-surface-container-lowest p-6 shadow-sm">
+                <h3 className="text-xl font-bold text-primary">{item.title}</h3>
+                <p className="mt-3 leading-7 text-on-surface-variant">{item.text}</p>
+                <Link className="focus-ring mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary" to={item.to}>
+                  Explore page
+                  <ArrowRight size={16} aria-hidden="true" />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad bg-background">
+        <div className="container-shell">
           <SectionHeader eyebrow="Featured products" title="Catalogue-selected urn collections." center />
           <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {featured.map((product) => (
@@ -178,6 +257,24 @@ export function HomePage() {
               View Products
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad bg-surface-container-low">
+        <div className="container-shell">
+          <SectionHeader
+            eyebrow="Frequently asked questions"
+            title="Common B2B questions before a wholesale enquiry."
+            text="These answers reflect the verified capabilities and services currently described across the Big Wood Works website."
+          />
+          <div className="mt-10 grid gap-4">
+            {faqItems.map((item) => (
+              <article key={item.question} className="rounded-lg border border-outline-variant bg-background p-6 shadow-sm">
+                <h3 className="text-xl font-bold text-primary">{item.question}</h3>
+                <p className="mt-3 leading-7 text-on-surface-variant">{item.answer}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
