@@ -23,7 +23,6 @@ export function ContactPage() {
 
   const recipientEmail = "info@bigwoodworks.com";
   const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(contact.address)}&output=embed`;
-  const mapDirectionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.address)}`;
 
   function handleChange(
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
@@ -59,9 +58,9 @@ export function ContactPage() {
   }
 
   return (
-    <>
-      <section className="section-pad bg-surface-container-low">
-        <div className="container-shell grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+    <section className="section-pad bg-surface-container-low">
+      <div className="container-shell">
+        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <p className="eyebrow">Contact us</p>
             <h1 className="mt-4 font-display text-5xl font-semibold leading-tight text-primary">We're here to help.</h1>
@@ -135,44 +134,30 @@ export function ContactPage() {
             </button>
           </form>
         </div>
-      </section>
 
-      <section className="bg-background pb-16 md:pb-24">
-        <div className="container-shell">
-          <div className="relative min-h-[330px] overflow-hidden rounded-xl border border-outline-variant bg-primary shadow-soft md:min-h-[390px]">
-            <iframe
-              title={`Big Wood Works location: ${contact.address}`}
-              src={mapEmbedUrl}
-              className="absolute inset-0 h-full w-full grayscale contrast-125 brightness-75"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
+        <div className="relative mt-14 h-[285px] overflow-hidden border border-outline-variant bg-primary shadow-soft md:mt-16 md:h-[360px]">
+          <iframe
+            title={`Big Wood Works location: ${contact.address}`}
+            src={mapEmbedUrl}
+            className="absolute inset-0 h-full w-full"
+            style={{ filter: "grayscale(1) contrast(1.3) brightness(0.58)" }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
 
-            <div className="pointer-events-none absolute inset-0 bg-primary/20 mix-blend-multiply" />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-primary/25 via-transparent to-primary/10" />
+          <div className="pointer-events-none absolute inset-0 bg-black/15" />
 
-            <div className="pointer-events-none absolute inset-x-5 bottom-5 z-10 sm:inset-x-auto sm:bottom-7 sm:left-7 md:bottom-9 md:left-9">
-              <div className="pointer-events-auto max-w-sm border border-outline-variant bg-background/95 p-5 shadow-lift backdrop-blur-sm md:p-6">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant">Our presence</p>
-                <p className="mt-3 leading-7 text-on-surface">
-                  Located in the heart of India's craft manufacturing network, where traditional craftsmanship meets contemporary design.
-                </p>
-                <p className="mt-3 text-sm font-semibold text-primary">{contact.address}</p>
-                <a
-                  href={mapDirectionsUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="focus-ring mt-4 inline-flex items-center gap-2 text-sm font-bold text-secondary underline-offset-4 hover:underline"
-                >
-                  <MapPin size={17} aria-hidden="true" />
-                  Open directions
-                </a>
-              </div>
-            </div>
+          <div className="pointer-events-none absolute bottom-5 left-5 z-10 w-[calc(100%-2.5rem)] max-w-[360px] bg-background px-5 py-4 shadow-soft sm:bottom-7 sm:left-7 sm:px-6 sm:py-5">
+            <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-on-surface-variant">
+              Our presence
+            </p>
+            <p className="mt-2 text-sm leading-6 text-on-surface">
+              Located in the heart of Delhi's craft district, where tradition meets contemporary design.
+            </p>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
