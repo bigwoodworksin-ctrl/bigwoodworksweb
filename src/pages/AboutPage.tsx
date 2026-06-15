@@ -75,13 +75,13 @@ const values = [
   },
   {
     title: "Legacy",
-    text: "Creating timeless objects that honor the memories they protect.",
+    text: "Creating timeless objects that honour the memories they protect.",
     icon: Award,
   },
 ];
 
-const founderMohdZaid = new URL("../assets/founder-mohd-zaid_NOBG.png", import.meta.url).href;
-const founderMujahidUlIslam = new URL("../assets/founder-mujahid-ul-islam_NOBG.png", import.meta.url).href;
+const founderMohdZaid = new URL("../assets/founder-mohd-zaid.png", import.meta.url).href;
+const founderMujahidUlIslam = new URL("../assets/founder-mujahid-ul-islam.png", import.meta.url).href;
 
 const founderMessageCards = [
   {
@@ -216,7 +216,7 @@ export function AboutPage() {
                     key={activeFounder.name}
                     src={activeFounder.image}
                     alt={activeFounder.name}
-                    className="absolute bottom-[-10px] right-[-28px] z-10 max-h-[410px] w-full object-contain object-bottom transition-opacity duration-500 md:max-h-[470px] lg:bottom-[-4px] lg:right-[-34px] lg:max-h-[505px]"
+                    className="absolute inset-0 z-10 h-full w-full object-contain object-bottom px-4 transition-opacity duration-500"
                     loading="lazy"
                   />
 

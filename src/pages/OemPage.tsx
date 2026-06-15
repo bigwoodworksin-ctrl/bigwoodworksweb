@@ -1,3 +1,5 @@
+import { ArrowRight, Download } from "lucide-react";
+import { Link } from "react-router-dom";
 import { SectionHeader } from "../components/SectionHeader";
 import { customizationServices, whyChooseUs } from "../data/catalogue";
 
@@ -26,6 +28,27 @@ export function OemPage() {
                 {item}
               </div>
             ))}
+          </div>
+        </div>
+        <div className="mt-12 rounded-xl bg-primary-container px-6 py-8 text-on-primary md:px-8">
+          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-tertiary-fixed">Next step</p>
+              <h2 className="mt-3 font-display text-3xl font-semibold">Discuss your private-label or OEM requirement.</h2>
+              <p className="mt-4 max-w-2xl leading-7 text-on-primary/75">
+                Share the product direction, quantities, branding requirements, and market needs with us so we can guide the right manufacturing path.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Link className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded bg-tertiary-fixed px-6 text-sm font-bold text-on-tertiary-fixed" to="/contact">
+                Request Wholesale Quote
+                <ArrowRight size={18} aria-hidden="true" />
+              </Link>
+              <a className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded border border-on-primary/30 px-6 text-sm font-bold text-on-primary" href="/assets/catalogue.pdf" download>
+                Download Catalogue
+                <Download size={18} aria-hidden="true" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

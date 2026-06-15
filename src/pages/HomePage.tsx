@@ -2,7 +2,7 @@ import { ArrowRight, CheckCircle2, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ProductCard } from "../components/ProductCard";
 import { SectionHeader } from "../components/SectionHeader";
-import { buyerBenefits, collections, productFamilies, processSteps, stats, whyChooseUs } from "../data/catalogue";
+import { buyerBenefits, buyerTypes, collections, productFamilies, processSteps, stats, whyChooseUs } from "../data/catalogue";
 
 export function HomePage() {
   const featured = collections.flatMap((collection) => collection.products).slice(0, 6);
@@ -15,16 +15,16 @@ export function HomePage() {
         </div>
         <div className="container-shell relative grid min-h-[calc(100svh-5rem)] gap-10 py-16 lg:grid-cols-[1fr_0.9fr] lg:items-center">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.28em] text-tertiary-fixed">Premium cremation urns & memorial products</p>
+            <p className="text-sm font-bold uppercase tracking-[0.28em] text-tertiary-fixed">Made in India · Custom Branding · Global Export Support</p>
             <h1 className="mt-5 font-display text-5xl font-bold leading-[1.05] md:text-7xl">
-              Handcrafted warmth for every memory.
+              Handcrafted Wooden Cremation Urns for Wholesale & Private Label
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-on-primary/78">
-              Big Wood Works is a trusted manufacturer and exporter of handcrafted cremation urns, pet urns, keepsake urns, and memorial products.
+              OEM and ODM manufacturing for funeral brands, wholesalers, importers and e-commerce businesses. Custom engraving, flexible order quantities, export-ready packaging and bulk production support.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded bg-tertiary-fixed px-6 text-sm font-bold text-on-tertiary-fixed" to="/products">
-                View collections
+              <Link className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded bg-tertiary-fixed px-6 text-sm font-bold text-on-tertiary-fixed" to="/contact">
+                Request Wholesale Quote
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
               <a className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded border border-on-primary/35 px-6 text-sm font-bold text-on-primary" href="/assets/catalogue.pdf" download>
@@ -47,9 +47,26 @@ export function HomePage() {
       <section className="section-pad bg-background">
         <div className="container-shell">
           <SectionHeader
+            eyebrow="Who we supply"
+            title="Built for memorial buyers, not one-off retail orders."
+            text="The product range, customisation workflow, and export support are designed for B2B buyers who need consistency, communication, and repeat-ready supply."
+          />
+          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+            {buyerTypes.map((type) => (
+              <article key={type} className="rounded-lg border border-outline-variant bg-surface-container-lowest p-5 text-center shadow-sm">
+                <h3 className="text-lg font-bold leading-7 text-primary">{type}</h3>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad bg-surface-container-low">
+        <div className="container-shell">
+          <SectionHeader
             eyebrow="Company overview"
             title="Trusted Cremation Urn Manufacturer & OEM Partner"
-            text="Backed by 30+ years of manufacturing excellence, we serve funeral brands, importers, wholesalers, distributors, and e-commerce businesses worldwide through reliable OEM & ODM manufacturing solutions."
+            text="Backed by 30+ years of manufacturing excellence, we serve funeral brands, importers, wholesalers, distributors, and e-commerce businesses across international markets through reliable OEM & ODM manufacturing solutions."
           />
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {whyChooseUs.map((item) => (
@@ -62,7 +79,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section-pad bg-surface-container-low">
+      <section className="section-pad bg-background">
         <div className="container-shell">
           <SectionHeader
             eyebrow="Curation of excellence"
@@ -80,16 +97,47 @@ export function HomePage() {
         </div>
       </section>
 
+      <section className="section-pad bg-surface-container-low">
+        <div className="container-shell">
+          <SectionHeader
+            eyebrow="OEM, ODM & private label"
+            title="Wholesale programs shaped around your market."
+            text="We support branding, engraving, artwork adaptation, packaging, and repeat production planning for private-label memorial collections."
+          />
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {[
+              {
+                title: "Private-label presentation",
+                text: "Branding, labels, inserts, and packaging support help memorial products arrive market-ready.",
+              },
+              {
+                title: "Product development support",
+                text: "Collections can be adapted around wood species, engraving, UV printing, resin detail, and finish direction.",
+              },
+              {
+                title: "Repeat-order consistency",
+                text: "Production, inspection, and export support are structured for wholesale continuity rather than one-time supply.",
+              },
+            ].map((item) => (
+              <article key={item.title} className="rounded-lg border border-outline-variant bg-background p-6 shadow-sm">
+                <h3 className="text-xl font-bold text-primary">{item.title}</h3>
+                <p className="mt-3 leading-7 text-on-surface-variant">{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section-pad bg-background">
         <div className="container-shell">
           <SectionHeader
             eyebrow="Timber to lasting legacy"
             title="A careful process from material selection to dispatch."
-            text="Every piece is handled with respect, from wood selection and seasoning through crafting, customization, quality inspection, packaging, and global delivery."
+            text="Every piece is handled with respect, from wood selection and seasoning through crafting, customisation, quality inspection, packaging, and global delivery."
           />
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {processSteps.map((step, index) => (
-              <article key={step.title} className="rounded-lg border border-outline-variant bg-background p-6">
+              <article key={step.title} className="rounded-lg border border-outline-variant bg-surface-container-lowest p-6">
                 <p className="font-display text-4xl font-bold text-on-primary-container">{String(index + 1).padStart(2, "0")}</p>
                 <h3 className="mt-5 text-xl font-bold text-primary">{step.title}</h3>
                 <p className="mt-3 leading-7 text-on-surface-variant">{step.text}</p>
@@ -104,7 +152,7 @@ export function HomePage() {
           <SectionHeader
             eyebrow="Why global buyers choose us"
             title="Manufacturing control from concept to global delivery."
-            text="By managing the full lifecycle of products, we maintain control over quality, craftsmanship, customization, and supply."
+            text="By managing the full lifecycle of products, we maintain control over quality, craftsmanship, customisation, and supply."
           />
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {buyerBenefits.map((benefit) => (
@@ -124,6 +172,38 @@ export function HomePage() {
             {featured.map((product) => (
               <ProductCard key={product.name} product={product} />
             ))}
+          </div>
+          <div className="mt-10 flex justify-center">
+            <Link className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded bg-primary px-6 text-sm font-bold text-on-primary" to="/products">
+              View Products
+              <ArrowRight size={18} aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad bg-surface-container-low">
+        <div className="container-shell">
+          <div className="rounded-xl border border-outline-variant bg-primary-container p-8 text-on-primary shadow-soft md:p-10">
+            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-[0.24em] text-tertiary-fixed">Catalogue & wholesale support</p>
+                <h2 className="mt-4 font-display text-4xl font-semibold leading-tight">Ready to review products or discuss a private-label program?</h2>
+                <p className="mt-4 max-w-3xl leading-8 text-on-primary/78">
+                  Start with the catalogue or send a wholesale enquiry for product direction, branding, engraving, packaging, and export support.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded bg-tertiary-fixed px-6 text-sm font-bold text-on-tertiary-fixed" to="/contact">
+                  Request Wholesale Quote
+                  <ArrowRight size={18} aria-hidden="true" />
+                </Link>
+                <a className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded border border-on-primary/35 px-6 text-sm font-bold text-on-primary" href="/assets/catalogue.pdf" download>
+                  Download Catalogue
+                  <Download size={18} aria-hidden="true" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

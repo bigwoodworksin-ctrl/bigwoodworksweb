@@ -20,19 +20,27 @@ export interface Collection {
 
 export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
   { label: "Products", href: "/products" },
-  { label: "Customization", href: "/customization" },
   { label: "Manufacturing", href: "/manufacturing" },
+  { label: "OEM & Private Label", href: "/oem" },
   { label: "Export", href: "/export" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
 export const stats = [
   { value: "30+", label: "Years manufacturing excellence" },
   { value: "50,000+", label: "Cremation urns manufactured since 2023" },
-  { value: "8,000+", label: "Monthly manufacturing capacity" },
+  { value: "8,000+", label: "Units monthly production capacity" },
   { value: "6+", label: "Countries served" },
+];
+
+export const buyerTypes = [
+  "Funeral brands",
+  "Crematoriums and funeral homes",
+  "Wholesalers and importers",
+  "Distributors",
+  "E-commerce businesses",
 ];
 
 export const processSteps = [
@@ -53,7 +61,7 @@ export const processSteps = [
     text: "Each piece is shaped through skilled woodworking and fine finishing.",
   },
   {
-    title: "Customization",
+    title: "Customisation",
     text: "Names, dates, logos, artwork, engraving, and UV printing create a personal touch.",
   },
   {
@@ -101,7 +109,7 @@ export const buyerBenefits = [
   },
   {
     title: "Export expertise",
-    text: "Packaging, documentation, and worldwide delivery support help buyers move quickly.",
+    text: "Packaging, documentation, and global delivery support help buyers move quickly.",
   },
   {
     title: "Low MOQ support",
@@ -118,7 +126,7 @@ export const buyerBenefits = [
 ];
 
 export const manufacturingHighlights = [
-  { title: "Monthly manufacturing capacity", text: "8,000+ units capacity for bulk and repeat orders." },
+  { title: "Monthly production capacity", text: "8,000+ units monthly production capacity for bulk and repeat orders." },
   { title: "Skilled craftsmanship", text: "Expert teams for woodworking, finishing, engraving, and assembly." },
   { title: "Laser engraving", text: "6 precision laser machines for detailed personalization." },
   { title: "Resin inlay work", text: "Custom resin detailing for unique premium products." },
@@ -133,7 +141,7 @@ export const infrastructure = [
   "R&D Department",
   "Customer Service Department",
   "Design Department",
-  "Customization Department",
+  "Customisation Department",
   "Dispatch Department",
 ];
 
@@ -168,7 +176,7 @@ export const customizationServices = [
     text: "Branding, packaging, labels, inserts, and custom product development.",
   },
   {
-    title: "Color, finish, and size customization",
+    title: "Color, finish, and size customisation",
     text: "Custom stains, coatings, dimensions, capacities, and design variations.",
   },
 ];
@@ -192,6 +200,49 @@ export const exportSupport = [
   },
 ];
 
+export const exportProcess = [
+  {
+    title: "Product selection",
+    text: "Buyers review suitable urn collections, wood species, finishes, and customisation requirements.",
+  },
+  {
+    title: "Sample or design review",
+    text: "Reference images, artwork, branding direction, and development requirements are aligned before production.",
+  },
+  {
+    title: "Quotation",
+    text: "Wholesale pricing, quantities, and order scope are discussed based on the selected product direction.",
+  },
+  {
+    title: "Artwork and branding approval",
+    text: "Names, logos, engraving, UV artwork, and packaging details are finalised where required.",
+  },
+  {
+    title: "Production",
+    text: "Approved designs move into manufacturing with monitored finishing and customisation stages.",
+  },
+  {
+    title: "Quality inspection",
+    text: "Dimensions, finish quality, engraving accuracy, and presentation are reviewed before packing.",
+  },
+  {
+    title: "Packaging",
+    text: "Products are packed for secure domestic handling and international shipment preparation.",
+  },
+  {
+    title: "Documentation",
+    text: "Commercial paperwork and dispatch coordination are prepared as part of export support.",
+  },
+  {
+    title: "Dispatch",
+    text: "Orders are released for courier, air, or sea arrangements where applicable to the buyer's order plan.",
+  },
+  {
+    title: "Delivery support",
+    text: "Communication continues through dispatch and delivery coordination for repeat B2B supply confidence.",
+  },
+];
+
 export const materials = [
   "Mango Wood",
   "Rose Wood",
@@ -199,7 +250,7 @@ export const materials = [
   "Pine Wood",
   "Maple Wood",
   "Akashi Wood",
-  "Steam Beach",
+  "Steam Beech",
   "Brass accents",
   "Aluminium accents",
   "Premium resin",
@@ -214,7 +265,7 @@ export const collections: Collection[] = [
   {
     title: "Lichtenberg Resin Urns",
     subtitle: "Inspired by nature, made to remember",
-    description: "Premium resin urns created to honor cherished memories with style and grace.",
+    description: "Premium resin urns created to honour cherished memories with style and grace.",
     image: "/assets/catalogue-images/page-26-1.png",
     products: [
       { name: "Legacy Vein Urn", collection: "Lichtenberg Resin", material: "Mango Wood", image: "/assets/catalogue-images/page-26-1.png" },
@@ -258,7 +309,7 @@ export const collections: Collection[] = [
   {
     title: "Tree of Life Collection",
     subtitle: "Rooted in remembrance",
-    description: "Crafted to honor cherished memories with timeless elegance and meaningful symbolism.",
+    description: "Crafted to honour cherished memories with timeless elegance and meaningful symbolism.",
     image: "/assets/catalogue-images/page-36-1.png",
     products: [
       { name: "Family Tree", collection: "Tree of Life", material: "Rose Wood", image: "/assets/catalogue-images/page-36-1.png" },
@@ -280,7 +331,7 @@ export const collections: Collection[] = [
   {
     title: "Engraved Legacy Collection",
     subtitle: "Personalized legacy tributes",
-    description: "Personalized engravings crafted to honor cherished memories.",
+    description: "Personalised engravings crafted to honour cherished memories.",
     image: "/assets/catalogue-images/page-40-1.png",
     products: [
       { name: "Nature's Peace", collection: "Engraved Legacy", material: "Rose Wood", image: "/assets/catalogue-images/page-40-1.png" },

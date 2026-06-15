@@ -29,7 +29,7 @@ export function CustomizationPage() {
       <section className="section-pad bg-surface-container-low">
         <div className="container-shell grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
-            <p className="eyebrow">Customization</p>
+            <p className="eyebrow">Customisation</p>
             <h1 className="mt-4 font-display text-5xl font-semibold leading-tight text-primary md:text-6xl">
               Personalised memorial work, built around your market.
             </h1>
@@ -66,9 +66,9 @@ export function CustomizationPage() {
       <section className="section-pad bg-background">
         <div className="container-shell">
           <SectionHeader
-            eyebrow="Customization services"
-            title="Personalized memorial solutions for wholesale and OEM buyers."
-            text="We provide comprehensive customization services for funeral brands, wholesalers, importers, distributors, and e-commerce businesses."
+            eyebrow="Customisation services"
+            title="Personalised memorial solutions for wholesale and OEM buyers."
+            text="We provide comprehensive customisation services for funeral brands, wholesalers, importers, distributors, and e-commerce businesses."
           />
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {customizationServices.map((service) => (
@@ -105,7 +105,7 @@ export function CustomizationPage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-xl border border-outline-variant bg-background p-6 shadow-soft sm:row-span-2">
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-secondary">What can be customized</p>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-secondary">What can be customised</p>
               <div className="mt-5 grid gap-3">
                 {customizationExtras.map((item) => (
                   <div key={item} className="flex gap-3 rounded-lg border border-outline-variant bg-surface-container-low px-4 py-3">
@@ -173,7 +173,7 @@ export function CustomizationPage() {
                 Submit enquiry
                 <ArrowRight size={18} aria-hidden="true" />
               </button>
-              {submitted ? <p className="mt-4 text-sm font-semibold text-secondary">Thanks. Your customization enquiry is ready to be followed up by the team.</p> : null}
+              {submitted ? <p className="mt-4 text-sm font-semibold text-secondary">Thanks. Your customisation enquiry is ready to be followed up by the team.</p> : null}
             </form>
           </div>
           <div className="rounded-xl border border-outline-variant bg-primary-container p-6 text-on-primary shadow-soft">

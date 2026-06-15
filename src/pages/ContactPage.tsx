@@ -3,16 +3,32 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { contact } from "../data/catalogue";
 
 type FormState = {
-  name: string;
+  fullName: string;
+  companyName: string;
+  country: string;
+  businessType: string;
   email: string;
+  phone: string;
   inquiryType: string;
+  productInterest: string;
+  estimatedQuantity: string;
+  customBranding: string;
+  targetDeliveryDate: string;
   message: string;
 };
 
 const initialFormState: FormState = {
-  name: "",
+  fullName: "",
+  companyName: "",
+  country: "",
+  businessType: "Funeral brand",
   email: "",
-  inquiryType: "Wholesale catalogue",
+  phone: "",
+  inquiryType: "Wholesale quote",
+  productInterest: "",
+  estimatedQuantity: "",
+  customBranding: "Yes",
+  targetDeliveryDate: "",
   message: "",
 };
 
@@ -21,7 +37,7 @@ export function ContactPage() {
   const [error, setError] = useState("");
   const [status, setStatus] = useState("");
 
-  const recipientEmail = "info@bigwoodworks.com";
+  const recipientEmail = contact.email;
   const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(contact.address)}&output=embed`;
 
   function handleChange(
@@ -36,25 +52,39 @@ export function ContactPage() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
-      setError("Please fill in your name, email, and message.");
+    if (
+      !form.fullName.trim() ||
+      !form.companyName.trim() ||
+      !form.country.trim() ||
+      !form.email.trim() ||
+      !form.message.trim()
+    ) {
+      setError("Please complete your name, company, country, email, and message before submitting.");
       return;
     }
 
-    const subject = `New ${form.inquiryType} inquiry - ${form.name}`;
+    const subject = `New ${form.inquiryType} enquiry - ${form.companyName}`;
     const body = [
-      "New inquiry from Big Wood Works website",
+      "New wholesale enquiry from the Big Wood Works website",
       "",
-      `Name: ${form.name}`,
+      `Full name: ${form.fullName}`,
+      `Company name: ${form.companyName}`,
+      `Country: ${form.country}`,
+      `Business type: ${form.businessType}`,
       `Email: ${form.email}`,
-      `Inquiry type: ${form.inquiryType}`,
+      `WhatsApp or telephone: ${form.phone || "Not provided"}`,
+      `Enquiry type: ${form.inquiryType}`,
+      `Products of interest: ${form.productInterest || "To be discussed"}`,
+      `Estimated quantity: ${form.estimatedQuantity || "To be discussed"}`,
+      `Custom branding required: ${form.customBranding}`,
+      `Target delivery date: ${form.targetDeliveryDate || "To be discussed"}`,
       "",
       "Message:",
       form.message,
     ].join("\n");
 
     window.location.href = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setStatus("Your email app should open with the inquiry details. Please click Send to submit the inquiry.");
+    setStatus("Your email app should open with the enquiry details. Please review and click Send to submit it.");
   }
 
   return (
@@ -63,74 +93,199 @@ export function ContactPage() {
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <p className="eyebrow">Contact us</p>
-            <h1 className="mt-4 font-display text-5xl font-semibold leading-tight text-primary">We're here to help.</h1>
+            <h1 className="mt-4 font-display text-5xl font-semibold leading-tight text-primary">Request a wholesale quote.</h1>
             <p className="mt-5 text-lg leading-8 text-on-surface-variant">
-              Contact us for catalogue requests, OEM discussions, export inquiries, customization options, and wholesale manufacturing support.
+              Contact us for catalogue requests, OEM and private-label discussions, export enquiries, customisation options, and wholesale manufacturing support.
             </p>
             <div className="mt-8 grid gap-4">
-              <div className="flex gap-3 rounded-lg bg-background p-5"><Phone className="text-secondary" /><span>{contact.phones.join(" | ")}</span></div>
-              <div className="flex gap-3 rounded-lg bg-background p-5"><Mail className="text-secondary" /><span>{recipientEmail}</span></div>
-              <div className="flex gap-3 rounded-lg bg-background p-5"><MapPin className="text-secondary" /><span>{contact.address}</span></div>
+              <div className="flex gap-3 rounded-lg bg-background p-5">
+                <Phone className="text-secondary" />
+                <span>{contact.phones.join(" | ")}</span>
+              </div>
+              <div className="flex gap-3 rounded-lg bg-background p-5">
+                <Mail className="text-secondary" />
+                <span>{recipientEmail}</span>
+              </div>
+              <div className="flex gap-3 rounded-lg bg-background p-5">
+                <MapPin className="text-secondary" />
+                <span>{contact.address}</span>
+              </div>
             </div>
+            <p className="mt-5 text-sm leading-7 text-on-surface-variant">
+              Share your product direction, branding requirements, estimated quantity, and delivery needs so we can reply with the right manufacturing path.
+            </p>
+            {/* TODO: Add a published response-time note here if the business wants to commit to a service expectation. */}
           </div>
 
           <form onSubmit={handleSubmit} className="rounded-lg bg-background p-6 shadow-soft md:p-8">
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="grid gap-2 text-sm font-bold text-primary">
-                Name
+                Full name *
                 <input
-                  name="name"
-                  value={form.name}
+                  name="fullName"
+                  value={form.fullName}
                   onChange={handleChange}
                   className="focus-ring rounded border border-outline-variant px-4 py-3"
+                  autoComplete="name"
                   required
                 />
               </label>
               <label className="grid gap-2 text-sm font-bold text-primary">
-                Email
+                Company name *
+                <input
+                  name="companyName"
+                  value={form.companyName}
+                  onChange={handleChange}
+                  className="focus-ring rounded border border-outline-variant px-4 py-3"
+                  autoComplete="organization"
+                  required
+                />
+              </label>
+            </div>
+
+            <div className="mt-5 grid gap-5 sm:grid-cols-2">
+              <label className="grid gap-2 text-sm font-bold text-primary">
+                Country *
+                <input
+                  name="country"
+                  value={form.country}
+                  onChange={handleChange}
+                  className="focus-ring rounded border border-outline-variant px-4 py-3"
+                  autoComplete="country-name"
+                  required
+                />
+              </label>
+              <label className="grid gap-2 text-sm font-bold text-primary">
+                Business type
+                <select
+                  name="businessType"
+                  value={form.businessType}
+                  onChange={handleChange}
+                  className="focus-ring rounded border border-outline-variant px-4 py-3"
+                >
+                  <option>Funeral brand</option>
+                  <option>Crematorium or funeral home</option>
+                  <option>Wholesaler or importer</option>
+                  <option>Distributor</option>
+                  <option>E-commerce business</option>
+                  <option>Private-label buyer</option>
+                </select>
+              </label>
+            </div>
+
+            <div className="mt-5 grid gap-5 sm:grid-cols-2">
+              <label className="grid gap-2 text-sm font-bold text-primary">
+                Email *
                 <input
                   name="email"
                   type="email"
                   value={form.email}
                   onChange={handleChange}
                   className="focus-ring rounded border border-outline-variant px-4 py-3"
+                  autoComplete="email"
                   required
+                />
+              </label>
+              <label className="grid gap-2 text-sm font-bold text-primary">
+                WhatsApp or telephone
+                <input
+                  name="phone"
+                  type="tel"
+                  value={form.phone}
+                  onChange={handleChange}
+                  className="focus-ring rounded border border-outline-variant px-4 py-3"
+                  autoComplete="tel"
                 />
               </label>
             </div>
 
+            <div className="mt-5 grid gap-5 sm:grid-cols-2">
+              <label className="grid gap-2 text-sm font-bold text-primary">
+                Enquiry type
+                <select
+                  name="inquiryType"
+                  value={form.inquiryType}
+                  onChange={handleChange}
+                  className="focus-ring rounded border border-outline-variant px-4 py-3"
+                >
+                  <option>Wholesale quote</option>
+                  <option>Catalogue request</option>
+                  <option>OEM / ODM manufacturing</option>
+                  <option>Customisation</option>
+                  <option>Export support</option>
+                </select>
+              </label>
+              <label className="grid gap-2 text-sm font-bold text-primary">
+                Products of interest
+                <input
+                  name="productInterest"
+                  value={form.productInterest}
+                  onChange={handleChange}
+                  className="focus-ring rounded border border-outline-variant px-4 py-3"
+                  placeholder="Urns, keepsakes, pet urns, engraved products..."
+                />
+              </label>
+            </div>
+
+            <div className="mt-5 grid gap-5 sm:grid-cols-2">
+              <label className="grid gap-2 text-sm font-bold text-primary">
+                Estimated quantity
+                <input
+                  name="estimatedQuantity"
+                  value={form.estimatedQuantity}
+                  onChange={handleChange}
+                  className="focus-ring rounded border border-outline-variant px-4 py-3"
+                  placeholder="Sample run, 100 units, repeat bulk order..."
+                />
+              </label>
+              <label className="grid gap-2 text-sm font-bold text-primary">
+                Custom branding required
+                <select
+                  name="customBranding"
+                  value={form.customBranding}
+                  onChange={handleChange}
+                  className="focus-ring rounded border border-outline-variant px-4 py-3"
+                >
+                  <option>Yes</option>
+                  <option>No</option>
+                  <option>Not sure yet</option>
+                </select>
+              </label>
+            </div>
+
             <label className="mt-5 grid gap-2 text-sm font-bold text-primary">
-              Inquiry type
-              <select
-                name="inquiryType"
-                value={form.inquiryType}
+              Target delivery date
+              <input
+                name="targetDeliveryDate"
+                type="date"
+                value={form.targetDeliveryDate}
                 onChange={handleChange}
                 className="focus-ring rounded border border-outline-variant px-4 py-3"
-              >
-                <option>Wholesale catalogue</option>
-                <option>OEM / ODM manufacturing</option>
-                <option>Customization</option>
-                <option>Export support</option>
-              </select>
+              />
             </label>
 
             <label className="mt-5 grid gap-2 text-sm font-bold text-primary">
-              Message
+              Message *
               <textarea
                 name="message"
                 rows={7}
                 value={form.message}
                 onChange={handleChange}
                 className="focus-ring rounded border border-outline-variant px-4 py-3"
+                placeholder="Tell us about your collection requirements, finishes, branding, packaging needs, or reference products."
                 required
               />
             </label>
+
+            <p className="mt-4 text-sm leading-6 text-on-surface-variant">
+              If you need to share a logo, artwork, or reference design, mention it in your message and we can coordinate file sharing by email.
+            </p>
 
             {error && <p className="mt-4 text-sm font-semibold text-red-600">{error}</p>}
             {status && <p className="mt-4 text-sm font-semibold text-green-700">{status}</p>}
 
             <button type="submit" className="focus-ring mt-6 rounded bg-primary px-6 py-3 text-sm font-bold text-on-primary">
-              Send inquiry
+              Submit Wholesale Enquiry
             </button>
           </form>
         </div>
@@ -153,7 +308,7 @@ export function ContactPage() {
               Our presence
             </p>
             <p className="mt-2 text-sm leading-6 text-on-surface">
-              Located in the heart of Delhi's craft district, where tradition meets contemporary design.
+              Located in New Delhi, where buyer communication, product planning, and dispatch coordination are managed for wholesale orders.
             </p>
           </div>
         </div>

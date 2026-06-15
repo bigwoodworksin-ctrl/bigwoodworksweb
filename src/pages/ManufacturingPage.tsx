@@ -1,14 +1,12 @@
 import { Layers3, Paintbrush, TreePine } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 import { SectionHeader } from "../components/SectionHeader";
-import { infrastructure, manufacturingHighlights, materials, qualitySteps } from "../data/catalogue";
+import { infrastructure, manufacturingHighlights, materials, processSteps, qualitySteps } from "../data/catalogue";
 
 interface ManufacturingOption {
   name: string;
   image?: string;
-  texture?: string;
-  accent?: string;
-  shape?: "cube" | "swatch";
 }
 
 interface ManufacturingOptionGroup {
@@ -22,44 +20,26 @@ interface EquipmentCard {
   text: string;
   image: string;
   alt: string;
-  featured?: boolean;
 }
-
 
 const equipmentCards: EquipmentCard[] = [
   {
     title: "Turning and Cutting",
-    text: "Heavy-duty cutting, turning, and shaping units help us maintain accurate dimensions, clean edges, and repeatable production for wholesale orders.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBDSU_viovFz-7bkkTu90tFD2XDffO70YvisboCI9Lv-Lg09Giuf6Sy7cnrMtv31s_6QPg2lPv1Gme_mdINbyuopzZFjgYg8xRLyDXgw98RI36X_qDN6izH3-wOs1IC09GH9TYZoX5Ul9reyGoVqjTiLN7BAumWHhLoMW0_P2mjJ5Y4UDEGj2x5tecfd9D6P40Q4O8--sdc8SKxPvDEZUFQkudhYnKM7xciOyDbHFKOULWfgH7LrBOoYEU77d4dD1ONrmkSJqhSRbgB",
+    text: "Heavy-duty cutting, turning, and shaping units help maintain accurate dimensions, clean edges, and repeatable production for wholesale orders.",
+    image: "/assets/manufacturing-hero.png",
     alt: "Woodworking machinery turning and cutting wood in a professional production unit",
-    featured: true,
-  },
-  {
-    title: "Hand Finishing",
-    text: "Specialists complete sanding, polishing, buffing, lacquer, and final touch work by hand so each product feels refined and dignified.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCQ-Es4xuujhOFBQrXwKFi2QHd_oohOfTOwlI1CH8AcrxULexRDG301ahZLMwzDD4-fB46C5Vi0oKltUBC32t8ohqGDklCyWmDvphCo8w5488hzobekv63c0hbiEwCmQAEIZFFLGIHup_-tYNVuUVIUzYNl2AcbUs_pU1b1QyFw9jufIV5iUOdOyqoeM3bzASeSJDIxTQvS2vXzeiRHYYSHL07VudUSEVJYKuXCbq5KhUqsLFaY0rroKfrxqDvC7dIpbsn2C4KmXCRe",
-    alt: "Craftsperson applying a hand finish to wood",
-  },
-  {
-    title: "Resin Detailing",
-    text: "Controlled resin work supports decorative inlays, premium accents, and buyer-specific product development for custom collections.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAGTeqI8FJixwl58USHLpg7AvS-4js8IiVyLnMNbURIchiwAJuP1Rt2DhcY29_9eXgIKk-KTzBgZ0WRQMkdWW9YwCqXz5jufFMJFHsC-hGIyaRGhu8VH67CeHig-pxdNuYcjO3eOXoSUvDWZyGNtwmSaWrvBiS5SluIIiW2bydRdtgVzMfMVXieKrQHbnT-q52hdo0OX8YeBPXta2zFgp2ayH2CbbaEoI-yL6zlAHXZfsQp8_aaqpQoavtXt6IJafsdUA7VsrEpXWep",
-    alt: "Clear resin being poured into a wood detail",
   },
   {
     title: "Laser Engraving",
-    text: "Six laser engraving machines support names, dates, artwork, logos, plaques, and detailed personalization with repeatable accuracy.",
+    text: "Six laser engraving machines support names, dates, artwork, logos, plaques, and detailed personalisation with repeatable accuracy.",
     image: "/assets/laser-engraving-bg.png",
-    alt: "Laser engraving machine creating a detailed mountain design on wood",
+    alt: "Laser engraving machine creating a detailed design on wood",
   },
   {
-    title: "UV Printing",
-    text: "Direct-to-surface UV printing supports full-color artwork, photo-style decoration, branding, and market-specific design programs.",
+    title: "UV Printing and Resin Detailing",
+    text: "Direct-to-surface UV printing and controlled resin work support full-colour artwork, decorative accents, and buyer-specific collection development.",
     image: "/assets/uv-printing-bg.png",
-    alt: "UV printing machine producing a full-color mountain design on wood",
+    alt: "UV printing and premium decorative detailing on wood",
   },
 ];
 
@@ -68,79 +48,33 @@ const optionGroups: ManufacturingOptionGroup[] = [
     title: "Wood Options",
     icon: TreePine,
     items: [
-      {
-        name: "Rosewood",
-        image: "/assets/material-library/rosewood.png",
-      },
-      {
-        name: "Mango Wood",
-        image: "/assets/material-library/mango_wood.png",
-      },
-      {
-        name: "Neem Wood",
-        image: "/assets/material-library/neem_wood.png",
-      },
-      {
-        name: "Pine Wood",
-        image: "/assets/material-library/pine_wood.png",
-      },
-      {
-        name: "Steam Beech",
-        image: "/assets/material-library/steam_beech.png",
-      },
-      {
-        name: "Maple Wood",
-        image: "/assets/material-library/maple_wood.png",
-      },
-      {
-        name: "Akashi Wood",
-        image: "/assets/material-library/acacia_wood.png",
-      },
+      { name: "Rosewood", image: "/assets/material-library/rosewood.png" },
+      { name: "Mango Wood", image: "/assets/material-library/mango_wood.png" },
+      { name: "Neem Wood", image: "/assets/material-library/neem_wood.png" },
+      { name: "Pine Wood", image: "/assets/material-library/pine_wood.png" },
+      { name: "Steam Beech", image: "/assets/material-library/steam_beech.png" },
+      { name: "Maple Wood", image: "/assets/material-library/maple_wood.png" },
+      { name: "Akashi Wood", image: "/assets/material-library/acacia_wood.png" },
     ],
   },
   {
     title: "Other Materials",
     icon: Layers3,
     items: [
-      {
-        name: "Brass",
-        image: "/assets/material-library/brass.png",
-      },
-      {
-        name: "Aluminium",
-        image: "/assets/material-library/aluminium.png",
-      },
-      {
-        name: "Resin",
-        image: "/assets/material-library/resin.png",
-      },
+      { name: "Brass", image: "/assets/material-library/brass.png" },
+      { name: "Aluminium", image: "/assets/material-library/aluminium.png" },
+      { name: "Resin", image: "/assets/material-library/resin.png" },
     ],
   },
   {
     title: "Finish Options",
     icon: Paintbrush,
     items: [
-      {
-        name: "Natural",
-        image: "/assets/material-library/natural.png",
-      },
-      {
-        name: "Matte",
-        image: "/assets/material-library/matte.png",
-      },
-      {
-        name: "Gloss",
-        image: "/assets/material-library/gloss.png",
-      },
-      {
-        name: "Lacquer",
-        image: "/assets/material-library/lacquer.png",
-      },
-      {
-        name: "Buff",
-        image: "/assets/material-library/buff_polish.png",
-      },
-
+      { name: "Natural", image: "/assets/material-library/natural.png" },
+      { name: "Matte", image: "/assets/material-library/matte.png" },
+      { name: "Gloss", image: "/assets/material-library/gloss.png" },
+      { name: "Lacquer", image: "/assets/material-library/lacquer.png" },
+      { name: "Buff", image: "/assets/material-library/buff_polish.png" },
     ],
   },
 ];
@@ -154,10 +88,14 @@ export function ManufacturingPage() {
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-tertiary-fixed">Manufacturing excellence</p>
             <h1 className="mt-4 font-display text-5xl font-semibold leading-tight md:text-6xl">Built for Precision & Scale</h1>
             <p className="mt-6 text-lg leading-8 text-on-primary/75">
-              Every product is crafted through a carefully managed process that combines skilled craftsmanship, precision engineering, and strict quality control.
+              Every product moves through a managed production flow that combines woodworking skill, customisation support, quality inspection, and export-ready preparation.
             </p>
           </div>
-          <img src="/assets/manufacturing-hero.png" alt="Wood processing machinery in the manufacturing facility" className="aspect-[16/10] w-full rounded-xl object-cover shadow-soft" />
+          <img
+            src="/assets/manufacturing-hero.png"
+            alt="Wood processing machinery in the manufacturing facility"
+            className="aspect-[16/10] w-full rounded-xl object-cover shadow-soft"
+          />
         </div>
       </section>
 
@@ -178,33 +116,51 @@ export function ManufacturingPage() {
       <section className="section-pad bg-background">
         <div className="container-shell">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="eyebrow">Core operations</p>
-            <h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-primary md:text-5xl">Precision Woodworking Equipment</h2>
+            <p className="eyebrow">Production journey</p>
+            <h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-primary md:text-5xl">How orders move through manufacturing</h2>
             <div className="mx-auto mt-5 h-1 w-24 rounded-full bg-on-tertiary-container" />
             <p className="mt-6 text-lg leading-8 text-on-surface-variant">
-              A full-background visual equipment section showing the main production capabilities behind our manufacturing workflow.
+              From wood selection through finishing and dispatch, each stage is planned to support repeat wholesale production and product presentation consistency.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {processSteps.map((step, index) => (
+              <article key={step.title} className="rounded-xl border border-outline-variant bg-surface-container-lowest p-6 shadow-sm">
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-secondary">{String(index + 1).padStart(2, "0")}</p>
+                <h3 className="mt-4 font-display text-2xl font-semibold text-primary">{step.title}</h3>
+                <p className="mt-4 leading-7 text-on-surface-variant">{step.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad bg-surface-container-low">
+        <div className="container-shell">
+          <SectionHeader
+            eyebrow="Core capabilities"
+            title="Woodworking, engraving, UV printing, and finishing support."
+            text="These are the main visual production capabilities currently supported by the project content and image library."
+          />
+
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
             {equipmentCards.map((card) => (
               <article
                 key={card.title}
-                className={`group relative min-h-[360px] overflow-hidden rounded-xl border border-outline-variant bg-primary shadow-soft transition duration-500 hover:-translate-y-1 hover:shadow-lift ${
-                  card.featured ? "md:col-span-2" : ""
-                }`}
+                className="group overflow-hidden rounded-xl border border-outline-variant bg-background shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-lift"
               >
-                <img
-                  src={card.image}
-                  alt={card.alt}
-                  className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/35 to-transparent" />
-                <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(39,19,16,0.38),transparent_55%)]" />
-                <div className="relative z-10 flex min-h-[360px] flex-col justify-end p-7 text-on-primary md:p-9">
-                  <h3 className="font-display text-3xl font-semibold leading-tight">{card.title}</h3>
-                  <p className="mt-4 max-w-xl leading-7 text-on-primary/80">{card.text}</p>
+                <div className="aspect-[16/10] overflow-hidden">
+                  <img
+                    src={card.image}
+                    alt={card.alt}
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-6 md:p-7">
+                  <h3 className="font-display text-3xl font-semibold leading-tight text-primary">{card.title}</h3>
+                  <p className="mt-4 leading-7 text-on-surface-variant">{card.text}</p>
                 </div>
               </article>
             ))}
@@ -216,8 +172,8 @@ export function ManufacturingPage() {
         <div className="container-shell">
           <SectionHeader
             eyebrow="Quality assurance"
-            title="Crafted with Care. Delivered with Confidence."
-            text="Strict quality control ensures accurate personalization, premium finishing, and safe delivery. Pre-shipment photos and videos can be provided for approval."
+            title="Crafted with care. Delivered with confidence."
+            text="Strict quality control supports accurate personalisation, premium finishing, and safe delivery. Pre-shipment photos and videos can be provided for approval."
           />
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {qualitySteps.map((step) => (
@@ -250,6 +206,7 @@ export function ManufacturingPage() {
                       </div>
                       <h2 className="max-w-[9ch] font-display text-4xl font-semibold leading-[1.05] text-primary">{group.title}</h2>
                     </div>
+
                     <div className="grid grid-cols-[repeat(auto-fit,minmax(155px,1fr))] gap-4">
                       {group.items.map((item) => (
                         <button
@@ -258,22 +215,14 @@ export function ManufacturingPage() {
                           className="focus-ring group flex min-h-[190px] flex-col items-center justify-between rounded-lg border border-outline-variant bg-background p-4 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:border-secondary hover:shadow-lift"
                           aria-label={`${group.title}: ${item.name}`}
                         >
-                          {item.image ? (
-                            <span className="relative mx-auto flex h-24 w-24 items-center justify-center transition duration-300 group-hover:rotate-2 group-hover:scale-105">
-                              <img src={item.image} alt="" className="max-h-full max-w-full object-contain drop-shadow-[0_16px_20px_rgba(39,19,16,0.2)]" loading="lazy" />
-                            </span>
-                          ) : (
-                            <span
-                              className={
-                                item.shape === "swatch"
-                                  ? `relative block h-20 rounded-md border border-outline-variant ${item.texture} shadow-[inset_0_1px_10px_rgba(255,255,255,0.28),0_10px_22px_rgba(39,19,16,0.2)] transition duration-300 group-hover:scale-[1.03]`
-                                  : `relative mx-auto block h-24 w-24 rounded-md border border-outline-variant ${item.texture} shadow-[inset_-14px_-12px_18px_rgba(0,0,0,0.22),inset_10px_10px_18px_rgba(255,255,255,0.24),0_16px_24px_rgba(39,19,16,0.22)] transition duration-300 group-hover:rotate-2 group-hover:scale-105`
-                              }
-                            >
-                              <span className={`absolute inset-x-3 top-3 h-2 rounded-full bg-gradient-to-r ${item.accent} opacity-70 blur-[1px]`} />
-                              <span className="absolute inset-0 rounded-md bg-[linear-gradient(90deg,rgba(255,255,255,0.18),transparent_30%,rgba(0,0,0,0.14)_72%,transparent)] opacity-80" />
-                            </span>
-                          )}
+                          <span className="relative mx-auto flex h-24 w-24 items-center justify-center transition duration-300 group-hover:rotate-2 group-hover:scale-105">
+                            <img
+                              src={item.image}
+                              alt=""
+                              className="max-h-full max-w-full object-contain drop-shadow-[0_16px_20px_rgba(39,19,16,0.2)]"
+                              loading="lazy"
+                            />
+                          </span>
                           <span className="mt-4 block text-balance font-display text-xl font-semibold leading-tight text-primary">{item.name}</span>
                         </button>
                       ))}
@@ -292,7 +241,7 @@ export function ManufacturingPage() {
             <SectionHeader
               eyebrow="Factory & infrastructure"
               title="Production, finishing, quality, warehouse, and office support."
-              text="Our manufacturing and corporate teams support product development, buyer communication, customization, dispatch, and repeat export supply."
+              text="Our manufacturing and corporate teams support product development, buyer communication, customisation, dispatch, and repeat export supply."
             />
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               {infrastructure.map((item) => (
@@ -315,6 +264,23 @@ export function ManufacturingPage() {
                 </span>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad bg-primary-container text-on-primary">
+        <div className="container-shell rounded-2xl border border-on-primary/10 px-6 py-10 md:px-10">
+          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-tertiary-fixed">Custom manufacturing</p>
+              <h2 className="mt-4 font-display text-4xl font-semibold leading-tight">Discuss your custom manufacturing requirement.</h2>
+              <p className="mt-4 max-w-2xl leading-8 text-on-primary/75">
+                Tell us about the collection type, branding direction, finish preference, and quantity range you need, and we will guide the next step.
+              </p>
+            </div>
+            <Link to="/contact" className="focus-ring inline-flex min-h-12 items-center justify-center rounded bg-tertiary-fixed px-6 text-sm font-bold text-on-tertiary-fixed">
+              Request Wholesale Quote
+            </Link>
           </div>
         </div>
       </section>
