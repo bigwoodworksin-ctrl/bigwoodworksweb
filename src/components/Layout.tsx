@@ -84,6 +84,34 @@ function ensureMeta(selector: string, createTag: () => HTMLElement) {
   return element;
 }
 
+function ensureJsonLdScript(id: string) {
+  let script = document.head.querySelector(`script[data-seo="${id}"]`) as HTMLScriptElement | null;
+
+  if (!script) {
+    script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.setAttribute("data-seo", id);
+    document.head.appendChild(script);
+  }
+
+  return script;
+}
+
+const crumbLabels: Record<string, string> = {
+  about: "About",
+  products: "Products",
+  customization: "Customisation",
+  manufacturing: "Manufacturing",
+  export: "Export",
+  contact: "Contact",
+  quote: "Request Quote",
+  oem: "OEM & Private Label",
+  "oem-private-label": "OEM & Private Label",
+  wholesale: "Wholesale",
+  catalogue: "Catalogue",
+  catalog: "Catalogue",
+};
+
 export function Layout() {
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
@@ -165,6 +193,69 @@ export function Layout() {
       tag.setAttribute("name", "twitter:image");
       return tag;
     }).setAttribute("content", `${siteUrl}/assets/home-hero-urns.png`);
+
+    const organizationSchema = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Big Wood Works",
+      url: siteUrl,
+      logo: `${siteUrl}/assets/big-wood-works-logo.png`,
+      email: contact.email,
+      telephone: contact.phones,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "F17 Shaheen Bagh",
+        addressLocality: "New Delhi",
+        postalCode: "110025",
+        addressCountry: "IN",
+      },
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: contact.email,
+          telephone: contact.phones[0],
+          areaServed: ["US", "GB", "CA", "AU", "EU", "IN"],
+          availableLanguage: "en",
+        },
+      ],
+    };
+
+    const websiteSchema = {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Big Wood Works",
+      url: siteUrl,
+      inLanguage: "en-GB",
+    };
+
+    const breadcrumbItems = [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteUrl,
+      },
+      ...pathname
+        .split("/")
+        .filter(Boolean)
+        .map((segment, index, segments) => ({
+          "@type": "ListItem",
+          position: index + 2,
+          name: crumbLabels[segment] ?? segment,
+          item: `${siteUrl}/${segments.slice(0, index + 1).join("/")}`,
+        })),
+    ];
+
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: breadcrumbItems,
+    };
+
+    ensureJsonLdScript("organization").text = JSON.stringify(organizationSchema);
+    ensureJsonLdScript("website").text = JSON.stringify(websiteSchema);
+    ensureJsonLdScript("breadcrumb").text = JSON.stringify(breadcrumbSchema);
   }, [pathname]);
 
   useEffect(() => {
