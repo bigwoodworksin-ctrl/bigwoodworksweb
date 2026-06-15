@@ -60,7 +60,6 @@ const equipmentCards: EquipmentCard[] = [
     text: "Direct-to-surface UV printing supports full-color artwork, photo-style decoration, branding, and market-specific design programs.",
     image: "/assets/uv-printing-bg.png",
     alt: "UV printing machine producing a full-color mountain design on wood",
-    featured: true,
   },
 ];
 
