@@ -52,15 +52,14 @@ const equipmentCards: EquipmentCard[] = [
   {
     title: "Laser Engraving",
     text: "Six laser engraving machines support names, dates, artwork, logos, plaques, and detailed personalization with repeatable accuracy.",
-    image: "/assets/manufacturing-hero.png",
-    alt: "Laser engraving and wood processing machinery in the manufacturing facility",
+    image: "/assets/laser-engraving-bg.png",
+    alt: "Laser engraving machine creating a detailed mountain design on wood",
   },
   {
     title: "UV Printing",
     text: "Direct-to-surface UV printing supports full-color artwork, photo-style decoration, branding, and market-specific design programs.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC4-c2LYF5kU9mJR9D9ZtxWBws1KNiM5ctkGKQ-Rcnnvn4u15Q89M9p4IScV7q-z1BYOliUS-4J06Sr0a8Yh8SdiZp06lCv8JTLQFkeJcGDKase00LK3ziK9HR7darK2UCkwZHqTCwhYEp002rYXqjDcW2E7eSjrVKyHoC0CK2SIvZNh9NYrZMV2ayw7Xq91ElHpWgffDcrGfEwkDrXhZf6Wne12sTTGsqMHyCkzHgCxNi61r79h9ffSCgf3SCgCWcw6fv7HQacjjyg",
-    alt: "Large woodworking production unit with industrial equipment",
+    image: "/assets/uv-printing-bg.png",
+    alt: "UV printing machine producing a full-color mountain design on wood",
     featured: true,
   },
 ];

@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import {
   ArrowRight,
   Award,
@@ -15,6 +14,8 @@ import {
   Users,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import founderMohdZaid from "../assets/founder-mohd-zaid.png";
+import founderMujahidUlIslam from "../assets/founder-mujahid-ul-islam.png";
 import { SectionHeader } from "../components/SectionHeader";
 import { stats, whyChooseUs } from "../data/catalogue";
 
@@ -57,6 +58,21 @@ const timeline = [
   },
 ];
 
+const storyPoints = [
+  {
+    title: "Respectful craftsmanship",
+    text: "Every urn, keepsake, and memorial product is built with careful material selection and a finish that feels dignified in hand.",
+  },
+  {
+    title: "Buyer-first manufacturing",
+    text: "We support private label programs, repeat wholesale orders, and market-specific product development with dependable lead times.",
+  },
+  {
+    title: "Global-ready support",
+    text: "Packaging, documentation, approval photos, and export coordination are handled to make international purchasing easier.",
+  },
+];
+
 const values = [
   {
     title: "Respect",
@@ -80,34 +96,20 @@ const values = [
   },
 ];
 
-const founderMohdZaid = new URL("../assets/founder-mohd-zaid_NOBG.png", import.meta.url).href;
-const founderMujahidUlIslam = new URL("../assets/founder-mujahid-ul-islam_NOBG.png", import.meta.url).href;
-
-const founderMessageCards = [
-  {
-    name: "Mohd Zaid",
-    role: "Founder",
-    image: founderMohdZaid,
-  },
+const founders = [
   {
     name: "Mujahid Ul Islam",
     role: "Founder",
     image: founderMujahidUlIslam,
   },
+  {
+    name: "Mohd Zaid",
+    role: "Founder",
+    image: founderMohdZaid,
+  },
 ];
 
 export function AboutPage() {
-  const [activeFounderIndex, setActiveFounderIndex] = useState(0);
-  const activeFounder = founderMessageCards[activeFounderIndex] ?? founderMessageCards[0]!;
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveFounderIndex((current) => (current + 1) % founderMessageCards.length);
-    }, 4500);
-
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <>
       <section className="section-pad bg-surface-container-low">
@@ -152,85 +154,49 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-[#f4f1ef]">
+      <section className="section-pad bg-surface-container-low">
         <div className="container-shell">
-          <div className="mx-auto max-w-[980px]">
-            <p className="mb-2 text-[9px] font-bold uppercase tracking-[0.18em] text-on-surface-variant">
-              Founder&apos;s message
-            </p>
-            <h2 className="text-[26px] font-extrabold leading-tight tracking-[-0.03em] text-[#111111] md:text-[30px]">
-              Who you&apos;ll work with.
-            </h2>
-            <p className="mt-2 text-[12px] leading-5 text-[#333333]">
-              Meet the founders behind Big Wood Works.
-            </p>
-          </div>
-
-          <div className="mx-auto mt-6 max-w-[980px] px-1 sm:px-3">
-            <article className="relative min-h-[570px] overflow-hidden bg-white shadow-[0_18px_45px_rgba(15,15,15,0.10)] transform-gpu -rotate-[1.2deg] md:min-h-[585px]">
-              <div className="relative z-10 grid min-h-[570px] gap-8 px-8 py-11 md:min-h-[585px] md:px-12 md:py-14 lg:grid-cols-[1.05fr_0.95fr] lg:px-14">
-                <div className="relative z-20 flex max-w-[560px] flex-col justify-between">
-                  <div>
-                    <h3 className="max-w-[650px] text-[24px] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#0d0d0d] md:text-[25px]">
-                      Crafted with Respect. Made to Honour Every Memory.
-                    </h3>
-
-                    <div className="mt-6 max-w-[540px] space-y-[18px] text-[12.5px] leading-[1.55] tracking-[-0.01em] text-[#262626] md:text-[13px] md:leading-[1.58]">
-                      <p>
-                        At Big Wood Works, we understand that every memorial urn carries something deeply personal—the memory of a life, the love of a family, and a story that deserves to be honoured with dignity.
-                      </p>
-                      <p>
-                        This understanding is at the heart of everything we create. Every piece is handled with care, respect, and attention, from the selection of the wood to the final engraving, finishing, inspection, and packaging. We never see an urn as simply a product; we recognise the trust and emotion placed in our hands.
-                      </p>
-                      <p>
-                        Our promise is to create meaningful memorials that families can treasure for generations while providing our business partners with dependable quality, thoughtful customization, clear communication, and consistent support.
-                      </p>
-                      <p className="max-w-[430px] text-[10.5px] leading-[1.55] text-[#323232] md:text-[11px]">
-                        We are sincerely grateful to every family, customer, business partner, artisan, and team member who has placed their trust in Big Wood Works. Your confidence inspires us to work with greater care and purpose every day.
-                      </p>
+          <SectionHeader
+            eyebrow="Founder's message"
+            title="Made to honour every memory with care and consistency."
+            text="Every memorial urn carries the memory of a life, the love of a family, and a story that deserves to be honoured with dignity. From the first wood selection to the final carton, the process is handled with care, respect, and attention."
+          />
+          <div className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div className="rounded-xl border border-outline-variant bg-background p-6 shadow-soft md:p-8">
+              <p className="text-lg leading-8 text-on-surface-variant">
+                We began with traditional woodworking and a belief that memorial products should feel personal, precise, and beautifully made. That belief still guides us as we serve funeral homes, memorial brands, importers, distributors, and OEM partners around the world.
+              </p>
+              <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                {storyPoints.map((point) => (
+                  <article key={point.title} className="rounded-lg border border-outline-variant bg-surface-container-low p-5">
+                    <h3 className="text-lg font-bold text-primary">{point.title}</h3>
+                    <p className="mt-3 text-sm leading-7 text-on-surface-variant">{point.text}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              {founders.map((founder) => (
+                <article key={founder.name} className="overflow-hidden rounded-xl border border-outline-variant bg-background shadow-soft">
+                  <div className="bg-surface-container-lowest p-4">
+                    <div className="overflow-hidden rounded-lg bg-surface-container-low">
+                      <img src={founder.image} alt={founder.name} className="aspect-[4/5] w-full object-cover object-top" loading="lazy" />
                     </div>
                   </div>
-
-                  <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-                    <Link className="focus-ring inline-flex min-h-8 w-[108px] items-center justify-center rounded-full bg-[#111111] px-5 text-[10px] font-bold text-white shadow-[0_10px_20px_rgba(0,0,0,0.15)]" to="/contact">
-                      Let&apos;s Talk
-                    </Link>
-
-                    <div className="flex items-center gap-2" aria-label="Founder message cards">
-                      {founderMessageCards.map((founder, index) => (
-                        <button
-                          key={founder.name}
-                          type="button"
-                          onClick={() => setActiveFounderIndex(index)}
-                          className={index === activeFounderIndex ? "h-1.5 w-7 rounded-full bg-[#111111] transition-all" : "h-1.5 w-1.5 rounded-full bg-[#cfc9c4] transition-all"}
-                          aria-label={`Show ${founder.name}`}
-                          aria-pressed={index === activeFounderIndex}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="relative min-h-[330px] lg:min-h-[480px]">
-                  <img
-                    key={activeFounder.name}
-                    src={activeFounder.image}
-                    alt={activeFounder.name}
-                    className="absolute bottom-[-10px] right-[-28px] z-10 max-h-[410px] w-full object-contain object-bottom transition-opacity duration-500 md:max-h-[470px] lg:bottom-[-4px] lg:right-[-34px] lg:max-h-[505px]"
-                    loading="lazy"
-                  />
-
-                  <div className="absolute bottom-12 left-1/2 z-30 -translate-x-1/2 rounded-xl bg-[#f7f2ee] px-5 py-2 shadow-[0_8px_22px_rgba(0,0,0,0.12)] md:bottom-12 md:left-3 md:translate-x-0">
-                    <p className="whitespace-nowrap text-[27px] font-semibold leading-none tracking-[-0.02em] text-[#111111] md:text-[30px]" style={{ fontFamily: '"Playlist Script", cursive' }}>
-                      {activeFounder.name}
+                  <div className="p-6">
+                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-secondary">{founder.role}</p>
+                    <h2 className="mt-2 font-display text-3xl font-semibold text-primary">{founder.name}</h2>
+                    <p className="mt-4 leading-7 text-on-surface-variant">
+                      A hands-on leader shaping the company&apos;s craftsmanship, product development, buyer relationships, and export growth.
                     </p>
                   </div>
-                </div>
-              </div>
-            </article>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
       <section className="section-pad bg-background">
         <div className="container-shell">
           <SectionHeader
@@ -241,53 +207,33 @@ export function AboutPage() {
           />
 
           <div className="relative mx-auto mt-16 max-w-6xl">
-            <div className="absolute left-5 top-0 h-full w-px bg-outline-variant md:left-1/2 md:-translate-x-1/2" aria-hidden="true" />
+            <div className="absolute left-6 top-0 h-full w-px bg-outline-variant md:left-1/2 md:-translate-x-1/2" aria-hidden="true" />
 
-            <div className="space-y-10 md:space-y-12">
+            <div className="grid gap-8 md:gap-12">
               {timeline.map((item, index) => {
                 const Icon = item.icon;
                 const isEven = index % 2 === 0;
 
-                const yearBlock = (
-                  <div>
-                    <h3 className="font-display text-4xl font-semibold leading-none text-primary">{item.year}</h3>
-                    <p className="mt-3 text-xl leading-8 text-on-surface-variant">{item.label}</p>
-                  </div>
-                );
-
-                const textCard = (
-                  <div className="w-full rounded-lg border border-outline-variant bg-surface-container-low p-6 shadow-sm transition-shadow hover:shadow-soft md:p-7">
-                    <div className="mb-3 md:hidden">
-                      <h3 className="font-display text-3xl font-semibold text-primary">{item.year}</h3>
-                      <p className="mt-2 text-base font-semibold leading-7 text-secondary">{item.label}</p>
-                    </div>
-                    <p className="text-base leading-8 text-on-surface-variant md:text-lg">{item.text}</p>
-                  </div>
-                );
-
                 return (
-                  <article key={item.year} className="relative pl-14 md:grid md:grid-cols-12 md:items-center md:pl-0">
-                    {isEven ? (
-                      <>
-                        <div className="hidden md:col-span-5 md:block md:pr-12 md:text-right">{yearBlock}</div>
+                  <article key={item.year} className="relative grid grid-cols-[3rem_minmax(0,1fr)] gap-4 md:grid-cols-[minmax(0,1fr)_3rem_minmax(0,1fr)] md:items-center md:gap-0">
+                    <div className={isEven ? "hidden text-right md:block md:pr-12" : "hidden md:order-3 md:block md:pl-12"}>
+                      <h3 className="font-display text-4xl font-semibold leading-none text-primary">{item.year}</h3>
+                      <p className="mt-3 text-xl leading-8 text-on-surface-variant">{item.label}</p>
+                    </div>
 
-                        <div className="absolute left-0 top-1 z-10 grid h-10 w-10 place-items-center rounded-full border-4 border-background bg-primary text-on-primary shadow-soft md:static md:col-span-2 md:mx-auto">
-                          <Icon size={16} aria-hidden="true" />
+                    <div className="z-10 grid h-12 w-12 place-items-center rounded-full border-4 border-background bg-primary text-on-primary shadow-soft md:order-2">
+                      <Icon size={18} aria-hidden="true" />
+                    </div>
+
+                    <div className={isEven ? "md:pl-12" : "md:order-1 md:pr-12"}>
+                      <div className="rounded-xl border border-outline-variant bg-surface-container-lowest p-6 shadow-sm transition-shadow hover:shadow-soft md:p-7">
+                        <div className="md:hidden">
+                          <h3 className="font-display text-3xl font-semibold text-primary">{item.year}</h3>
+                          <p className="mt-2 text-base font-semibold leading-7 text-secondary">{item.label}</p>
                         </div>
-
-                        <div className="md:col-span-5 md:pl-12">{textCard}</div>
-                      </>
-                    ) : (
-                      <>
-                        <div className="md:col-span-5 md:pr-12">{textCard}</div>
-
-                        <div className="absolute left-0 top-1 z-10 grid h-10 w-10 place-items-center rounded-full border-4 border-background bg-primary text-on-primary shadow-soft md:static md:col-span-2 md:mx-auto">
-                          <Icon size={16} aria-hidden="true" />
-                        </div>
-
-                        <div className="hidden md:col-span-5 md:block md:pl-12">{yearBlock}</div>
-                      </>
-                    )}
+                        <p className="mt-4 text-base leading-8 text-on-surface-variant md:mt-0 md:text-lg">{item.text}</p>
+                      </div>
+                    </div>
                   </article>
                 );
               })}
