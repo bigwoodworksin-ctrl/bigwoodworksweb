@@ -362,10 +362,7 @@ export function Layout() {
       <footer className="bg-primary-container text-on-primary">
         <div className="container-shell grid gap-10 py-12 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
           <div>
-            <div className="flex items-center gap-3">
-              <img src="/assets/big-wood-works-logo.png" alt="" className="h-14 w-14 object-contain" />
-              <span className="font-display text-3xl font-semibold">Big Wood Works</span>
-            </div>
+            <img src="/assets/footer-logo.png" alt="Big Wood Works" className="h-auto w-full max-w-[260px] object-contain" />
             <p className="mt-5 max-w-md leading-7 text-on-primary/75">
               Premium cremation urns and memorial products manufactured with respect, consistency, and export-ready quality.
             </p>
