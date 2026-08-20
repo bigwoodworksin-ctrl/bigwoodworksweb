@@ -8,13 +8,14 @@ export function ExportPage() {
     <section className="section-pad bg-background">
       <div className="container-shell">
         <SectionHeader
+          as="h1"
           eyebrow="Global export reach"
           title="Global export markets and wholesale supply support."
           text="Big Wood Works supplies handcrafted memorial products to funeral brands, wholesalers, importers, and e-commerce businesses across international markets."
         />
         <div className="mt-10 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="rounded-xl border border-outline-variant bg-surface-container-low p-5 shadow-soft">
-            <img src="/assets/export-logistics.png" alt="Worldwide logistics support" className="aspect-[16/9] w-full rounded-lg object-cover" />
+            <img src="/assets/export-logistics.png" alt="Packed memorial products prepared for international logistics" width="1672" height="941" className="aspect-[16/9] w-full rounded-lg object-cover" />
             <div className="mt-5 flex flex-wrap gap-3">
               {["Worldwide logistics support", "Export-ready packaging", "End-to-end buyer support"].map((item) => (
                 <span key={item} className="rounded border border-outline-variant bg-background px-3 py-2 text-xs font-bold uppercase tracking-wide text-primary">

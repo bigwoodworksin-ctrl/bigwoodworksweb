@@ -47,7 +47,7 @@ export function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <section className="relative overflow-hidden bg-primary-container text-on-primary">
         <div className="absolute inset-0 opacity-25">
-          <img src="/assets/home-hero-urns.png" alt="" className="h-full w-full object-cover object-center" />
+          <img src="/assets/home-hero-urns.png" alt="" width="1672" height="941" fetchPriority="high" className="h-full w-full object-cover object-center" />
         </div>
         <div className="container-shell relative grid min-h-[calc(100svh-5rem)] gap-10 py-16 lg:grid-cols-[1fr_0.9fr] lg:items-center">
           <div>

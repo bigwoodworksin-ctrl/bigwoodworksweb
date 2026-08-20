@@ -8,6 +8,7 @@ export function OemPage() {
     <section className="section-pad bg-background">
       <div className="container-shell">
         <SectionHeader
+          as="h1"
           eyebrow="OEM & ODM"
           title="Reliable manufacturing solutions for memorial brands."
           text="We support custom design development, private-label packaging, branding, quality control, and export-ready logistics for funeral brands, importers, wholesalers, distributors, and e-commerce businesses."

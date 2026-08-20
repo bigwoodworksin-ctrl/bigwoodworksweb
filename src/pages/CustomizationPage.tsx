@@ -1,8 +1,7 @@
 import { ArrowRight, CheckCircle2, Download } from "lucide-react";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { SectionHeader } from "../components/SectionHeader";
-import { customizationServices, materials, processSteps, productFamilies } from "../data/catalogue";
+import { contact, customizationServices, materials, processSteps, productFamilies } from "../data/catalogue";
 
 const customWorkflow = [
   { title: "Brief and reference", text: "We start from the buyer's market, dimensions, finish expectations, and artwork references." },
@@ -22,7 +21,6 @@ const customizationExtras = [
 ];
 
 export function CustomizationPage() {
-  const [submitted, setSubmitted] = useState(false);
 
   return (
     <>
@@ -150,30 +148,29 @@ export function CustomizationPage() {
             />
             <form
               className="mt-8 rounded-xl border border-outline-variant bg-surface-container-lowest p-6 shadow-soft"
-              onSubmit={(event) => {
-                event.preventDefault();
-                setSubmitted(true);
-              }}
+              action={`mailto:${contact.email}`}
+              method="post"
+              encType="text/plain"
             >
               <div className="grid gap-5 sm:grid-cols-2">
                 <label className="grid gap-2 text-sm font-bold text-primary">
                   Name
-                  <input className="focus-ring rounded border border-outline-variant px-4 py-3" />
+                  <input name="name" autoComplete="name" required className="focus-ring rounded border border-outline-variant px-4 py-3" />
                 </label>
                 <label className="grid gap-2 text-sm font-bold text-primary">
                   Email
-                  <input type="email" className="focus-ring rounded border border-outline-variant px-4 py-3" />
+                  <input name="email" type="email" autoComplete="email" required className="focus-ring rounded border border-outline-variant px-4 py-3" />
                 </label>
               </div>
               <label className="mt-5 grid gap-2 text-sm font-bold text-primary">
                 Custom request
-                <textarea rows={6} className="focus-ring rounded border border-outline-variant px-4 py-3" placeholder="Tell us about the urn style, artwork, finish, and packaging you need." />
+                <textarea name="custom-request" rows={6} required className="focus-ring rounded border border-outline-variant px-4 py-3" placeholder="Tell us about the urn style, artwork, finish, and packaging you need." />
               </label>
               <button type="submit" className="focus-ring mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded bg-primary px-6 text-sm font-bold text-on-primary">
                 Submit enquiry
                 <ArrowRight size={18} aria-hidden="true" />
               </button>
-              {submitted ? <p className="mt-4 text-sm font-semibold text-secondary">Thanks. Your customisation enquiry is ready to be followed up by the team.</p> : null}
+              <p className="mt-4 text-sm text-on-surface-variant">Submitting opens your email application so you can review and send the enquiry.</p>
             </form>
           </div>
           <div className="rounded-xl border border-outline-variant bg-primary-container p-6 text-on-primary shadow-soft">

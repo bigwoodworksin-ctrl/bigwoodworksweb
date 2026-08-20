@@ -2,10 +2,10 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { contact, navItems } from "../data/catalogue";
+import { absoluteUrl, aliasCanonical, canonicalPages, getPage, getSiteOrigin, locale, siteName, socialImagePath } from "../seo";
 
-const siteUrl = "https://www.bigwoodworks.com";
-
-const pageMeta: Record<string, { title: string; description: string }> = {
+/* Historical route copy retained below only as a migration reference. */
+const legacyPageMeta: Record<string, { title: string; description: string }> = {
   "/": {
     title: "Wooden Cremation Urn Manufacturer & Exporter | Big Wood Works",
     description:
@@ -122,8 +122,11 @@ export function Layout() {
   }, [pathname]);
 
   useEffect(() => {
-    const meta = pageMeta[pathname] ?? pageMeta["/"];
-    const canonicalUrl = pathname === "/" ? siteUrl : `${siteUrl}${pathname}`;
+    const meta = getPage(pathname);
+    const siteUrl = getSiteOrigin();
+    const canonicalPath = aliasCanonical[pathname] ?? meta.path;
+    const canonicalUrl = absoluteUrl(siteUrl, canonicalPath);
+    const isKnownPage = canonicalPages.some((page) => page.path === canonicalPath) || pathname in aliasCanonical;
 
     document.title = meta.title;
     document.documentElement.lang = "en-GB";
@@ -133,6 +136,18 @@ export function Layout() {
       tag.setAttribute("name", "description");
       return tag;
     }).setAttribute("content", meta.description);
+
+    ensureMeta('meta[name="keywords"]', () => {
+      const tag = document.createElement("meta");
+      tag.setAttribute("name", "keywords");
+      return tag;
+    }).setAttribute("content", meta.keywords);
+
+    ensureMeta('meta[name="robots"]', () => {
+      const tag = document.createElement("meta");
+      tag.setAttribute("name", "robots");
+      return tag;
+    }).setAttribute("content", isKnownPage ? "index, follow, max-image-preview:large" : "noindex, nofollow");
 
     ensureMeta('link[rel="canonical"]', () => {
       const tag = document.createElement("link");
@@ -158,6 +173,18 @@ export function Layout() {
       return tag;
     }).setAttribute("content", "website");
 
+    ensureMeta('meta[property="og:site_name"]', () => {
+      const tag = document.createElement("meta");
+      tag.setAttribute("property", "og:site_name");
+      return tag;
+    }).setAttribute("content", siteName);
+
+    ensureMeta('meta[property="og:locale"]', () => {
+      const tag = document.createElement("meta");
+      tag.setAttribute("property", "og:locale");
+      return tag;
+    }).setAttribute("content", locale);
+
     ensureMeta('meta[property="og:url"]', () => {
       const tag = document.createElement("meta");
       tag.setAttribute("property", "og:url");
@@ -168,7 +195,7 @@ export function Layout() {
       const tag = document.createElement("meta");
       tag.setAttribute("property", "og:image");
       return tag;
-    }).setAttribute("content", `${siteUrl}/assets/home-hero-urns.png`);
+    }).setAttribute("content", `${siteUrl}${socialImagePath}`);
 
     ensureMeta('meta[name="twitter:card"]', () => {
       const tag = document.createElement("meta");
@@ -192,11 +219,12 @@ export function Layout() {
       const tag = document.createElement("meta");
       tag.setAttribute("name", "twitter:image");
       return tag;
-    }).setAttribute("content", `${siteUrl}/assets/home-hero-urns.png`);
+    }).setAttribute("content", `${siteUrl}${socialImagePath}`);
 
     const organizationSchema = {
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
       name: "Big Wood Works",
       url: siteUrl,
       logo: `${siteUrl}/assets/big-wood-works-logo.png`,
@@ -224,9 +252,23 @@ export function Layout() {
     const websiteSchema = {
       "@context": "https://schema.org",
       "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
       name: "Big Wood Works",
       url: siteUrl,
       inLanguage: "en-GB",
+      publisher: { "@id": `${siteUrl}/#organization` },
+    };
+
+    const webpageSchema = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      url: canonicalUrl,
+      name: meta.title,
+      description: meta.description,
+      inLanguage: "en-GB",
+      isPartOf: { "@id": `${siteUrl}/#website` },
+      about: { "@id": `${siteUrl}/#organization` },
     };
 
     const breadcrumbItems = [
@@ -255,6 +297,7 @@ export function Layout() {
 
     ensureJsonLdScript("organization").text = JSON.stringify(organizationSchema);
     ensureJsonLdScript("website").text = JSON.stringify(websiteSchema);
+    ensureJsonLdScript("webpage").text = JSON.stringify(webpageSchema);
     ensureJsonLdScript("breadcrumb").text = JSON.stringify(breadcrumbSchema);
   }, [pathname]);
 
@@ -286,10 +329,13 @@ export function Layout() {
 
   return (
     <div className="min-h-screen bg-background text-on-surface">
+      <a href="#main-content" className="focus-ring sr-only z-[100] rounded bg-background px-4 py-3 text-primary focus:not-sr-only focus:fixed focus:left-4 focus:top-4">
+        Skip to main content
+      </a>
       <header className="sticky top-0 z-50 border-b border-outline-variant bg-background/95 backdrop-blur-xl">
         <nav ref={menuRef} className="container-shell flex h-20 items-center justify-between gap-5" aria-label="Primary navigation">
           <Link to="/" className="focus-ring flex min-w-0 items-center gap-3 rounded">
-            <img src="/assets/big-wood-works-logo.png" alt="Big Wood Works" className="h-14 w-14 shrink-0 object-contain" />
+            <img src="/assets/big-wood-works-logo.png" alt="Big Wood Works home" width="1008" height="1061" className="h-14 w-14 shrink-0 object-contain" />
             <span className="truncate font-display text-2xl font-semibold text-primary">Big Wood Works</span>
           </Link>
 
@@ -355,14 +401,14 @@ export function Layout() {
         </div>
       </header>
 
-      <main>
+      <main id="main-content">
         <Outlet />
       </main>
 
       <footer className="bg-primary-container text-on-primary">
         <div className="container-shell grid gap-10 py-12 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
           <div>
-            <img src="/assets/footer-logo.png" alt="Big Wood Works" className="h-auto w-full max-w-[260px] object-contain" />
+            <img src="/assets/footer-logo.png" alt="Big Wood Works" width="2000" height="2096" loading="lazy" className="h-auto w-full max-w-[260px] object-contain" />
             <p className="mt-5 max-w-md leading-7 text-on-primary/75">
               Premium cremation urns and memorial products manufactured with respect, consistency, and export-ready quality.
             </p>

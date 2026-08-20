@@ -8,6 +8,7 @@ export function ProductsPage() {
       <section className="section-pad bg-background">
         <div className="container-shell">
           <SectionHeader
+            as="h1"
             eyebrow="Collection overview"
             title="Premium urn collections for wholesale and OEM buyers."
             text="Review product families for funeral brands, importers, distributors, and private-label buyers. Specifications, finish choices, branding options, and sample guidance can be discussed collection by collection."

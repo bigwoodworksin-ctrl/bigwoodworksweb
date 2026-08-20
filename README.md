@@ -36,6 +36,10 @@ Aliases are included for `/quote`, `/catalogue`, `/catalog`, `/wholesale`, and `
 
 ## Development
 
+Copy `.env.example` to `.env` and replace the example origin with the verified production domain. On Vercel, `VERCEL_PROJECT_PRODUCTION_URL` and `VERCEL_URL` are supported as fallbacks. The build generates route-specific HTML metadata plus `robots.txt`, `sitemap.xml`, `llms.txt`, and `manifest.webmanifest` from that shared origin. Builds without a production origin remain `noindex` for safety.
+
+For repository-managed Google Analytics 4, set `VITE_GA_MEASUREMENT_ID` to the verified `G-...` property ID. Leave it unset when Google Tag Manager or the hosting platform already injects Analytics to avoid duplicate page views. Client-side route changes are tracked as page views.
+
 Install dependencies:
 
 ```bash
