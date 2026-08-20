@@ -332,21 +332,21 @@ export function Layout() {
       <a href="#main-content" className="focus-ring sr-only z-[100] rounded bg-background px-4 py-3 text-primary focus:not-sr-only focus:fixed focus:left-4 focus:top-4">
         Skip to main content
       </a>
-      <header className="sticky top-0 z-50 border-b border-outline-variant bg-background/95 backdrop-blur-xl">
-        <nav ref={menuRef} className="container-shell flex h-20 items-center justify-between gap-5" aria-label="Primary navigation">
-          <Link to="/" className="focus-ring flex min-w-0 items-center gap-3 rounded">
-            <img src="/assets/big-wood-works-logo.png" alt="Big Wood Works home" width="1008" height="1061" className="h-14 w-14 shrink-0 object-contain" />
-            <span className="truncate font-display text-2xl font-semibold text-primary">Big Wood Works</span>
+      <header className="sticky top-0 z-50 bg-transparent px-3 py-3 sm:px-5 sm:py-4">
+        <nav ref={menuRef} className="wood-nav mx-auto flex h-16 w-full max-w-[1240px] items-center justify-between gap-4 rounded-full border border-tertiary-fixed/20 px-4 shadow-[0_20px_45px_rgba(39,19,16,0.22)] sm:h-[72px] sm:px-6" aria-label="Primary navigation">
+          <Link to="/" className="focus-ring flex min-w-0 items-center gap-2 rounded-full sm:gap-3">
+            <img src="/assets/big-wood-works-logo.png" alt="Big Wood Works home" width="1008" height="1061" className="h-10 w-10 shrink-0 rounded-full bg-background/95 object-contain p-0.5 sm:h-12 sm:w-12" />
+            <span className="truncate font-display text-xl font-bold text-tertiary-fixed sm:text-2xl">Big Wood Works</span>
           </Link>
 
-          <div className="hidden items-center gap-6 lg:flex">
-            {navItems.map((item) => (
+          <div className="hidden items-center gap-5 xl:flex">
+            {navItems.filter((item) => item.href !== "/").map((item) => (
               <NavLink
                 key={item.href}
                 to={item.href}
                 className={({ isActive }) =>
-                  `focus-ring rounded py-2 text-sm font-bold tracking-wide transition ${
-                    isActive ? "border-b-2 border-primary text-primary" : "text-on-surface-variant hover:text-primary"
+                  `focus-ring relative rounded py-2 text-sm font-semibold tracking-wide transition-colors after:absolute after:inset-x-0 after:-bottom-0.5 after:mx-auto after:h-px after:origin-center after:bg-tertiary-fixed after:transition-transform ${
+                    isActive ? "text-tertiary-fixed after:scale-x-100" : "text-on-primary-container hover:text-on-primary after:scale-x-0"
                   }`
                 }
               >
@@ -355,18 +355,18 @@ export function Layout() {
             ))}
           </div>
 
-          <div className="hidden items-center gap-3 lg:flex">
-            <Link className="focus-ring rounded border border-outline-variant px-4 py-3 text-sm font-bold text-primary hover:bg-surface-container" to="/contact">
-              Request Wholesale Quote
-            </Link>
-            <a className="focus-ring rounded bg-tertiary-fixed px-4 py-3 text-sm font-bold text-on-tertiary-fixed hover:bg-tertiary-fixed-dim" href="/assets/catalogue.pdf" download>
+          <div className="hidden items-center gap-3 xl:flex">
+            <a className="focus-ring rounded-full bg-tertiary-fixed px-6 py-3 text-sm font-bold text-on-tertiary-fixed transition-colors hover:bg-tertiary-fixed-dim" href="/assets/catalogue.pdf" download>
               Catalogue
             </a>
+            <Link className="focus-ring rounded-full border border-tertiary-fixed/70 px-6 py-3 text-sm font-bold text-on-primary transition-colors hover:bg-background hover:text-primary" to="/contact">
+              Request Quote
+            </Link>
           </div>
 
           <button
             type="button"
-            className="focus-ring grid size-11 place-items-center rounded border border-outline-variant text-primary lg:hidden"
+            className="focus-ring grid size-11 shrink-0 place-items-center rounded-full border border-tertiary-fixed/50 text-tertiary-fixed transition-colors hover:bg-tertiary-fixed hover:text-on-tertiary-fixed xl:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close navigation" : "Open navigation"}
@@ -376,27 +376,27 @@ export function Layout() {
           </button>
         </nav>
 
-        <div id="mobile-menu" className={open ? "border-t border-outline-variant bg-background lg:hidden" : "hidden"}>
-          <div className="container-shell grid gap-2 py-4">
+        <div id="mobile-menu" className={open ? "wood-nav mx-auto mt-3 grid w-full max-w-[1240px] gap-2 rounded-[24px] border border-tertiary-fixed/20 p-4 shadow-[0_20px_45px_rgba(39,19,16,0.22)] xl:hidden" : "hidden"}>
+          <div className="grid gap-2">
             {navItems.map((item) => (
               <NavLink
                 key={item.href}
                 to={item.href}
                 className={({ isActive }) =>
-                  `focus-ring rounded px-4 py-3 text-base font-semibold ${
-                    isActive ? "bg-primary text-on-primary" : "text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                  `focus-ring rounded-xl px-4 py-3 text-base font-semibold transition-colors ${
+                    isActive ? "bg-tertiary-fixed text-on-tertiary-fixed" : "text-on-primary-container hover:bg-background/10 hover:text-on-primary"
                   }`
                 }
               >
                 {item.label}
               </NavLink>
             ))}
-            <Link className="focus-ring rounded bg-primary px-4 py-3 text-base font-bold text-on-primary" to="/contact">
-              Request Wholesale Quote
-            </Link>
-            <a className="focus-ring rounded bg-tertiary-fixed px-4 py-3 text-base font-bold text-on-tertiary-fixed" href="/assets/catalogue.pdf" download>
+            <a className="focus-ring rounded-xl bg-tertiary-fixed px-4 py-3 text-center text-base font-bold text-on-tertiary-fixed" href="/assets/catalogue.pdf" download>
               Download Catalogue
             </a>
+            <Link className="focus-ring rounded-xl border border-tertiary-fixed/60 px-4 py-3 text-center text-base font-bold text-on-primary" to="/contact">
+              Request Wholesale Quote
+            </Link>
           </div>
         </div>
       </header>
