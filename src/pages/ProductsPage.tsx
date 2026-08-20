@@ -49,9 +49,9 @@ function CategoryNavigation({ activeTarget }: { activeTarget: string }) {
               href={`#${category.target}`}
               aria-label={category.label}
               aria-current={active ? "location" : undefined}
-              className={`focus-ring group relative grid h-12 w-12 place-items-center rounded-xl transition ${active ? "bg-tertiary-fixed" : "hover:bg-background/10"}`}
+              className={`focus-ring group relative grid h-12 w-12 place-items-center rounded-xl transition ${active ? "bg-primary ring-2 ring-tertiary-fixed shadow-[0_0_0_3px_rgba(255,222,165,0.14)]" : "hover:bg-background/10"}`}
             >
-              <img src={category.image} alt="" width="1122" height="1402" className="h-10 w-10 object-contain mix-blend-screen" />
+              <img src={category.image} alt="" width="1122" height="1402" className={`relative z-10 object-contain mix-blend-screen drop-shadow-[0_4px_5px_rgba(0,0,0,0.35)] transition-transform ${active ? "h-11 w-11 scale-110" : "h-10 w-10 group-hover:scale-105"}`} />
               <span className="pointer-events-none absolute left-[calc(100%+12px)] whitespace-nowrap rounded-lg bg-primary px-3 py-2 text-xs font-bold text-on-primary opacity-0 shadow-soft transition group-hover:opacity-100 group-focus-visible:opacity-100">
                 {category.label}
               </span>
