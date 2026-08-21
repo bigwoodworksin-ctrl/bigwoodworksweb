@@ -334,8 +334,14 @@ export function Layout() {
       </a>
       <header className="sticky top-0 z-50 bg-transparent px-3 py-3 sm:px-5 sm:py-4">
         <nav ref={menuRef} className="wood-nav mx-auto flex h-16 w-full max-w-[1240px] items-center justify-between gap-4 rounded-full border border-tertiary-fixed/20 px-4 shadow-[0_20px_45px_rgba(39,19,16,0.22)] sm:h-[72px] sm:px-6" aria-label="Primary navigation">
-          <Link to="/" className="focus-ring flex min-w-0 items-center gap-2 rounded-full sm:gap-3">
-            <img src="/assets/big-wood-works-logo.png" alt="Big Wood Works home" width="1008" height="1061" className="h-10 w-10 shrink-0 rounded-full bg-background/95 object-contain p-0.5 sm:h-12 sm:w-12" />
+          <Link to="/" className="focus-ring flex min-w-0 items-center gap-2 rounded-lg sm:gap-3" aria-label="Big Wood Works home">
+            <img
+              src="/assets/big-wood-works-nav-logo.png"
+              alt=""
+              width="1374"
+              height="1145"
+              className="h-11 w-auto shrink-0 object-contain mix-blend-screen sm:h-[54px]"
+            />
             <span className="truncate font-display text-xl font-bold text-tertiary-fixed sm:text-2xl">Big Wood Works</span>
           </Link>
 
