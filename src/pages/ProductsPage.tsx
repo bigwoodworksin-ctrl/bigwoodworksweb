@@ -83,20 +83,34 @@ export function ProductsPage() {
 
   return (
     <>
-      <section className="section-pad bg-background">
-        <div className="container-shell">
-          <SectionHeader
-            as="h1"
-            eyebrow="Collection overview"
-            title="Premium urn collections for wholesale and OEM buyers."
-            text="Review product families for funeral brands, importers, distributors, and private-label buyers. Specifications, finish choices, branding options, and sample guidance can be discussed collection by collection."
-          />
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {["Wholesale-ready collections", "Private-label support", "Specifications on request"].map((item) => (
-              <div key={item} className="rounded-lg border border-outline-variant bg-surface-container-low p-5 text-lg font-bold text-primary">
-                {item}
-              </div>
-            ))}
+      <section className="overflow-hidden bg-background py-14 md:py-20">
+        <div className="container-shell grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+          <div className="max-w-2xl">
+            <SectionHeader
+              as="h1"
+              eyebrow="Collection overview"
+              title="Wooden Memorial Urns Crafted for Wholesale, OEM & Private Label."
+              text="Review product families for funeral brands, importers, distributors, and private-label buyers. Specifications, finish choices, branding options, and sample guidance can be discussed collection by collection."
+            />
+            <div className="mt-8 flex flex-wrap gap-3">
+              {["Wholesale-ready collections", "Private-label support", "Specifications on request"].map((item, index) => (
+                <span key={item} className={`rounded-full border px-5 py-2.5 text-sm font-semibold ${index === 0 ? "border-tertiary-fixed-dim bg-tertiary-fixed text-on-tertiary-fixed" : "border-outline-variant bg-background text-primary"}`}>
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative isolate overflow-hidden rounded-[28px] border border-outline-variant bg-surface-container shadow-soft">
+            <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-tr from-primary/10 via-transparent to-tertiary-fixed/10" />
+            <img
+              src="/assets/products-hero.png"
+              alt="Big Wood Works wooden memorial urn collection including engraved, pet, classical and resin designs"
+              width="1672"
+              height="941"
+              fetchPriority="high"
+              className="aspect-[4/3] w-full object-cover object-[70%_center]"
+            />
           </div>
         </div>
       </section>
