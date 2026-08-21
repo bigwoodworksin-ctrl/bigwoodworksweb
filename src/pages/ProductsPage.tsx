@@ -16,6 +16,8 @@ const categoryNavigation = [
   { label: "Best Sellers", image: "/assets/category-navigation/heart-keepsake.png", target: "collection-10" },
 ];
 
+const productProofItems = ["Wholesale-ready collections", "Private-label support", "Specifications on request"];
+
 function CategoryNavigation({ activeTarget }: { activeTarget: string }) {
   return (
     <>
@@ -84,33 +86,42 @@ export function ProductsPage() {
   return (
     <>
       <section className="overflow-hidden bg-background py-14 md:py-20">
-        <div className="container-shell grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
-          <div className="max-w-2xl">
-            <SectionHeader
-              as="h1"
-              eyebrow="Collection overview"
-              title="Wooden Memorial Urns Crafted for Wholesale, OEM & Private Label."
-              text="Review product families for funeral brands, importers, distributors, and private-label buyers. Specifications, finish choices, branding options, and sample guidance can be discussed collection by collection."
-            />
-            <div className="mt-8 flex flex-wrap gap-3">
-              {["Wholesale-ready collections", "Private-label support", "Specifications on request"].map((item, index) => (
-                <span key={item} className={`rounded-full border px-5 py-2.5 text-sm font-semibold ${index === 0 ? "border-tertiary-fixed-dim bg-tertiary-fixed text-on-tertiary-fixed" : "border-outline-variant bg-background text-primary"}`}>
-                  {item}
-                </span>
-              ))}
+        <div className="container-shell">
+          <div className="grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+            <div className="max-w-2xl">
+              <SectionHeader
+                as="h1"
+                eyebrow="Collection overview"
+                title="Wooden Memorial Urns Crafted for Wholesale, OEM & Private Label."
+                text="Review product families for funeral brands, importers, distributors, and private-label buyers. Specifications, finish choices, branding options, and sample guidance can be discussed collection by collection."
+              />
+            </div>
+
+            <div className="relative isolate overflow-hidden rounded-[28px] border border-outline-variant bg-surface-container shadow-soft">
+              <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-tr from-primary/10 via-transparent to-tertiary-fixed/10" />
+              <img
+                src="/assets/products-hero.png"
+                alt="Big Wood Works wooden memorial urn collection including engraved, pet, classical and resin designs"
+                width="1001"
+                height="686"
+                fetchPriority="high"
+                className="aspect-[1001/686] w-full object-cover object-center"
+              />
             </div>
           </div>
 
-          <div className="relative isolate overflow-hidden rounded-[28px] border border-outline-variant bg-surface-container shadow-soft">
-            <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-tr from-primary/10 via-transparent to-tertiary-fixed/10" />
-            <img
-              src="/assets/products-hero.png"
-              alt="Big Wood Works wooden memorial urn collection including engraved, pet, classical and resin designs"
-              width="1672"
-              height="941"
-              fetchPriority="high"
-              className="aspect-[4/3] w-full object-cover object-[70%_center]"
-            />
+          <div className="proof-marquee mt-10 overflow-hidden" aria-label="Product service highlights">
+            <div className="proof-track flex w-max gap-4">
+              {[...productProofItems, ...productProofItems].map((item, index) => (
+                <div
+                  key={`${item}-${index}`}
+                  aria-hidden={index >= productProofItems.length ? "true" : undefined}
+                  className="w-[280px] shrink-0 rounded-lg border border-outline-variant bg-surface-container-low px-5 py-6 text-lg font-bold text-primary sm:w-[340px] lg:w-[360px]"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
