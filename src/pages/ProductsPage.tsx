@@ -4,15 +4,15 @@ import { SectionHeader } from "../components/SectionHeader";
 import { collections } from "../data/catalogue";
 
 const categoryNavigation = [
-  { label: "Lichtenberg Resin", image: "/assets/category-navigation/resin-art-urn.png", target: "collection-0" },
+  { label: "Lichtenberg Resin", image: "/assets/category-navigation/classical-urn.png", target: "collection-0" },
   { label: "Nature Tribute", image: "/assets/category-navigation/tree-memorial-box.png", target: "collection-1" },
   { label: "UV Printed Urns", image: "/assets/category-navigation/botanical-engraved-urn.png", target: "collection-2" },
   { label: "Botanical Tribute", image: "/assets/category-navigation/heritage-engraved-urn.png", target: "collection-3" },
   { label: "Tree of Life", image: "/assets/category-navigation/tree-of-life-urn.png", target: "collection-4" },
-  { label: "Resin Art", image: "/assets/category-navigation/sculptural-memorial.png", target: "collection-5" },
+  { label: "Resin Art", image: "/assets/category-navigation/resin-art-urn.png", target: "collection-5" },
   { label: "Engraved Legacy", image: "/assets/category-navigation/pet-keepsake.png", target: "collection-6" },
-  { label: "Classical Urns", image: "/assets/category-navigation/classical-urn.png", target: "collection-7" },
-  { label: "Pet Tribute", image: "/assets/category-navigation/cylinder-pet-urn.png", target: "collection-9" },
+  { label: "Classical Urns", image: "/assets/category-navigation/cylinder-pet-urn.png", target: "collection-7" },
+  { label: "Pet Tribute", image: "/assets/category-navigation/sculptural-memorial.png", target: "collection-9" },
   { label: "Best Sellers", image: "/assets/category-navigation/heart-keepsake.png", target: "collection-10" },
 ];
 
