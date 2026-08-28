@@ -1,4 +1,8 @@
 {
+  "framework": "vite",
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "dist",
   "cleanUrls": true,
   "redirects": [
     { "source": "/quote", "destination": "/contact", "permanent": true },
