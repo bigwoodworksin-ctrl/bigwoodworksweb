@@ -5,6 +5,7 @@ import { ContactPage } from "./pages/ContactPage";
 import { CustomizationPage } from "./pages/CustomizationPage";
 import { ExportPage } from "./pages/ExportPage";
 import { HomePage } from "./pages/HomePage";
+import { HiddenCataloguePage } from "./pages/HiddenCataloguePage";
 import { ManufacturingPage } from "./pages/ManufacturingPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { OemPage } from "./pages/OemPage";
@@ -13,6 +14,7 @@ import { ProductsPage } from "./pages/ProductsPage";
 export default function App() {
   return (
     <Routes>
+      <Route path="products/hidden/catlog" element={<HiddenCataloguePage />} />
       <Route element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="about" element={<AboutPage />} />

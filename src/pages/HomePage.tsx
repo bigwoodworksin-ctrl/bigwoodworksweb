@@ -63,8 +63,8 @@ export function HomePage() {
                 Request Wholesale Quote
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
-              <a className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded border border-on-primary/35 px-6 text-sm font-bold text-on-primary" href="/assets/catalogue.pdf" download>
-                Download catalogue
+              <a className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded border border-on-primary/35 px-6 text-sm font-bold text-on-primary" href="/contact">
+                Request catalogue
                 <Download size={18} aria-hidden="true" />
               </a>
             </div>
@@ -295,7 +295,7 @@ export function HomePage() {
                   Request Wholesale Quote
                   <ArrowRight size={18} aria-hidden="true" />
                 </Link>
-                <a className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded border border-on-primary/35 px-6 text-sm font-bold text-on-primary" href="/assets/catalogue.pdf" download>
+                <a className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded border border-on-primary/35 px-6 text-sm font-bold text-on-primary" href="/contact">
                   Download Catalogue
                   <Download size={18} aria-hidden="true" />
                 </a>

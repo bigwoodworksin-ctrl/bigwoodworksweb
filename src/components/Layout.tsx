@@ -362,7 +362,7 @@ export function Layout() {
           </div>
 
           <div className="hidden items-center gap-3 xl:flex">
-            <a className="focus-ring rounded-full bg-tertiary-fixed px-6 py-3 text-sm font-bold text-on-tertiary-fixed transition-colors hover:bg-tertiary-fixed-dim" href="/assets/catalogue.pdf" download>
+            <a className="focus-ring rounded-full bg-tertiary-fixed px-6 py-3 text-sm font-bold text-on-tertiary-fixed transition-colors hover:bg-tertiary-fixed-dim" href="/contact">
               Catalogue
             </a>
             <Link className="focus-ring rounded-full border border-tertiary-fixed/70 px-6 py-3 text-sm font-bold text-on-primary transition-colors hover:bg-background hover:text-primary" to="/contact">
@@ -397,7 +397,7 @@ export function Layout() {
                 {item.label}
               </NavLink>
             ))}
-            <a className="focus-ring rounded-xl bg-tertiary-fixed px-4 py-3 text-center text-base font-bold text-on-tertiary-fixed" href="/assets/catalogue.pdf" download>
+            <a className="focus-ring rounded-xl bg-tertiary-fixed px-4 py-3 text-center text-base font-bold text-on-tertiary-fixed" href="/contact">
               Download Catalogue
             </a>
             <Link className="focus-ring rounded-xl border border-tertiary-fixed/60 px-4 py-3 text-center text-base font-bold text-on-primary" to="/contact">

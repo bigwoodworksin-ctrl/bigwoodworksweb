@@ -125,8 +125,8 @@ export function AboutPage() {
                 Browse collections
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
-              <a className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded border border-outline-variant px-6 text-sm font-bold text-primary" href="/assets/catalogue.pdf" download>
-                Download catalogue
+              <a className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded border border-outline-variant px-6 text-sm font-bold text-primary" href="/contact">
+                Request catalogue
                 <Download size={18} aria-hidden="true" />
               </a>
             </div>
@@ -374,8 +374,8 @@ export function AboutPage() {
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
-              <a className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded bg-tertiary-fixed px-6 text-sm font-bold text-on-tertiary-fixed" href="/assets/catalogue.pdf" download>
-                Download catalogue
+              <a className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded bg-tertiary-fixed px-6 text-sm font-bold text-on-tertiary-fixed" href="/contact">
+                Request catalogue
                 <Download size={18} aria-hidden="true" />
               </a>
               <Link className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded border border-on-primary/35 px-6 text-sm font-bold text-on-primary" to="/contact">
