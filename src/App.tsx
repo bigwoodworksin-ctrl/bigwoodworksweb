@@ -15,6 +15,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="products/hidden/catlog" element={<HiddenCataloguePage />} />
+      <Route path="products/hidden/catalog" element={<HiddenCataloguePage />} />
       <Route element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="about" element={<AboutPage />} />
