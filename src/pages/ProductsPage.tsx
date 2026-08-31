@@ -42,7 +42,10 @@ function CategoryNavigation({ activeTarget }: { activeTarget: string }) {
         </div>
       </nav>
 
-      <nav aria-label="Product categories" className="fixed left-3 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-1 rounded-[22px] border border-tertiary-fixed/20 bg-primary-container p-2 shadow-[0_18px_42px_rgba(39,19,16,0.24)] 2xl:flex">
+      <nav
+        aria-label="Product categories"
+        className="fixed left-5 top-1/2 z-50 hidden -translate-y-1/2 flex-col gap-1.5 rounded-[34px] border border-[#8b633c] bg-[linear-gradient(90deg,#2b1711_0%,#4a2b1f_48%,#2a1610_100%)] px-2.5 py-3 shadow-[inset_0_0_0_3px_rgba(18,8,5,0.7),inset_0_0_0_5px_rgba(202,150,88,0.18),0_22px_48px_rgba(39,19,16,0.3)] 2xl:flex"
+      >
         {categoryNavigation.map((category) => {
           const active = activeTarget === category.target;
           return (
@@ -51,10 +54,20 @@ function CategoryNavigation({ activeTarget }: { activeTarget: string }) {
               href={`#${category.target}`}
               aria-label={category.label}
               aria-current={active ? "location" : undefined}
-              className={`focus-ring group relative grid h-12 w-12 place-items-center rounded-xl transition ${active ? "bg-primary ring-2 ring-tertiary-fixed shadow-[0_0_0_3px_rgba(255,222,165,0.14)]" : "hover:bg-background/10"}`}
+              className={`focus-ring group relative grid h-12 w-12 place-items-center rounded-2xl border transition duration-200 ${active ? "border-[#f4cb82] bg-[radial-gradient(circle,#fff2ce_0%,#f6d28e_58%,#dca85d_100%)] shadow-[0_0_0_3px_rgba(255,226,168,0.2),0_0_22px_rgba(255,211,127,0.55)]" : "border-transparent hover:border-[#aa7950]/50 hover:bg-white/10"}`}
             >
-              <img src={category.image} alt="" width="1122" height="1402" className={`relative z-10 object-contain mix-blend-screen drop-shadow-[0_4px_5px_rgba(0,0,0,0.35)] transition-transform ${active ? "h-11 w-11 scale-110" : "h-10 w-10 group-hover:scale-105"}`} />
-              <span className="pointer-events-none absolute left-[calc(100%+12px)] whitespace-nowrap rounded-lg bg-primary px-3 py-2 text-xs font-bold text-on-primary opacity-0 shadow-soft transition group-hover:opacity-100 group-focus-visible:opacity-100">
+              <img
+                src={category.image}
+                alt=""
+                width="1122"
+                height="1402"
+                className={`relative z-10 object-contain drop-shadow-[0_4px_5px_rgba(0,0,0,0.38)] transition-transform duration-200 ${active ? "h-11 w-11 scale-110" : "h-10 w-10 mix-blend-screen group-hover:scale-105"}`}
+              />
+              <span
+                aria-hidden="true"
+                className={`pointer-events-none absolute left-[calc(100%+7px)] h-2.5 w-2.5 rounded-full border-2 border-[#fff0c8] bg-[#e7ae5d] shadow-[0_0_12px_rgba(255,215,140,0.8)] transition-opacity ${active ? "opacity-100" : "opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100"}`}
+              />
+              <span className={`pointer-events-none absolute left-[calc(100%+22px)] whitespace-nowrap rounded-xl border border-[#ead9bd] bg-[#fffaf0] px-4 py-2.5 text-xs font-semibold text-primary shadow-[0_10px_28px_rgba(39,19,16,0.2)] transition-all duration-200 ${active ? "translate-x-0 opacity-100" : "-translate-x-1 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100"}`}>
                 {category.label}
               </span>
             </a>
