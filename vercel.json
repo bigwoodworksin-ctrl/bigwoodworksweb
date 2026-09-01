@@ -10,10 +10,5 @@
     { "source": "/catalogue", "destination": "/products", "permanent": true },
     { "source": "/wholesale", "destination": "/oem", "permanent": true },
     { "source": "/oem-private-label", "destination": "/oem", "permanent": true }
-  ],
-  "rewrites": [
-    { "source": "/products/hidden/catlog", "destination": "/index.html" },
-    { "source": "/products/hidden/catalog", "destination": "/index.html" },
-    { "source": "/((?!assets/|.*\\..*).*)", "destination": "/index.html" }
   ]
 }
