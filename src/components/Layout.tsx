@@ -332,7 +332,9 @@ export function Layout() {
       <a href="#main-content" className="focus-ring sr-only z-[100] rounded bg-background px-4 py-3 text-primary focus:not-sr-only focus:fixed focus:left-4 focus:top-4">
         Skip to main content
       </a>
-      <header className="sticky top-0 z-50 bg-transparent px-3 py-3 sm:px-5 sm:py-4">
+      <header
+        className={`${pathname === "/" ? "absolute inset-x-0 top-0" : "sticky top-0"} z-50 bg-transparent px-3 py-3 sm:px-5 sm:py-4`}
+      >
         <nav ref={menuRef} className="wood-nav mx-auto flex h-16 w-full max-w-[1240px] items-center justify-between gap-4 rounded-full border border-tertiary-fixed/20 px-4 shadow-[0_20px_45px_rgba(39,19,16,0.22)] sm:h-[72px] sm:px-6" aria-label="Primary navigation">
           <Link to="/" className="focus-ring flex min-w-0 items-center gap-2 rounded-lg sm:gap-3" aria-label="Big Wood Works home">
             <img
