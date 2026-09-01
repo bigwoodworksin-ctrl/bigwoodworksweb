@@ -49,7 +49,7 @@ export function HomePage() {
         <div className="absolute inset-0 opacity-25">
           <img src="/assets/home-hero-urns.png" alt="" width="1672" height="941" fetchPriority="high" className="h-full w-full object-cover object-center" />
         </div>
-        <div className="container-shell relative grid min-h-[calc(100svh-5rem)] gap-10 py-16 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+        <div className="container-shell relative grid min-h-[100svh] gap-10 py-16 lg:grid-cols-[1fr_0.9fr] lg:items-center">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.28em] text-tertiary-fixed">Made in India • Custom Branding • Global Export Support</p>
             <h1 className="mt-5 font-display text-5xl font-bold leading-[1.05] md:text-7xl">
