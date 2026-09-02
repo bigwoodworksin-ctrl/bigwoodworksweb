@@ -1,4 +1,4 @@
-import { Layers3, Paintbrush, TreePine } from "lucide-react";
+import { ArrowRight, Download, Layers3, Paintbrush, TreePine } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SectionHeader } from "../components/SectionHeader";
@@ -268,19 +268,26 @@ export function ManufacturingPage() {
         </div>
       </section>
 
-      <section className="bg-primary-container pb-8 pt-12 text-on-primary md:pt-16">
-        <div className="container-shell rounded-2xl border border-on-primary/10 px-6 py-10 md:px-10">
-          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+      <section className="section-pad bg-background">
+        <div className="container-shell">
+          <div className="mx-auto grid max-w-6xl gap-8 rounded-xl border border-primary/10 bg-primary-container px-7 py-10 text-on-primary shadow-[0_24px_55px_rgba(39,19,16,0.2)] md:px-10 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-tertiary-fixed">Custom manufacturing</p>
-              <h2 className="mt-4 font-display text-4xl font-semibold leading-tight">Discuss your custom manufacturing requirement.</h2>
-              <p className="mt-4 max-w-2xl leading-8 text-on-primary/75">
-                Tell us about the collection type, branding direction, finish preference, and quantity range you need, and we will guide the next step.
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-tertiary-fixed">Catalogue &amp; wholesale support</p>
+              <h2 className="mt-4 max-w-xl font-display text-4xl font-semibold leading-tight">Ready to review products or discuss a private-label program?</h2>
+              <p className="mt-4 max-w-2xl leading-8 text-on-primary/80">
+                Start with the catalogue or send a wholesale enquiry for product direction, branding, engraving, packaging, and export support.
               </p>
             </div>
-            <Link to="/contact" className="focus-ring inline-flex min-h-12 items-center justify-center rounded bg-tertiary-fixed px-6 text-sm font-bold text-on-tertiary-fixed">
-              Request Wholesale Quote
-            </Link>
+            <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
+              <Link to="/contact" className="focus-ring inline-flex min-h-12 items-center justify-center gap-3 rounded bg-tertiary-fixed px-6 text-sm font-bold text-on-tertiary-fixed transition-colors hover:bg-tertiary-fixed-dim">
+                Request Wholesale Quote
+                <ArrowRight size={18} aria-hidden="true" />
+              </Link>
+              <Link to="/contact" className="focus-ring inline-flex min-h-12 items-center justify-center gap-3 rounded border border-on-primary/35 px-6 text-sm font-bold text-on-primary transition-colors hover:bg-on-primary/10">
+                Download Catalogue
+                <Download size={18} aria-hidden="true" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
