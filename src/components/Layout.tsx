@@ -413,11 +413,14 @@ export function Layout() {
         <Outlet />
       </main>
 
-      <footer className="bg-primary-container text-on-primary">
-        <div className="container-shell grid gap-10 py-12 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
+      <footer className="border-t border-tertiary-fixed/15 bg-primary-container text-on-primary">
+        <div className="container-shell grid gap-8 py-10 md:grid-cols-[1fr_0.65fr_0.9fr] md:items-start md:gap-12 md:py-12">
           <div>
-            <img src="/assets/footer-logo.png" alt="Big Wood Works" width="2000" height="2096" loading="lazy" className="h-auto w-full max-w-[260px] object-contain" />
-            <p className="mt-5 max-w-md leading-7 text-on-primary/75">
+            <Link to="/" className="focus-ring inline-flex items-center gap-3 rounded-lg" aria-label="Big Wood Works home">
+              <img src="/assets/big-wood-works-nav-logo.png" alt="" width="1374" height="1145" loading="lazy" className="h-[70px] w-auto shrink-0 object-contain" />
+              <span className="font-display text-2xl font-bold text-tertiary-fixed">Big Wood Works</span>
+            </Link>
+            <p className="mt-4 max-w-md text-sm leading-6 text-on-primary/75 sm:text-base sm:leading-7">
               Premium cremation urns and memorial products manufactured with respect, consistency, and export-ready quality.
             </p>
           </div>
@@ -433,7 +436,7 @@ export function Layout() {
           </div>
           <address className="not-italic">
             <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-on-primary/55">Contact</h2>
-            <p className="mt-5 leading-7 text-on-primary/75">
+            <p className="mt-5 break-words leading-7 text-on-primary/75">
               {contact.phones.join(" | ")}
               <br />
               {contact.email}

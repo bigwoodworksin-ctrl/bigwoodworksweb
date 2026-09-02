@@ -268,7 +268,7 @@ export function ManufacturingPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-primary-container text-on-primary">
+      <section className="bg-primary-container pb-8 pt-12 text-on-primary md:pt-16">
         <div className="container-shell rounded-2xl border border-on-primary/10 px-6 py-10 md:px-10">
           <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
